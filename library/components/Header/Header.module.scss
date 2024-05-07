@@ -15,6 +15,7 @@
                 0 2px 4px rgba(0, 0, 0, 0.075),
                 0 4px 8px rgba(0, 0, 0, 0.075);
             height: $header-height;
+            margin: 0 var(--padding-s);
             padding: 0.5rem var(--padding-s);
 
             .logo {

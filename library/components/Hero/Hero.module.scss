@@ -19,13 +19,17 @@
     .content {
         color: #ffffff;
         max-width: 40ch;
-        padding: 0 1rem 5vh 1rem;
+        padding: 0 1rem 5rem 1rem;
         text-align: center;
 
         h1 {
             font-size: 2em;
+        }
+    }
 
-            @media (min-width: $breakpoint-m) {
+    @media (min-width: $breakpoint-m) {
+        .content {
+            h1 {
                 font-size: 2.5em;
             }
         }

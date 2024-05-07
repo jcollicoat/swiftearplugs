@@ -1,7 +1,4 @@
-import type { Metadata } from 'next';
 import '@styles/layout.scss';
-
-export const metadata: Metadata = {};
 
 export default function RootLayout({
     children,

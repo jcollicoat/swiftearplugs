@@ -1,3 +1,3 @@
 export default function HomePage() {
-    return 'Next Boilerplate';
+    return 'Swift Earplugs';
 }

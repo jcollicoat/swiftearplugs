@@ -1,0 +1,26 @@
+// Imports
+
+// Constants
+
+$breakpoint-s: 400px;
+$breakpoint-m: 800px;
+$breakpoint-l: 1200px;
+$breakpoint-xl: 1600px;
+
+$transition-speed: 0.25s;
+$transition-speed-slow: 0.5s;
+$transition: $transition-speed ease-in-out;
+$transition-slow: $transition-speed-slow ease-in-out;
+
+// Mixins
+
+@mixin focus-outline {
+    outline: 1px dashed transparent;
+    outline-offset: 2px;
+    transition: $transition;
+    transition-property: outline-color;
+
+    &:focus-visible {
+        outline-color: currentColor;
+    }
+}

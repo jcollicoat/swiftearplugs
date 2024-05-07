@@ -23,13 +23,19 @@ body {
         'Apple Color Emoji',
         'Segoe UI Emoji',
         'Segoe UI Symbol';
-    min-height: 100vh;
+    min-height: 120vh;
 }
 
 header,
 main {
     margin: 0 auto;
     width: 100%;
+}
+
+main {
+    max-width: 1600px;
+    padding: calc($header-height + var(--padding-s)) var(--padding-s) 0
+        var(--padding-s);
 }
 
 a,
@@ -54,8 +60,11 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
     line-height: 1;
     margin: 0;
+}
+
+p {
+    line-height: 1.25;
 }

@@ -1,0 +1,28 @@
+@import '@styles/constants.scss';
+
+.fixed {
+    position: fixed;
+
+    .container {
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 var(--padding-s);
+
+        .header {
+            background-color: #ffffff;
+            border-radius: 0 0 0.5rem 0.5rem;
+            box-shadow:
+                0 2px 4px rgba(0, 0, 0, 0.075),
+                0 4px 8px rgba(0, 0, 0, 0.075);
+            height: $header-height;
+            padding: 0.5rem var(--padding-s);
+
+            .logo {
+                display: block;
+                fill: currentColor;
+                height: 100%;
+                margin: 0 auto;
+            }
+        }
+    }
+}

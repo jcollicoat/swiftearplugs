@@ -1,0 +1,33 @@
+@import '@styles/constants.scss';
+
+.hero {
+    align-items: flex-end;
+    background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0) 50%
+        ),
+        url('https://picsum.photos/1600/1600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: var(--padding-s);
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+
+    .content {
+        color: #ffffff;
+        max-width: 40ch;
+        padding: 0 1rem 5vh 1rem;
+        text-align: center;
+
+        h1 {
+            font-size: 2em;
+
+            @media (min-width: $breakpoint-m) {
+                font-size: 2.5em;
+            }
+        }
+    }
+}

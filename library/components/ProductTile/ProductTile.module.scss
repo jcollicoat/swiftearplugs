@@ -19,15 +19,9 @@
         padding: var(--padding-m);
 
         .buy {
-            align-items: center;
-            aspect-ratio: 8 / 10;
-            background: rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-shrink: 0;
-            justify-content: center;
-            max-width: 100%;
-            width: 400px;
+            border-radius: var(--padding-m);
+            max-width: 400px;
+            width: 100%;
         }
 
         .info {

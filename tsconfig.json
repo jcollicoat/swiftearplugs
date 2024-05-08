@@ -23,7 +23,8 @@
         "paths": {
             "@components/*": ["library/components/*"],
             "@styles/*": ["library/styles/*"]
-        }
+        },
+        "typeRoots": ["@types/**/*.ts"]
     },
     "include": [
         "next-env.d.ts",

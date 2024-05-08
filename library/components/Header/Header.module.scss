@@ -1,19 +1,20 @@
 @import '@styles/constants.scss';
 
 .fixed {
+    background-image: linear-gradient(
+        to bottom,
+        rgba($color-red, 0.8),
+        rgba($color-red, 0)
+    );
+    padding: var(--padding-s);
     position: fixed;
 
     .container {
         margin: 0 auto;
         max-width: 1200px;
-        padding: 0 var(--padding-s);
 
         .header {
-            background-color: #ffffff;
-            border-radius: 0 0 0.5rem 0.5rem;
-            box-shadow:
-                0 2px 4px rgba(0, 0, 0, 0.075),
-                0 4px 8px rgba(0, 0, 0, 0.075);
+            color: #ffffff;
             height: $header-height;
             margin: 0 var(--padding-s);
             padding: 0.5rem var(--padding-s);

@@ -33,9 +33,8 @@ main {
 }
 
 main {
-    max-width: 1600px;
-    padding: calc($header-height + var(--padding-s)) var(--padding-s) 0
-        var(--padding-s);
+    max-width: 1400px;
+    padding-bottom: var(--padding-l);
 }
 
 a,

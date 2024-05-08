@@ -8,7 +8,7 @@ export const Hero: FC = () => {
                 <h1>
                     Swift&nbsp;Earplugs
                     <br />
-                    bring you closer to the music&nbsp;you&nbsp;love.
+                    bring you closer&nbsp;to&nbsp;the music&nbsp;you&nbsp;love.
                 </h1>
             </div>
         </div>

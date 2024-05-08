@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import styles from './Product.module.scss';
+import styles from './ProductTile.module.scss';
 
-export const Product: FC = () => {
+export const ProductTile: FC = () => {
     return (
         <div className={styles.container}>
             <div className={styles.tile}>

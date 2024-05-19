@@ -4,13 +4,12 @@
     display: flex;
     flex-direction: column;
     gap: var(--padding-m);
-    padding: var(--padding-s);
     padding-top: 0;
 
     .tile {
         align-self: flex-start;
         background-color: #ffffff;
-        border-radius: 0.5rem;
+        border-radius: var(--padding-s);
         box-shadow:
             0 2px 4px rgba(127, 0, 0, 0.1),
             0 4px 8px rgba(127, 0, 0, 0.1),
@@ -61,6 +60,10 @@
                 }
             }
         }
+    }
+
+    @media (min-width: $breakpoint-s) {
+        padding: 0 var(--padding-s);
     }
 
     @media (min-width: $breakpoint-m) {

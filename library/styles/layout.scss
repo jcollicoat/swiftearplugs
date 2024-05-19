@@ -23,26 +23,29 @@ body {
         'Apple Color Emoji',
         'Segoe UI Emoji',
         'Segoe UI Symbol';
-    min-height: 120vh;
-}
-
-header,
-main {
     margin: 0 auto;
-    width: 100%;
-}
-
-main {
     max-width: 1400px;
-    padding: 0 0 var(--padding-m) 0;
+    padding: var(--padding-s);
+    padding-top: 0;
 
     @media (min-width: $breakpoint-s) {
-        padding: var(--padding-s);
+        padding-top: var(--padding-s);
     }
 
     @media (min-width: $breakpoint-m) {
         padding: var(--padding-m);
     }
+}
+
+header,
+main,
+footer {
+    margin: 0 auto;
+    width: 100%;
+}
+
+main {
+    margin-bottom: var(--padding-l);
 }
 
 a,

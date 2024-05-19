@@ -30,6 +30,10 @@
 
         .copy {
             max-width: 600px;
+
+            h2 {
+                margin-bottom: 0.5em;
+            }
         }
 
         .items {
@@ -41,17 +45,19 @@
             padding: 0;
 
             .item {
-                display: flex;
-                flex-direction: column;
                 width: calc(50% - calc(var(--padding-s) * 0.5));
 
                 .icon {
                     aspect-ratio: 1 / 1;
                     border-radius: 50%;
                     display: block;
-                    margin-bottom: 0.5rem;
+                    margin-bottom: var(--padding-s);
                     max-width: 120px;
                     width: 50%;
+                }
+
+                h3 {
+                    margin-bottom: 0.5em;
                 }
             }
         }

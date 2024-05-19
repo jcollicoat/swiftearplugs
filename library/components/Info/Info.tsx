@@ -25,7 +25,11 @@ export const Info: FC = () => {
                             src="https://picsum.photos/160/160"
                             className={styles.icon}
                         />
-                        Up to 17dB of noise reduction
+                        <h3>Up to 17dB of noise reduction</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit.
+                        </p>
                     </li>
                     <li className={styles.item}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -34,7 +38,11 @@ export const Info: FC = () => {
                             src="https://picsum.photos/160/160"
                             className={styles.icon}
                         />
-                        Designed for a secure fit
+                        <h3>Designed for a secure fit</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit.
+                        </p>
                     </li>
                     <li className={styles.item}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -43,7 +51,11 @@ export const Info: FC = () => {
                             src="https://picsum.photos/160/160"
                             className={styles.icon}
                         />
-                        Reusable and simple to clean
+                        <h3>Reusable and simple to clean</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit.
+                        </p>
                     </li>
                     <li className={styles.item}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -52,7 +64,11 @@ export const Info: FC = () => {
                             src="https://picsum.photos/160/160"
                             className={styles.icon}
                         />
-                        Protect your hearing for years to come
+                        <h3>Protect your hearing for years to come</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit.
+                        </p>
                     </li>
                 </ul>
             </div>

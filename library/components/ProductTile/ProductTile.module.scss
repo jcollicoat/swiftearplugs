@@ -3,7 +3,7 @@
 .container {
     margin: 0 auto;
     max-width: 1200px;
-    padding: 0 var(--padding-m);
+    padding: 0 var(--padding-s);
 
     .tile {
         background-color: #ffffff;
@@ -16,63 +16,21 @@
         flex-wrap: wrap;
         gap: var(--padding-l);
         padding: var(--padding-m);
-        padding-bottom: var(--padding-l);
 
         .buy {
             border-radius: var(--padding-m);
             max-width: 400px;
             width: 100%;
         }
-
-        .info {
-            display: flex;
-            flex-direction: column;
-            gap: var(--padding-m);
-            flex-grow: 1;
-            text-align: center;
-
-            .items {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-
-                .item {
-                    align-items: center;
-                    display: flex;
-                    flex-direction: column;
-                    width: calc(50% - 0.5rem);
-
-                    .icon {
-                        aspect-ratio: 1 / 1;
-                        border-radius: 50%;
-                        display: block;
-                        margin-bottom: 0.5rem;
-                        max-width: 120px;
-                        width: 50%;
-                    }
-                }
-            }
-        }
     }
 
     @media (min-width: $breakpoint-m) {
+        padding: 0 var(--padding-m);
+
         .tile {
             align-items: center;
             flex-direction: row-reverse;
             flex-wrap: nowrap;
-
-            .info {
-                text-align: left;
-
-                .items {
-                    .item {
-                        align-items: start;
-                    }
-                }
-            }
         }
     }
 }

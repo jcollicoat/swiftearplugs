@@ -1,0 +1,45 @@
+@import '@styles/constants.scss';
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+    flex-grow: 1;
+    padding: var(--padding-s);
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--padding-s);
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            width: calc(50% - calc(var(--padding-s) * 0.5));
+
+            .icon {
+                aspect-ratio: 1 / 1;
+                border-radius: 50%;
+                display: block;
+                margin-bottom: 0.5rem;
+                max-width: 120px;
+                width: 50%;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-m) {
+        padding: var(--padding-m);
+
+        .items {
+            gap: var(--padding-m);
+
+            .item {
+                width: calc(50% - calc(var(--padding-m) * 0.5));
+            }
+        }
+    }
+}

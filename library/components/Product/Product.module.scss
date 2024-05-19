@@ -1,1 +1,7 @@
 @import '@styles/constants.scss';
+
+.product {
+    border-radius: var(--padding-m);
+    max-width: 400px;
+    width: 100%;
+}

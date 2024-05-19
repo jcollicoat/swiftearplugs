@@ -1,12 +1,15 @@
-'use client';
-
+import dynamic from 'next/dynamic';
 import { FC } from 'react';
-import { useProduct } from './useProduct';
+import styles from './Product.module.scss';
 
-const Product: FC = () => {
-    useProduct();
+const ProductLoader = dynamic(() => import('./ProductLoader'), {
+    ssr: false,
+});
 
-    return <div id="product"></div>;
+export const Product: FC = () => {
+    return (
+        <div className={styles.buy}>
+            <ProductLoader />
+        </div>
+    );
 };
-
-export default Product;

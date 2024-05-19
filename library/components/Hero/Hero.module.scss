@@ -1,11 +1,11 @@
 @import '@styles/constants.scss';
 
 .hero {
-    align-items: flex-end;
+    // background-image: url('https://picsum.photos/1600/1600');
     background-image: linear-gradient(
-            to top,
+            45deg,
             rgba($color-red, 1),
-            rgba($color-red, 0.25) 33%,
+            rgba($color-red, 0.25) 50%,
             rgba($color-red, 0)
         ),
         url('https://picsum.photos/1600/1600');
@@ -13,26 +13,37 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0 0 var(--padding-m) var(--padding-m);
+    color: #ffffff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: calc(-1 * var(--padding-m));
     min-height: clamp(400px, 50vh, 800px);
+    padding: var(--padding-s);
+    padding-bottom: var(--padding-l);
 
-    .content {
-        color: #ffffff;
-        max-width: 40ch;
-        padding: 0 1rem 5rem 1rem;
-        text-align: center;
+    .logo {
+        fill: currentColor;
+        margin-bottom: var(--padding-s);
+        max-width: 30%;
+        width: 150px;
+    }
 
-        h1 {
-            font-size: 2em;
-        }
+    h1 {
+        font-size: 1.5em;
+        max-width: 75%;
+    }
+
+    @media (min-width: $breakpoint-s) {
+        border-radius: var(--padding-m);
     }
 
     @media (min-width: $breakpoint-m) {
-        .content {
-            h1 {
-                font-size: 2.5em;
-            }
+        padding: var(--padding-m);
+        padding-bottom: var(--padding-l);
+
+        h1 {
+            font-size: 2.5em;
         }
     }
 }

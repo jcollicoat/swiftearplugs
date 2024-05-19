@@ -1,4 +1,4 @@
-import { Header } from '@components/Header/Header';
+// import { Header } from '@components/Header/Header';
 import '@styles/layout.scss';
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
                 <link rel="icon" href="../public/favicon.ico" key="" />
             </head>
             <body>
-                <Header />
+                {/* <Header /> */}
                 <main>{children}</main>
             </body>
         </html>

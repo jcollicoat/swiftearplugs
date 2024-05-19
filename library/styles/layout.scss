@@ -34,7 +34,15 @@ main {
 
 main {
     max-width: 1400px;
-    padding-bottom: var(--padding-l);
+    padding: 0 0 var(--padding-m) 0;
+
+    @media (min-width: $breakpoint-s) {
+        padding: var(--padding-s);
+    }
+
+    @media (min-width: $breakpoint-m) {
+        padding: var(--padding-m);
+    }
 }
 
 a,
@@ -64,10 +72,7 @@ h6 {
     margin: 0;
 }
 
-h1 {
-    font-weight: 700;
-}
-
+h1,
 h2 {
     font-weight: 600;
 }

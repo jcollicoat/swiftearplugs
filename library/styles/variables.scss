@@ -1,17 +1,5 @@
 :root {
-    --padding-s: 0.25rem;
-    --padding-m: 1rem;
-    --padding-l: 3rem;
-
-    @media (min-width: $breakpoint-s) {
-        --padding-s: 1rem;
-        --padding-m: 2rem;
-        --padding-l: 3rem;
-    }
-
-    @media (min-width: $breakpoint-l) {
-        --padding-s: 1.5rem;
-        --padding-m: 3rem;
-        --padding-l: 4.5rem;
-    }
+    --padding-s: 1rem;
+    --padding-m: 2rem;
+    --padding-l: 4rem;
 }

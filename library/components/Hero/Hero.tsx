@@ -1,9 +1,12 @@
+import Image from 'next/image';
 import { FC } from 'react';
+import image from './actionvance-eXVd7gDPO9A-unsplash.jpg';
 import styles from './Hero.module.scss';
 
 export const Hero: FC = () => {
     return (
         <div className={styles.hero}>
+            <Image className={styles.image} src={image.src} fill alt="" />
             <svg
                 aria-label="Swift Earplugs"
                 xmlns="http://www.w3.org/2000/svg"

@@ -19,7 +19,9 @@
         flex-wrap: wrap;
         gap: var(--padding-l);
         padding: var(--padding-m);
+        position: relative;
         width: 100%;
+        z-index: 2;
     }
 
     .info {

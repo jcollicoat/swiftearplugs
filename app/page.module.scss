@@ -1,0 +1,7 @@
+@import '@styles/constants.scss';
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-l);
+}

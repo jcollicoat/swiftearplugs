@@ -27,27 +27,22 @@
             @include gradient-text;
 
             display: inline-block;
-            font-size: 1.25rem;
             margin-bottom: var(--padding-s);
         }
 
         ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-
             li {
                 margin-bottom: var(--padding-s);
                 max-width: 480px;
 
                 h3 {
                     align-items: center;
+                    color: $color-red;
                     display: flex;
                     gap: 0.25em;
                     margin-bottom: 0.25em;
 
                     svg {
-                        color: $color-red;
                         display: inline;
                         height: 1.15em;
                         width: 1.15em;

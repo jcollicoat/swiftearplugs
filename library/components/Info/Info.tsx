@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Product } from '@components/Product/Product';
+import { Product } from '@components/ProductTile/Product/Product';
 import styles from './Info.module.scss';
 
 export const Info: FC = () => {

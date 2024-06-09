@@ -10,9 +10,13 @@ export const Hero: FC = () => {
             <Image className={styles.image} src={image.src} fill alt="" />
             <Logo />
             <h1>
-                Swift&nbsp;Earplugs bring&nbsp;you&nbsp;closer to the
-                music&nbsp;you&nbsp;love.
+                Dance, laugh, and live loudly; Swift Earplugs got you covered.
             </h1>
+            <p>
+                Dive into the music with our high-fidelity earplugs designed to
+                deliver crystal clear sound, while protecting your hearing for
+                many years to come.
+            </p>
         </div>
     );
 };

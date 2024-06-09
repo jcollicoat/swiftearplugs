@@ -32,8 +32,6 @@
             gap: var(--padding-s);
 
             li {
-                max-width: 480px;
-
                 svg {
                     color: $color-red;
                     height: 1.5rem;
@@ -48,6 +46,15 @@
                     color: rgba(0, 0, 0, 0.75);
                     font-size: 0.9em;
                 }
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-m) {
+        .content {
+            ul {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
     }

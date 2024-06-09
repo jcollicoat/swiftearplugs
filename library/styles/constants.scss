@@ -4,7 +4,8 @@
 
 // Constants
 
-$color-red: #e1004b;
+$color-pink: rgb(225, 0, 125);
+$color-red: rgb(225, 0, 75);
 
 $breakpoint-s: 400px;
 $breakpoint-m: 800px;
@@ -29,4 +30,10 @@ $transition-slow: $transition-speed-slow ease-in-out;
     &:focus-visible {
         outline-color: currentColor;
     }
+}
+
+@mixin gradient-text {
+    background-clip: text;
+    background-image: linear-gradient(to right, $color-red, $color-pink);
+    color: transparent;
 }

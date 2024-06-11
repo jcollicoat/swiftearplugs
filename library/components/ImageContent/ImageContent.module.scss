@@ -6,12 +6,10 @@
     gap: var(--padding-m);
 
     .image {
+        @include box-shadow;
+
         aspect-ratio: 16 / 9;
         border-radius: var(--padding-s);
-        box-shadow:
-            0 2px 4px rgba(127, 0, 0, 0.1),
-            0 4px 8px rgba(127, 0, 0, 0.1),
-            0 8px 16px rgba(127, 0, 0, 0.1);
         overflow: hidden;
         position: relative;
         width: 100%;

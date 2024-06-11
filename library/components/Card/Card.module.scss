@@ -1,12 +1,21 @@
 @import '@styles/constants.scss';
 
-.content {
+.card {
     background-color: rgba($color-red, 0.1);
     border-radius: var(--padding-s);
     display: flex;
     flex-direction: column;
     gap: var(--padding-s);
     padding: var(--padding-s);
+
+    .image {
+        @include box-shadow;
+
+        aspect-ratio: 3 / 1;
+        border-radius: calc(var(--padding-s) / 2);
+        overflow: hidden;
+        position: relative;
+    }
 
     h2 {
         color: $color-red;
@@ -19,8 +28,17 @@
 
         li {
             h3 {
+                align-items: center;
                 color: $color-red;
+                display: flex;
+                gap: 0.25em;
                 margin-bottom: 0.25em;
+
+                svg {
+                    display: inline;
+                    height: 1.15em;
+                    width: 1.15em;
+                }
             }
 
             p {

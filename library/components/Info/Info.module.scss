@@ -7,13 +7,11 @@
     padding-top: 0;
 
     .tile {
+        @include box-shadow;
+
         align-self: flex-start;
         background-color: #ffffff;
         border-radius: var(--padding-s);
-        box-shadow:
-            0 2px 4px rgba(127, 0, 0, 0.1),
-            0 4px 8px rgba(127, 0, 0, 0.1),
-            0 8px 16px rgba(127, 0, 0, 0.1);
         display: flex;
         justify-content: center;
         gap: var(--padding-l);

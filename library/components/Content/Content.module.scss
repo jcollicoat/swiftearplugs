@@ -1,0 +1,32 @@
+@import '@styles/constants.scss';
+
+.content {
+    background-color: rgba($color-red, 0.1);
+    border-radius: var(--padding-s);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+    padding: var(--padding-s);
+
+    h2 {
+        color: $color-red;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: var(--padding-s);
+
+        li {
+            h3 {
+                color: $color-red;
+                margin-bottom: 0.25em;
+            }
+
+            p {
+                color: rgba(0, 0, 0, 0.9);
+                font-size: 0.9em;
+            }
+        }
+    }
+}

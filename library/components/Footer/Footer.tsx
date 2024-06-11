@@ -6,7 +6,6 @@ export const Footer: FC = () => {
     return (
         <footer className={styles.footer}>
             <Logo />
-            <span>©&nbsp;Swift&nbsp;Earplugs</span>
         </footer>
     );
 };

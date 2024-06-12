@@ -1,16 +1,28 @@
 import Image from 'next/image';
-import { FC, PropsWithChildren } from 'react';
+import { CSSProperties, FC, PropsWithChildren } from 'react';
 import styles from './ImageContent.module.scss';
 
-export const ImageContent: FC<PropsWithChildren> = ({ children }) => {
+interface Props {
+    image: string;
+    position?: CSSProperties['objectPosition'];
+}
+
+export const ImageContent: FC<PropsWithChildren<Props>> = ({
+    image,
+    position,
+    children,
+}) => {
     return (
         <div className={styles.container}>
             <div className={styles.image}>
                 <Image
-                    src="https://picsum.photos/480/240"
+                    src={image}
                     alt=""
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{
+                        objectFit: 'cover',
+                        objectPosition: position ?? '25% 80%',
+                    }}
                 />
             </div>
             <div className={styles.content}>{children}</div>

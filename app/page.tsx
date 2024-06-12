@@ -3,6 +3,10 @@ import { Card } from '@components/Card/Card';
 import { Hero } from '@components/Hero/Hero';
 import { ImageContent } from '@components/ImageContent/ImageContent';
 import { ProductTile } from '@components/ProductTile/ProductTile';
+import imageOne from 'public/images/austin-distel-p9aNTv6wl5I-unsplash.jpg';
+import imageTwo from 'public/images/pexels-maumascaro-1154189.jpg';
+import imageThree from 'public/images/pexels-wendywei-1916817.jpg';
+import imageFour from 'public/images/sulthan-auliya-oQrJ82Iekqk-unsplash.jpg';
 import styles from './page.module.scss';
 
 export const metadata: Metadata = {
@@ -17,7 +21,7 @@ export default function HomePage() {
             <div className={styles.product}>
                 <ProductTile />
                 <div className={styles.inner}>
-                    <ImageContent>
+                    <ImageContent image={imageOne.src} position="25% 80%">
                         <h2>Designed for comfort and style</h2>
                         <ul>
                             <li>
@@ -84,7 +88,7 @@ export default function HomePage() {
                             </li>
                         </ul>
                     </ImageContent>
-                    <ImageContent>
+                    <ImageContent image={imageTwo.src} position="25% 100%">
                         <h2>Perfect on any night out</h2>
                         <ul>
                             <li>
@@ -137,7 +141,7 @@ export default function HomePage() {
                 </div>
             </div>
             <div className={styles.content}>
-                <Card>
+                <Card image={imageThree.src} position="auto 50%">
                     <h2>Our guarantee</h2>
                     <ul>
                         <li>
@@ -202,7 +206,7 @@ export default function HomePage() {
                         </li>
                     </ul>
                 </Card>
-                <Card>
+                <Card image={imageFour.src} position="auto 50%">
                     <h2>Support a local NZ business</h2>
                     <ul>
                         <li>

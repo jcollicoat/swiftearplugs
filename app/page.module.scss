@@ -12,6 +12,32 @@
         flex-direction: column;
         gap: var(--padding-m);
         width: 100%;
+
+        .colors {
+            align-items: center;
+            display: flex;
+
+            span {
+                border: 2px solid #ffffff;
+                border-radius: 0.75rem;
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+
+            .red {
+                background-color: lighten($color: $color-red, $amount: 25);
+            }
+
+            .gold {
+                background-color: lighten($color: #ff0000, $amount: 25);
+                transform: translateX(-25%);
+            }
+
+            .black {
+                background-color: lighten($color: #000000, $amount: 25);
+                transform: translateX(-50%);
+            }
+        }
     }
 
     @media (min-width: $breakpoint-m) {

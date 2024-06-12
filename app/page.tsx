@@ -45,8 +45,8 @@ export default function HomePage() {
                             </li>
                             <li>
                                 <div className={styles.colors}>
-                                    <span className={styles.red}></span>
                                     <span className={styles.gold}></span>
+                                    <span className={styles.purple}></span>
                                     <span className={styles.black}></span>
                                 </div>
                                 <h3>A pop of colour to suit your style</h3>

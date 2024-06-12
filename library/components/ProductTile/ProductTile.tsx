@@ -51,7 +51,7 @@ export const ProductTile: FC = () => {
                         </h3>
                         <p>
                             Crafted from durable materials, Swift Earplugs
-                            protect your hearing during countless nights out -
+                            protect your hearing during countless nights out –
                             because the best nights should never end in ringing
                             ears.
                         </p>

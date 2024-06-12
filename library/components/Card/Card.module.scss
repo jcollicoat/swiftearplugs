@@ -9,10 +9,9 @@
     padding: var(--padding-s);
 
     .image {
-        @include box-shadow;
-
         aspect-ratio: 3 / 1;
         border-radius: calc(var(--padding-s) / 2);
+        outline: 1px solid #ffffff;
         overflow: hidden;
         position: relative;
     }
@@ -27,23 +26,31 @@
         gap: var(--padding-s);
 
         li {
-            h3 {
-                align-items: center;
-                color: $color-red;
-                display: flex;
-                gap: 0.25em;
-                margin-bottom: 0.25em;
+            display: flex;
+            gap: var(--padding-s);
+            justify-content: space-between;
 
-                svg {
-                    display: inline;
-                    height: 1.15em;
-                    width: 1.15em;
-                }
+            svg {
+                color: $color-red;
+                display: block;
+                flex-shrink: 0;
+                height: 2.5rem;
+                width: 2.5rem;
             }
 
-            p {
-                color: rgba(0, 0, 0, 0.75);
-                font-size: 0.9em;
+            div {
+                h3 {
+                    align-items: center;
+                    color: $color-red;
+                    display: flex;
+                    gap: 0.25em;
+                    margin-bottom: 0.25em;
+                }
+
+                p {
+                    color: rgba(0, 0, 0, 0.75);
+                    font-size: 0.9em;
+                }
             }
         }
     }

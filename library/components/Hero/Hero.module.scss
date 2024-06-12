@@ -1,7 +1,7 @@
 @import '@styles/constants.scss';
 
 .hero {
-    border-radius: 0 0 var(--padding-m) var(--padding-m);
+    border-radius: 0 0 var(--padding-s) var(--padding-s);
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -37,7 +37,9 @@
         z-index: 1;
     }
 
-    svg, h1, p {
+    svg,
+    h1,
+    p {
         z-index: 3;
     }
 
@@ -46,12 +48,13 @@
         width: 150px;
     }
 
-    h1, p {
+    h1,
+    p {
         max-width: 480px;
     }
 
     @media (min-width: $breakpoint-s) {
-        border-radius: var(--padding-m);
+        border-radius: var(--padding-s);
         margin-left: 0;
         width: 100%;
     }

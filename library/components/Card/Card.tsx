@@ -10,7 +10,7 @@ export const Card: FC<PropsWithChildren> = ({ children }) => {
                     src="https://picsum.photos/480/240"
                     alt=""
                     fill
-                    objectFit="cover"
+                    style={{ objectFit: 'cover' }}
                 />
             </div>
             {children}

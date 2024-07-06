@@ -10,7 +10,7 @@ export const Hero: FC = () => {
             <Image className={styles.image} src={image.src} fill alt="" />
             <Logo />
             <h1>
-                Dance, laugh, and live loudly; Swift&nbsp;Earplugs got you
+                Dance, laugh, and live loudly; Swift&nbsp;Earplugs have got you
                 covered.
             </h1>
             <p>

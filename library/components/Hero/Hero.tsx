@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { Logo } from '@components/Logo/Logo';
-import image from 'public/images/actionvance-eXVd7gDPO9A-unsplash.jpg';
+import image from '@images/actionvance-eXVd7gDPO9A-unsplash.jpg';
 import styles from './Hero.module.scss';
 
 export const Hero: FC = () => {

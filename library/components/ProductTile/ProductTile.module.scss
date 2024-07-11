@@ -3,17 +3,13 @@
 .tile {
     @include box-shadow;
 
-    align-self: flex-start;
     background-color: #ffffff;
     border-radius: var(--padding-s);
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
     gap: var(--padding-s);
     padding: var(--padding-s);
-    position: relative;
     width: 100%;
-    z-index: 2;
 
     .placeholder {
         background-color: rgba($color-red, 0.1);
@@ -58,13 +54,5 @@
     @media (min-width: $breakpoint-m) {
         gap: var(--padding-m);
         padding: var(--padding-m);
-        max-width: 40%;
-        position: sticky;
-        top: var(--padding-s);
-        width: 400px;
-    }
-
-    @media (min-width: $breakpoint-l) {
-        width: 500px;
     }
 }

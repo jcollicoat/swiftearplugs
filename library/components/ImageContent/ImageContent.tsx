@@ -29,7 +29,7 @@ export const ImageContent: FC<PropsWithChildren<Props>> = ({
             </div>
             <div className={styles.content}>
                 <h2>{heading}</h2>
-                {children}
+                <ul>{children}</ul>
             </div>
         </div>
     );

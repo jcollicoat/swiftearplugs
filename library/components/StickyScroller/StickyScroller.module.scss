@@ -26,7 +26,6 @@
     @media (min-width: $breakpoint-m) {
         flex-direction: row-reverse;
         gap: var(--padding-m);
-        padding-left: var(--padding-s);
 
         .sticky {
             max-width: 40%;
@@ -43,10 +42,7 @@
     }
 
     @media (min-width: $breakpoint-l) {
-        padding-left: var(--padding-m);
-
         .sticky {
-            padding-right: var(--padding-m);
             width: 500px;
         }
     }

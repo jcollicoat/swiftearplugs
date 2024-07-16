@@ -1,15 +1,15 @@
 import { Metadata } from 'next';
-import { Card } from '@components/Card/Card';
+// import { Card } from '@components/Card/Card';
 import { Hero } from '@components/Hero/Hero';
 import { IconContent } from '@components/IconContent/IconContent';
 import { ImageContent } from '@components/ImageContent/ImageContent';
-import { Product } from '@components/Product/Product';
+// import { Product } from '@components/Product/Product';
 import { ProductTile } from '@components/ProductTile/ProductTile';
 import { StickyScroller } from '@components/StickyScroller/StickyScroller';
 import imageOne from '@images/austin-distel-p9aNTv6wl5I-unsplash.jpg';
 import imageTwo from '@images/pexels-maumascaro-1154189.jpg';
-import imageThree from '@images/pexels-wendywei-1916817.jpg';
-import imageFour from '@images/sulthan-auliya-oQrJ82Iekqk-unsplash.jpg';
+// import imageThree from '@images/pexels-wendywei-1916817.jpg';
+// import imageFour from '@images/sulthan-auliya-oQrJ82Iekqk-unsplash.jpg';
 import styles from './page.module.scss';
 
 export const metadata: Metadata = {
@@ -21,8 +21,8 @@ export default function HomePage() {
     return (
         <>
             <Hero />
-            <Product />
-            {/* <StickyScroller stickyComponent={ProductTile}>
+            {/* <Product /> */}
+            <StickyScroller stickyComponent={ProductTile}>
                 <ImageContent
                     heading="Designed for comfort and style"
                     image={imageOne.src}
@@ -73,7 +73,7 @@ export default function HomePage() {
                     />
                 </ImageContent>
             </StickyScroller>
-            <div className={styles.content}>
+            {/* <div className={styles.content}>
                 <Card image={imageThree.src} position="auto 50%">
                     <h2>Our guarantee</h2>
                     <ul>
@@ -202,7 +202,7 @@ export default function HomePage() {
                         </li>
                     </ul>
                 </Card>
-            </div>
+            </div> */}
             <div className={styles.section}>
                 <h2>Why choose Swift Earplugs?</h2>
                 <ul>
@@ -324,7 +324,7 @@ export default function HomePage() {
                         </div>
                     </li>
                 </ul>
-            </div> */}
+            </div>
         </>
     );
 }

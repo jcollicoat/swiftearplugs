@@ -10,6 +10,7 @@
     .sticky {
         align-self: flex-start;
         flex-shrink: 0;
+        padding: 0 var(--padding-s);
         position: relative;
         width: 100%;
         z-index: 2;
@@ -25,9 +26,12 @@
     @media (min-width: $breakpoint-m) {
         flex-direction: row-reverse;
         gap: var(--padding-m);
+        padding-left: var(--padding-s);
 
         .sticky {
             max-width: 40%;
+            padding: 0;
+            padding-right: var(--padding-s);
             position: sticky;
             top: var(--padding-s);
             width: 400px;
@@ -39,9 +43,10 @@
     }
 
     @media (min-width: $breakpoint-l) {
-        gap: var(--padding-l);
+        padding-left: var(--padding-m);
 
         .sticky {
+            padding-right: var(--padding-m);
             width: 500px;
         }
     }

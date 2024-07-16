@@ -1,0 +1,71 @@
+@import '@styles/constants.scss';
+
+.wrapper {
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid rgba($color-red, 0.1);
+    border-radius: var(--padding-s);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+    padding: var(--padding-s);
+    position: relative;
+
+    .placeholder {
+        aspect-ratio: 1 / 1;
+        background-color: rgba($color-red, 0.1);
+        flex-shrink: 0;
+        max-width: 100%;
+        width: 300px;
+    }
+
+    .content {
+        h2 {
+            @include gradient-text;
+
+            margin-bottom: var(--padding-s);
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--padding-s);
+
+            li {
+                div {
+                    margin-right: -10px;
+
+                    span {
+                        height: 1.2em;
+                        margin-bottom: 0;
+                        width: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-s) {
+        gap: var(--padding-m);
+        margin-left: var(--padding-s);
+        width: calc(100% - (var(--padding-s) * 2));
+    }
+
+    @media (min-width: 600px) {
+        .content {
+            ul {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-m) {
+        margin-left: var(--padding-l);
+        padding: var(--padding-m);
+        width: calc(100% - (var(--padding-l) * 2));
+    }
+
+    @media (min-width: $breakpoint-l) {
+        flex-direction: row;
+    }
+}

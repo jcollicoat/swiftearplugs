@@ -6,13 +6,22 @@ interface Props {
     icon: ComponentProps<typeof Icon>['icon'];
     heading: string;
     content: string;
+    style?: 'above' | 'inline';
 }
 
-export const IconContent: FC<Props> = ({ icon, heading, content }) => {
+export const IconContent: FC<Props> = ({
+    icon,
+    heading,
+    content,
+    style = 'above',
+}) => {
     return (
         <li className={styles.item}>
-            <Icon icon={icon} />
-            <h3>{heading}</h3>
+            {style === 'above' && <Icon icon={icon} />}
+            <h3>
+                {style === 'inline' && <Icon icon={icon} />}
+                {heading}
+            </h3>
             <p>{content}</p>
         </li>
     );

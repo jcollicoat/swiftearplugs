@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import { Card } from '@components/Card/Card';
-import { Hero } from '@components/HeroNew/Hero';
+import { Hero } from '@components/Hero/Hero';
 import { IconContent } from '@components/IconContent/IconContent';
 import { ImageContent } from '@components/ImageContent/ImageContent';
+import { Product } from '@components/Product/Product';
 import { ProductTile } from '@components/ProductTile/ProductTile';
 import { StickyScroller } from '@components/StickyScroller/StickyScroller';
 import imageOne from '@images/austin-distel-p9aNTv6wl5I-unsplash.jpg';
@@ -20,7 +21,8 @@ export default function HomePage() {
     return (
         <>
             <Hero />
-            <StickyScroller stickyComponent={ProductTile}>
+            <Product />
+            {/* <StickyScroller stickyComponent={ProductTile}>
                 <ImageContent
                     heading="Designed for comfort and style"
                     image={imageOne.src}
@@ -322,7 +324,7 @@ export default function HomePage() {
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div> */}
         </>
     );
 }

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { Card } from '@components/Card/Card';
-import { Hero } from '@components/Hero/Hero';
+import { Hero } from '@components/HeroNew/Hero';
 import { IconContent } from '@components/IconContent/IconContent';
 import { ImageContent } from '@components/ImageContent/ImageContent';
 import { ProductTile } from '@components/ProductTile/ProductTile';

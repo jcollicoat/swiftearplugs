@@ -13,7 +13,6 @@
     margin-bottom: calc(-1 * var(--padding-m));
     padding: 25vh var(--padding-s) 15vh var(--padding-s);
     position: relative;
-    text-align: center;
     width: calc(100% + var(--padding-m));
 
     svg {
@@ -25,14 +24,19 @@
     .content {
         margin: auto;
         max-width: 380px;
+        text-align: center;
 
         h1 {
+            @include gradient-text;
+
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 0.1em;
         }
 
         h2 {
+            @include gradient-text;
+
             font-size: 1.5rem;
             font-weight: 400;
             margin-bottom: 1em;

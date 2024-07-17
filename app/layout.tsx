@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import { Footer } from '@components/Footer/Footer';
+import { Footer } from '@components/layouts/Footer/Footer';
 import '@styles/layout.scss';
 
 export default function RootLayout({

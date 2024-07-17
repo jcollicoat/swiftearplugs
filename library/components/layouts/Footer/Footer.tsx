@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Logo } from '@components/Logo/Logo';
+import { Logo } from '@components/generics/Logo/Logo';
 import styles from './Footer.module.scss';
 
 export const Footer: FC = () => {

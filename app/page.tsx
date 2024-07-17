@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
-import { Hero } from '@components/Hero/Hero';
-import { IconContent } from '@components/IconContent/IconContent';
-import { ImageContent } from '@components/ImageContent/ImageContent';
-import { ProductTile } from '@components/ProductTile/ProductTile';
-import { StickyScroller } from '@components/StickyScroller/StickyScroller';
-import { WhyChoose } from '@components/WhyChoose/WhyChoose';
+import { IconContent } from '@components/generics/IconContent/IconContent';
+import { ImageContent } from '@components/generics/ImageContent/ImageContent';
+import { ProductTile } from '@components/generics/ProductTile/ProductTile';
+import { Hero } from '@components/layouts/Hero/Hero';
+import { StickyScroller } from '@components/layouts/StickyScroller/StickyScroller';
+import { WhyChoose } from '@components/layouts/WhyChoose/WhyChoose';
 import imageOne from '@images/austin-distel-p9aNTv6wl5I-unsplash.jpg';
 import imageTwo from '@images/pexels-maumascaro-1154189.jpg';
 

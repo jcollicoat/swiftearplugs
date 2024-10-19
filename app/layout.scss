@@ -1,0 +1,32 @@
+// Imports
+
+@import 'styles/normalize.scss';
+@import 'styles/constants.scss';
+@import 'styles/variables.scss';
+
+// Layout Styles
+
+* {
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family:
+        'Figtree',
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol';
+    margin: 0 auto;
+    max-width: 1400px;
+    padding-top: 0;
+}

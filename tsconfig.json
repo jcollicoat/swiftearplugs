@@ -21,7 +21,11 @@
             }
         ],
         "baseUrl": ".",
-        "typeRoots": ["@types/**/*.ts"]
+        "typeRoots": ["@types/**/*.ts"],
+        "paths": {
+            "@Generic/*": ["components/Generic/*"],
+            "@Layout/*": ["components/Layout/*"]
+        }
     },
     "include": [
         "next-env.d.ts",

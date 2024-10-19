@@ -1,0 +1,33 @@
+@import 'styles/constants.scss';
+
+.wrapper {
+    left: 0;
+    padding: 12px;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    .bar {
+        align-items: center;
+        background-color: rgba(white, 0.75);
+        backdrop-filter: blur(100px);
+        border-radius: 1000px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: calc(1400px - 48px);
+        padding: 12px;
+        padding-left: 24px;
+        pointer-events: auto;
+
+        .logo {
+            color: rgb(225, 0, 125);
+            height: 36px;
+        }
+    }
+
+    @media (min-width: 700px) {
+        padding: 24px;
+    }
+}

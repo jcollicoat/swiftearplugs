@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
+import { Header } from '@Layout/Header/Header';
 import './layout.scss';
 
 export default function RootLayout({
@@ -22,6 +23,7 @@ export default function RootLayout({
                 />
             </head>
             <body>
+                <Header />
                 <main>{children}</main>
             </body>
         </html>

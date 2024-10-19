@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FC } from 'react';
 import styles from './Hero.module.scss';
 
@@ -9,12 +10,42 @@ export const Hero: FC = () => (
                     Dance, laugh
                     <br />
                     and live loudly.
+                    <Image
+                        src="/pinks-1.png"
+                        alt=""
+                        height={204 / 2}
+                        width={224 / 2}
+                        className={styles.float1}
+                    />
+                    <Image
+                        src="/pinks-2.png"
+                        alt=""
+                        width={194 / 2}
+                        height={228 / 2}
+                        className={styles.float2}
+                    />
                 </h1>
-                <span>Swift&nbsp;Earplugs have you covered.</span>
+                <span>
+                    Swift&nbsp;Earplugs have you covered.
+                    <Image
+                        src="/black-1.png"
+                        alt=""
+                        width={100 / 2}
+                        height={100 / 2}
+                        className={styles.float}
+                    />
+                </span>
                 <p>
                     Dive into the music with our high-fidelity earplugs designed
                     to deliver crystal clear sound, while protecting your
                     hearing for many years to come.
+                    <Image
+                        src="/case-purple-1.png"
+                        alt=""
+                        width={819 / 2}
+                        height={819 / 2}
+                        className={styles.float}
+                    />
                 </p>
             </div>
         </div>

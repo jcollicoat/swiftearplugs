@@ -12,37 +12,84 @@ $header-height: 72px;
     padding-bottom: var(--section-margin);
     padding-top: calc(var(--page-gutter) + $header-height + 60px);
 
+    min-height: 150vh;
+
     .content {
         margin: 0 auto;
         max-width: $page-width;
 
         .lockup {
+            align-items: flex-start;
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin: 0 auto;
             max-width: 540px;
+
+            h1,
+            span,
+            p {
+                position: relative;
+            }
 
             h1,
             span {
                 @include gradient-text;
             }
 
+            h1 {
+                .float1 {
+                    position: absolute;
+                    right: -24px;
+                    top: -60px;
+                }
+
+                .float2 {
+                    display: none;
+                    position: absolute;
+                    right: -72px;
+                    top: -72px;
+                }
+            }
+
             span {
                 font-size: 24px;
-            }
-        }
-    }
 
-    @media (min-width: $breakpoint-1) {
-        .content {
-            .lockup {
-                margin: unset;
+                .float {
+                    display: none;
+                    bottom: -36px;
+                    left: -48px;
+                    position: absolute;
+                }
+            }
+
+            p {
+                .float {
+                    display: none;
+                    position: absolute;
+                    right: -180px;
+                    top: -36px;
+                }
             }
         }
     }
 
     @media (min-width: $breakpoint-2) {
+        .content {
+            .lockup {
+                h1 .float1 {
+                    display: none;
+                }
+
+                h1 .float2,
+                span .float,
+                p .float {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-3) {
         .content {
             .lockup {
                 span {

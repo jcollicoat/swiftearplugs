@@ -28,6 +28,11 @@ body {
         'Segoe UI Symbol';
 }
 
+main {
+    position: relative;
+    z-index: 1;
+}
+
 h1,
 h2,
 h3,
@@ -41,7 +46,7 @@ p {
 h1 {
     font-size: 48px;
 
-    @media (min-width: $breakpoint-2) {
+    @media (min-width: $breakpoint-3) {
         font-size: 60px;
     }
 }

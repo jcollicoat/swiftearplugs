@@ -7,7 +7,9 @@
 
     @media (min-width: $breakpoint-1) {
         --page-gutter: 24px;
+    }
 
+    @media (min-width: $breakpoint-2) {
         --section-margin: 120px;
     }
 }

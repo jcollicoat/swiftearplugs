@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import styles from './Hero.module.scss';
+import { ProductTile } from './Product/ProductTile';
 
 export const Hero: FC = () => (
     <section className={styles.section}>
@@ -48,6 +49,7 @@ export const Hero: FC = () => (
                     />
                 </p>
             </div>
+            <ProductTile />
         </div>
     </section>
 );

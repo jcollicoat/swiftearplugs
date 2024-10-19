@@ -12,18 +12,22 @@ $header-height: 72px;
     padding-bottom: var(--section-margin);
     padding-top: calc(var(--page-gutter) + $header-height + 60px);
 
-    min-height: 150vh;
-
     .content {
+        display: grid;
+        gap: 60px;
         margin: 0 auto;
         max-width: $page-width;
+
+        > div:nth-child(2) {
+            justify-self: center;
+        }
 
         .lockup {
             align-items: flex-start;
             display: flex;
             flex-direction: column;
             gap: 12px;
-            max-width: 540px;
+            max-width: 555px;
 
             h1,
             span,
@@ -68,6 +72,7 @@ $header-height: 72px;
                     position: absolute;
                     right: -180px;
                     top: -36px;
+                    z-index: 0;
                 }
             }
         }
@@ -75,6 +80,12 @@ $header-height: 72px;
 
     @media (min-width: $breakpoint-2) {
         .content {
+            grid-template-columns: 1fr 1fr;
+
+            > div:nth-child(2) {
+                justify-self: end;
+            }
+
             .lockup {
                 h1 .float1 {
                     display: none;

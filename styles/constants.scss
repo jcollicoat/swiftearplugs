@@ -18,6 +18,10 @@ $page-width: 1400px;
 
 // Mixins
 
+@mixin container {
+    container-type: inline-size;
+}
+
 @mixin gradient-text {
     background-clip: text;
     background-image: linear-gradient(135deg, $color-red, $color-pink);

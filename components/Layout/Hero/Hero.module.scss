@@ -82,13 +82,15 @@ $header-height: 72px;
         .content {
             grid-template-columns: 1fr 1fr;
             column-gap: 24px;
-            row-gap: var(--section-margin);
+            row-gap: calc(var(--section-margin) - 30px);
 
             > div:nth-child(2) {
                 justify-self: end;
             }
 
             .lockup {
+                margin-top: 60px;
+
                 h1 .float1 {
                     display: none;
                 }
@@ -111,7 +113,7 @@ $header-height: 72px;
 
         .content {
             column-gap: 0;
-            row-gap: calc(var(--section-margin) * 2);
+            row-gap: calc((var(--section-margin) * 2) - 60px);
 
             .lockup {
                 span {

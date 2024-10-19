@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import { Footer } from '@components/layouts/Footer/Footer';
-import '@styles/layout.scss';
+import './layout.scss';
 
 export default function RootLayout({
     children,
@@ -10,7 +9,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <link rel="icon" href="../public/favicon.ico" key="" />
+                <link rel="icon" href="./favicon.ico" key="" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link
                     rel="preconnect"
@@ -24,7 +23,6 @@ export default function RootLayout({
             </head>
             <body>
                 <main>{children}</main>
-                <Footer />
             </body>
         </html>
     );

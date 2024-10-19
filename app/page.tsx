@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Hero } from '@Layout/Hero/Hero';
 
 export const metadata: Metadata = {
     title: 'Swift Earplugs',
@@ -6,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-    return 'Swift Earplugs';
+    return <Hero />;
 }

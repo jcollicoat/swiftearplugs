@@ -2,7 +2,7 @@ import { FC } from 'react';
 import styles from './Hero.module.scss';
 
 export const Hero: FC = () => (
-    <section className={styles.wrapper}>
+    <section className={styles.section}>
         <div className={styles.content}>
             <div className={styles.lockup}>
                 <h1>

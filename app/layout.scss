@@ -12,8 +12,8 @@
 }
 
 body {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: white;
+    color: $color-grey;
     font-family:
         'Figtree',
         -apple-system,
@@ -26,5 +26,32 @@ body {
         'Apple Color Emoji',
         'Segoe UI Emoji',
         'Segoe UI Symbol';
-    padding-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 48px;
+
+    @media (min-width: $breakpoint-2) {
+        font-size: 60px;
+    }
+}
+
+p {
+    line-height: 1.5;
+}
+
+a,
+button {
+    cursor: pointer;
+    font-weight: 500;
 }

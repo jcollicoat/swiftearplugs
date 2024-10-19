@@ -1,0 +1,25 @@
+// Constants
+
+$breakpoint-1: 800px;
+$breakpoint-2: 1100px;
+
+$color-red: rgb(225, 0, 75);
+$color-red-light: rgb(255, 230, 230);
+$color-pink: rgb(225, 0, 125);
+$color-pink-light: rgb(255, 229, 236);
+$color-purple: rgb(120, 50, 220);
+$color-purple-light: rgb(240, 230, 255);
+$color-grey: rgb(70, 70, 70);
+$color-grey-light: rgb(230, 230, 230);
+$color-shadow: rgba(128, 0, 42, 0.05);
+
+$page-width: 1400px;
+
+// Mixins
+
+@mixin gradient-text {
+    background-clip: text;
+    background-image: linear-gradient(135deg, $color-red, $color-pink);
+    color: transparent;
+    padding: 0 0 0.1em 0;
+}

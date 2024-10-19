@@ -2,7 +2,7 @@
 
 .wrapper {
     left: 0;
-    padding: 12px;
+    padding: var(--page-gutter);
     pointer-events: none;
     position: fixed;
     right: 0;
@@ -16,18 +16,14 @@
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
-        max-width: calc(1400px - 48px);
+        max-width: calc($page-width - (var(--page-gutter) * 2));
         padding: 12px;
         padding-left: 24px;
         pointer-events: auto;
 
         .logo {
-            color: rgb(225, 0, 125);
+            color: $color-pink;
             height: 36px;
         }
-    }
-
-    @media (min-width: 700px) {
-        padding: 24px;
     }
 }

@@ -1,0 +1,13 @@
+@import './constants.scss';
+
+:root {
+    --page-gutter: 12px;
+
+    --section-margin: 96px;
+
+    @media (min-width: $breakpoint-1) {
+        --page-gutter: 24px;
+
+        --section-margin: 120px;
+    }
+}

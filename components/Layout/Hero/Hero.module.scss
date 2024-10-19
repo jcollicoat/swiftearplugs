@@ -8,8 +8,6 @@ $header-height: 72px;
         rgba($color-red-light, 1),
         rgba($color-red-light, 0)
     );
-    padding: var(--page-gutter);
-    padding-bottom: var(--section-margin);
     padding-top: calc(var(--page-gutter) + $header-height + 60px);
 
     .content {
@@ -78,9 +76,13 @@ $header-height: 72px;
         }
     }
 
-    @media (min-width: $breakpoint-2) {
+    @media (min-width: 800px) {
+        margin-bottom: calc(var(--section-margin) * -1.5);
+
         .content {
             grid-template-columns: 1fr 1fr;
+            column-gap: 24px;
+            row-gap: var(--section-margin);
 
             > div:nth-child(2) {
                 justify-self: end;
@@ -100,8 +102,17 @@ $header-height: 72px;
         }
     }
 
-    @media (min-width: $breakpoint-3) {
+    @media (min-width: 1000px) {
+        margin-bottom: calc(var(--section-margin) * -2);
+    }
+
+    @media (min-width: 1200px) {
+        margin-bottom: calc(var(--section-margin) * -2.5);
+
         .content {
+            column-gap: 0;
+            row-gap: calc(var(--section-margin) * 2);
+
             .lockup {
                 span {
                     font-size: 36px;

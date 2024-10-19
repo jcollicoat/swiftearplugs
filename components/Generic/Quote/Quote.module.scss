@@ -1,0 +1,82 @@
+@import 'styles/constants.scss';
+
+.container {
+    @include container;
+
+    max-width: 724px;
+    width: 100%;
+
+    .wrapper {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+
+        .image {
+            aspect-ratio: 1 / 1;
+            background: $color-pink-light;
+            border-radius: 1000px;
+            flex-shrink: 0;
+            margin-left: 60px;
+            width: 180px;
+        }
+
+        .text {
+            align-items: start;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .mark {
+                color: $color-pink-light;
+                height: 72px;
+                margin-bottom: -36px;
+                margin-top: -48px;
+            }
+
+            span {
+                display: block;
+                padding: 0 12px;
+                position: relative;
+            }
+
+            .quote {
+                @include gradient-text;
+
+                font-family: 'DM Serif Text', serif;
+                font-size: 24px;
+                line-height: 1.333;
+            }
+        }
+
+        @container (width >= 500px) {
+            flex-direction: row;
+
+            .image {
+                margin-left: unset;
+            }
+
+            .text {
+                .mark {
+                    margin-top: calc(90px - 36px);
+                    transform: translateX(-24px);
+                }
+
+                span {
+                    padding: 0;
+                }
+            }
+        }
+
+        @container (width >= 650px) {
+            .image {
+                width: 240px;
+            }
+
+            .text {
+                .quote {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

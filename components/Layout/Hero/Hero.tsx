@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
+import { Quote } from '@Generic/Quote/Quote';
 import styles from './Hero.module.scss';
 import { ProductTile } from './Product/ProductTile';
 
@@ -50,6 +51,7 @@ export const Hero: FC = () => (
                 </p>
             </div>
             <ProductTile />
+            <Quote />
         </div>
     </section>
 );

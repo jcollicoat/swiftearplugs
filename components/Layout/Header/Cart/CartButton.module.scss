@@ -1,6 +1,7 @@
 @import 'styles/constants.scss';
 
 .button {
+    align-items: center;
     background: linear-gradient(to right, rgb(225, 0, 75), rgb(225, 0, 125));
     border: 2px solid rgb(225, 0, 125);
     border-radius: 1000px;
@@ -10,6 +11,21 @@
         0px 4px 8px rgb(128, 0, 42, 0.05);
     color: white;
     cursor: pointer;
+    display: flex;
+    font-weight: 500;
+    gap: 8px;
+    line-height: 1;
     min-height: 48px;
     padding: 8px 24px;
+
+    .text {
+        span {
+            display: block;
+            text-align: left;
+
+            &.subtext {
+                font-size: 12px;
+            }
+        }
+    }
 }

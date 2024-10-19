@@ -1,7 +1,6 @@
-import { FC } from 'react';
 import styles from './Quote.module.scss';
 
-export const Quote: FC = () => (
+export const Quote: React.FC = () => (
     <div className={styles.container}>
         <div className={styles.wrapper}>
             <div className={styles.image}></div>

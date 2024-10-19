@@ -1,10 +1,9 @@
 'use client';
 
-import { FC } from 'react';
 import { PiShoppingBag } from 'react-icons/pi';
 import styles from './CartButton.module.scss';
 
-export const CartButton: FC = () => {
+export const CartButton: React.FC = () => {
     const text = 'Checkout';
     const sub = '2 items';
 

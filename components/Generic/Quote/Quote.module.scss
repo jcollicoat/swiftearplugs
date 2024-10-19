@@ -40,11 +40,20 @@
             }
 
             .quote {
-                @include gradient-text;
+                @include float;
 
-                font-family: 'DM Serif Text', serif;
-                font-size: 24px;
-                line-height: 1.333;
+                span {
+                    @include gradient-text;
+
+                    font-family: 'DM Serif Text', serif;
+                    font-size: 24px;
+                    line-height: 1.333;
+                }
+
+                .float {
+                    bottom: -72px;
+                    right: -36px;
+                }
             }
         }
 
@@ -67,14 +76,21 @@
             }
         }
 
-        @container (width >= 650px) {
+        @container (width >= 700px) {
             .image {
                 width: 240px;
             }
 
             .text {
                 .quote {
-                    font-size: 30px;
+                    span {
+                        font-size: 30px;
+                    }
+
+                    .float {
+                        bottom: -48px;
+                        right: -48px;
+                    }
                 }
             }
         }

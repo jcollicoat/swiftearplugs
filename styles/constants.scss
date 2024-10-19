@@ -16,10 +16,28 @@ $color-shadow: rgba(128, 0, 42, 0.05);
 
 $page-width: 1400px;
 
+$z-float: 0;
+$z-main: 1;
+$z-header: 2;
+
 // Mixins
 
 @mixin container {
     container-type: inline-size;
+}
+
+@mixin float {
+    position: relative;
+
+    *:not(img) {
+        position: relative;
+        z-index: $z-main;
+    }
+
+    img {
+        position: absolute;
+        z-index: $z-float;
+    }
 }
 
 @mixin gradient-text {

@@ -27,50 +27,49 @@ $header-height: 72px;
             gap: 12px;
             max-width: 555px;
 
-            h1,
-            span,
-            p {
-                position: relative;
-            }
+            .title {
+                @include float;
 
-            h1,
-            span {
-                @include gradient-text;
-            }
+                h1 {
+                    @include gradient-text;
+                }
 
-            h1 {
                 .float1 {
-                    position: absolute;
                     right: -24px;
                     top: -60px;
                 }
 
                 .float2 {
                     display: none;
-                    position: absolute;
                     right: -72px;
                     top: -72px;
                 }
             }
 
-            span {
-                font-size: 24px;
+            .subtitle {
+                @include float;
+
+                span {
+                    @include gradient-text;
+
+                    font-size: 24px;
+                }
 
                 .float {
                     display: none;
-                    bottom: -36px;
-                    left: -48px;
-                    position: absolute;
+                    bottom: -24px;
+                    left: -60px;
                 }
             }
 
-            p {
+            .intro {
+                @include float;
+
                 .float {
                     display: none;
-                    position: absolute;
-                    right: -180px;
+                    right: -36px;
                     top: -36px;
-                    z-index: 0;
+                    transform: rotate(15deg);
                 }
             }
         }
@@ -91,13 +90,11 @@ $header-height: 72px;
             .lockup {
                 margin-top: 60px;
 
-                h1 .float1 {
+                .title .float1 {
                     display: none;
                 }
 
-                h1 .float2,
-                span .float,
-                p .float {
+                .title .float2 {
                     display: block;
                 }
             }
@@ -106,6 +103,13 @@ $header-height: 72px;
 
     @media (min-width: 1000px) {
         margin-bottom: calc(var(--section-margin) * -2);
+
+        .content .lockup {
+            .subtitle .float,
+            .intro .float {
+                display: block;
+            }
+        }
     }
 
     @media (min-width: 1200px) {
@@ -116,10 +120,22 @@ $header-height: 72px;
             row-gap: calc((var(--section-margin) * 2) - 60px);
 
             .lockup {
-                span {
+                .subtitle span {
                     font-size: 36px;
                 }
+
+                .intro .float {
+                    right: -120px;
+                    transform: rotate(5deg);
+                }
             }
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .content .lockup .intro .float {
+            right: -200px;
+            transform: roate(0deg);
         }
     }
 }

@@ -7,7 +7,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 2;
+    z-index: $z-header;
 
     .bar {
         align-items: center;

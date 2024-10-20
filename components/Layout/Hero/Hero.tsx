@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Quote } from '@Generic/Quote/Quote';
 import { content } from 'content';
 import styles from './Hero.module.scss';
-import { ProductTile } from './Product/ProductTile';
+import { Tile } from './Product/Tile';
 
 export const Hero: React.FC = () => (
     <section className={styles.section}>
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => (
                     />
                 </div>
             </div>
-            <ProductTile />
+            <Tile />
             <Quote
                 quote={content.hero.testimonial.quote}
                 name={content.hero.testimonial.name}

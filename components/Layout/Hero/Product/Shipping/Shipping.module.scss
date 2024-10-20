@@ -1,0 +1,21 @@
+@import 'styles/constants.scss';
+
+.wrapper {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 12px 0;
+
+    svg {
+        color: $color-pink;
+    }
+
+    span {
+        font-size: 14px;
+
+        @container (width >= 480px) {
+            font-size: 1em;
+        }
+    }
+}

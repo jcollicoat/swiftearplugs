@@ -2,13 +2,15 @@
 
 import { PiShoppingBag } from 'react-icons/pi';
 import { useCart } from 'context/cart';
+import { useModal } from 'context/modal';
 import styles from './CartButton.module.scss';
 
 export const CartButton: React.FC = () => {
     const { cart } = useCart();
+    const { isOpen, setIsOpen } = useModal();
 
     const cartHasItems = (cart?.lines.length ?? 0) > 0;
-    const buttonDisabled = !cartHasItems;
+    const buttonDisabled = cartHasItems;
 
     let text = 'Cart Empty';
     let sub = undefined;
@@ -20,7 +22,7 @@ export const CartButton: React.FC = () => {
     return (
         <button
             className={styles.button}
-            onClick={() => alert('Clicked!')}
+            onClick={() => setIsOpen(!isOpen)}
             disabled={buttonDisabled}
             aria-disabled={buttonDisabled}
         >

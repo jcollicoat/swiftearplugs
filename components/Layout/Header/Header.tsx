@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Logo } from '@Generic/Logo/Logo';
 import { CartButton } from './Cart/CartButton';
+import { CartModal } from './Cart/CartModal';
 import styles from './Header.module.scss';
 
 export const Header: React.FC = () => (
@@ -11,5 +12,6 @@ export const Header: React.FC = () => (
             </Link>
             <CartButton />
         </div>
+        <CartModal />
     </header>
 );

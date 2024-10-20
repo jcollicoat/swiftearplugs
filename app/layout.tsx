@@ -3,6 +3,7 @@ import './layout.scss';
 import { cookies } from 'next/headers';
 import { Header } from '@Layout/Header/Header';
 import { CartProvider } from 'context/cart';
+import { ModalProvider } from 'context/modal';
 import { getCart } from 'shopify/cart';
 
 export default function RootLayout({
@@ -32,8 +33,10 @@ export default function RootLayout({
             </head>
             <body>
                 <CartProvider cartPromise={cart}>
-                    <Header />
-                    <main>{children}</main>
+                    <ModalProvider>
+                        <Header />
+                        <main>{children}</main>
+                    </ModalProvider>
                 </CartProvider>
             </body>
         </html>

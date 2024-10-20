@@ -1,0 +1,42 @@
+@import 'styles/constants.scss';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+
+    .header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        h2 {
+            @include gradient-text;
+
+            font-size: 24px;
+        }
+
+        .close {
+            border: none;
+            border-radius: 1000px;
+            color: $color-grey;
+            display: flex;
+            font-size: 36px;
+            height: 48px;
+            width: 48px;
+
+            svg {
+                margin: auto;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-3) {
+        .header {
+            h2 {
+                font-size: 36px;
+            }
+        }
+    }
+}

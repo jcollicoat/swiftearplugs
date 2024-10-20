@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Quote } from '@Generic/Quote/Quote';
+import { content } from 'content';
 import styles from './Hero.module.scss';
 import { ProductTile } from './Product/ProductTile';
 
@@ -8,11 +9,10 @@ export const Hero: React.FC = () => (
         <div className={styles.content}>
             <div className={styles.lockup}>
                 <div className={styles.title}>
-                    <h1>
-                        Dance, laugh
-                        <br />
-                        and live loudly.
-                    </h1>
+                    <h1
+                        // eslint-disable-next-line react/no-danger
+                        dangerouslySetInnerHTML={{ __html: content.hero.title }}
+                    />
                     <Image
                         src="/pinks-1.png"
                         alt=""
@@ -29,7 +29,12 @@ export const Hero: React.FC = () => (
                     />
                 </div>
                 <div className={styles.subtitle}>
-                    <span>Swift&nbsp;Earplugs have you covered.</span>
+                    <span
+                        // eslint-disable-next-line react/no-danger
+                        dangerouslySetInnerHTML={{
+                            __html: content.hero.subtitle,
+                        }}
+                    />
                     <Image
                         src="/black-1.png"
                         alt=""
@@ -39,11 +44,10 @@ export const Hero: React.FC = () => (
                     />
                 </div>
                 <div className={styles.intro}>
-                    <p>
-                        Dive into the music with our high-fidelity earplugs
-                        designed to deliver crystal clear sound, while
-                        protecting your hearing for many years to come.
-                    </p>
+                    <p
+                        // eslint-disable-next-line react/no-danger
+                        dangerouslySetInnerHTML={{ __html: content.hero.intro }}
+                    />
                     <Image
                         src="/case-purple-1.png"
                         alt=""

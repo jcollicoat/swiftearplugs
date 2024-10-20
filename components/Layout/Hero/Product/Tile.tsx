@@ -1,6 +1,7 @@
 import { ProductProvider } from 'context/product';
 import { getProduct } from 'shopify/product';
 import { Payments } from './Payments/Payments';
+import { Selector } from './Selector/Selector';
 import { Shipping } from './Shipping/Shipping';
 import styles from './Tile.module.scss';
 
@@ -37,7 +38,7 @@ export const Tile: React.FC = async () => {
             />
             <div className={styles.container}>
                 <div className={styles.tile}>
-                    <div className={styles.selector}></div>
+                    <Selector />
                     <Shipping />
                     <Payments />
                 </div>

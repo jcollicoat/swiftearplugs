@@ -14,7 +14,8 @@
     gap: 12px;
     min-height: 48px;
     padding: 8px 24px;
-    transition: 0.25s ease background border-color box-shadow color opacity;
+    transition: 0.25s ease;
+    transition-property: background border-color box-shadow color opacity;
 
     &:disabled {
         background: $color-grey-light;

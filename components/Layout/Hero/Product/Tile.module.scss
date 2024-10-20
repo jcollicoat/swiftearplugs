@@ -18,13 +18,7 @@
         padding: 12px;
         padding-bottom: 24px;
 
-        .selector {
-            aspect-ratio: 1 / 1;
-            background-color: $color-red-light;
-            border-radius: 12px;
-        }
-
-        @container (width >= 480px) {
+        @container (width >= 500px) {
             padding: 24px;
 
             .selector {

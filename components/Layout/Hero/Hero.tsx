@@ -58,7 +58,10 @@ export const Hero: React.FC = () => (
                 </div>
             </div>
             <ProductTile />
-            <Quote />
+            <Quote
+                quote={content.hero.testimonial.quote}
+                name={content.hero.testimonial.name}
+            />
         </div>
     </section>
 );

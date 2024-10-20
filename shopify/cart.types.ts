@@ -1,4 +1,4 @@
-import { Connection, Image, Money } from 'shopify/types/types';
+import { Connection, Image, Money } from 'shopify/types';
 
 type CartProduct = {
     id: string;
@@ -12,7 +12,7 @@ type CartProduct = {
     };
 };
 
-type CartItem = {
+export type CartItem = {
     id: string | undefined;
     quantity: number;
     cost: {

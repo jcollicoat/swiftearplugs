@@ -1,4 +1,4 @@
-import { isShopifyError } from './types/guards';
+import { isShopifyError } from './guards';
 import { ensureStartsWith } from './utils';
 
 type ExtractVariables<T> = T extends { variables: object }

@@ -14,6 +14,16 @@
     gap: 12px;
     min-height: 48px;
     padding: 8px 24px;
+    transition: 0.25s ease background border-color box-shadow color opacity;
+
+    &:disabled {
+        background: $color-grey-light;
+        border-color: transparent;
+        box-shadow: none;
+        color: $color-grey;
+        cursor: auto;
+        opacity: 0.5;
+    }
 
     .text {
         span {

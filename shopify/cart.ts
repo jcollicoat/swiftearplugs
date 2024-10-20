@@ -2,11 +2,7 @@ import { getCartQuery } from './cart.fragments';
 import { Cart, ShopifyCart, ShopifyCartOperation } from './cart.types';
 import { TAGS } from './constants';
 import { shopifyFetch } from './fetch';
-import { Connection } from './types';
-
-const removeEdgesAndNodes = <T>(array: Connection<T>): T[] => {
-    return array.edges.map((edge) => edge.node);
-};
+import { removeEdgesAndNodes } from './utils';
 
 const reshapeCart = (cart: ShopifyCart): Cart => {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition

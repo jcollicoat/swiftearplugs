@@ -17,7 +17,7 @@ export type ProductVariant = {
     price: Money;
 };
 
-type ShopifyProduct = {
+export type ShopifyProduct = {
     id: string;
     handle: string;
     availableForSale: boolean;
@@ -40,4 +40,11 @@ type ShopifyProduct = {
 export type Product = Omit<ShopifyProduct, 'variants' | 'images'> & {
     variants: ProductVariant[];
     images: Image[];
+};
+
+export type ShopifyProductOperation = {
+    data: { product: ShopifyProduct };
+    variables: {
+        handle: string;
+    };
 };

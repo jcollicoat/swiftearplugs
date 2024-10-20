@@ -23,9 +23,9 @@ const reshapeCart = (cart: ShopifyCart): Cart => {
     };
 };
 
-export async function getCart(
+export const getCart = async (
     cartId: string | undefined,
-): Promise<Cart | undefined> {
+): Promise<Cart | undefined> => {
     if (!cartId) {
         return undefined;
     }
@@ -43,4 +43,4 @@ export async function getCart(
     }
 
     return reshapeCart(res.body.data.cart);
-}
+};

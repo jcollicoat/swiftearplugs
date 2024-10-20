@@ -14,7 +14,7 @@ const domain = SHOPIFY_STORE_DOMAIN
 const endpoint = `${domain}${SHOPIFY_GRAPHQL_API_ENDPOINT}`;
 const key = SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
 
-export async function shopifyFetch<T>({
+export const shopifyFetch = async <T>({
     cache = 'force-cache',
     headers,
     query,
@@ -26,7 +26,7 @@ export async function shopifyFetch<T>({
     query: string;
     tags?: string[];
     variables?: ExtractVariables<T>;
-}): Promise<{ status: number; body: T } | never> {
+}): Promise<{ status: number; body: T } | never> => {
     try {
         const result = await fetch(endpoint, {
             method: 'POST',
@@ -70,4 +70,4 @@ export async function shopifyFetch<T>({
             query,
         };
     }
-}
+};

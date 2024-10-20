@@ -2,6 +2,8 @@
 
 import React, {
     createContext,
+    FC,
+    PropsWithChildren,
     use,
     useCallback,
     useContext,
@@ -31,14 +33,14 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-function calculateItemCost(quantity: number, price: string): string {
+const calculateItemCost = (quantity: number, price: string): string => {
     return (Number(price) * quantity).toString();
-}
+};
 
-function updateCartItem(
+const updateCartItem = (
     item: CartItem,
     updateType: UpdateType,
-): CartItem | null {
+): CartItem | null => {
     if (updateType === 'delete') return null;
 
     const newQuantity =
@@ -63,13 +65,13 @@ function updateCartItem(
             },
         },
     };
-}
+};
 
-function createOrUpdateCartItem(
+const createOrUpdateCartItem = (
     existingItem: CartItem | undefined,
     variant: ProductVariant,
     product: Product,
-): CartItem {
+): CartItem => {
     const quantity = existingItem ? existingItem.quantity + 1 : 1;
     const totalAmount = calculateItemCost(quantity, variant.price.amount);
 
@@ -94,11 +96,11 @@ function createOrUpdateCartItem(
             },
         },
     };
-}
+};
 
-function updateCartTotals(
+const updateCartTotals = (
     lines: CartItem[],
-): Pick<Cart, 'totalQuantity' | 'cost'> {
+): Pick<Cart, 'totalQuantity' | 'cost'> => {
     const totalQuantity = lines.reduce((sum, item) => sum + item.quantity, 0);
     const totalAmount = lines.reduce(
         (sum, item) => sum + Number(item.cost.totalAmount.amount),
@@ -114,9 +116,9 @@ function updateCartTotals(
             totalTaxAmount: { amount: '0', currencyCode },
         },
     };
-}
+};
 
-function createEmptyCart(): Cart {
+const createEmptyCart = (): Cart => {
     return {
         id: undefined,
         checkoutUrl: '',
@@ -129,9 +131,9 @@ function createEmptyCart(): Cart {
         },
         discountCodes: [],
     };
-}
+};
 
-function cartReducer(state: Cart | undefined, action: CartAction): Cart {
+const cartReducer = (state: Cart | undefined, action: CartAction): Cart => {
     const currentCart = state || createEmptyCart();
 
     switch (action.type) {
@@ -192,15 +194,16 @@ function cartReducer(state: Cart | undefined, action: CartAction): Cart {
         default:
             return currentCart;
     }
+};
+
+interface CartProviderProps {
+    cartPromise: Promise<Cart | undefined>;
 }
 
-export function CartProvider({
+export const CartProvider: FC<PropsWithChildren<CartProviderProps>> = ({
     children,
     cartPromise,
-}: {
-    children: React.ReactNode;
-    cartPromise: Promise<Cart | undefined>;
-}) {
+}) => {
     const initialCart = use(cartPromise);
     const [optimisticCart, updateOptimisticCart] = useOptimistic(
         initialCart,
@@ -239,12 +242,12 @@ export function CartProvider({
     return (
         <CartContext.Provider value={value}>{children}</CartContext.Provider>
     );
-}
+};
 
-export function useCart() {
+export const useCart = () => {
     const context = useContext(CartContext);
     if (context === undefined) {
         throw new Error('useCart must be used within a CartProvider');
     }
     return context;
-}
+};

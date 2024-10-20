@@ -7,7 +7,7 @@ const { SHOPIFY_REVALIDATION_SECRET } = process.env;
 
 // This is called from `app/api/revalidate/route.ts` so providers can control revalidation logic.
 // eslint-disable-next-line require-await
-export async function revalidate(req: NextRequest): Promise<NextResponse> {
+export const revalidate = async (req: NextRequest): Promise<NextResponse> => {
     // We always need to respond with a 200 status code to Shopify,
     // otherwise it will continue to retry the request.
 
@@ -39,4 +39,4 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
         revalidated: true,
         now: Date.now(),
     });
-}
+};

@@ -76,11 +76,13 @@
             }
         }
 
-        @container (width >= 700px) {
+        @container (width >= 600px) {
             .image {
                 width: 240px;
             }
+        }
 
+        @container (width >= 700px) {
             .text {
                 .quote {
                     span {

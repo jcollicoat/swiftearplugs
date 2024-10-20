@@ -35,6 +35,7 @@ $z-header: 2;
     }
 
     img {
+        pointer-events: none;
         position: absolute;
         z-index: $z-float;
     }

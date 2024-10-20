@@ -1,12 +1,19 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import { Header } from '@Layout/Header/Header';
 import './layout.scss';
+import { cookies } from 'next/headers';
+import { Header } from '@Layout/Header/Header';
+import { getCart } from 'shopify/cart';
 
 export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const cartId = cookies().get('cartId')?.value;
+
+    // Don't await the fetch, pass the Promise to the context provider
+    const cart = getCart(cartId);
+
     return (
         <html lang="en">
             <head>

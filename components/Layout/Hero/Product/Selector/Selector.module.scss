@@ -37,7 +37,7 @@
                 content: '';
                 display: none;
                 height: 24px;
-                opacity: 0.8;
+                opacity: 0.5;
                 transition: 0.25s ease opacity;
                 width: 24px;
             }
@@ -60,6 +60,10 @@
                 border-color: $color-pink-light;
                 color: $color-pink;
 
+                &:hover {
+                    background: $color-pink-light;
+                }
+
                 &.selected {
                     background: $color-pink-light;
                     border-color: $color-pink;
@@ -70,6 +74,10 @@
                 border-color: $color-purple-light;
                 color: $color-purple;
 
+                &:hover {
+                    background: $color-purple-light;
+                }
+
                 &.selected {
                     background: $color-purple-light;
                     border-color: $color-purple;
@@ -79,6 +87,10 @@
             &.black {
                 border-color: $color-grey-light;
                 color: $color-grey;
+
+                &:hover {
+                    background: $color-grey-light;
+                }
 
                 &.selected {
                     background: $color-grey-light;

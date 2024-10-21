@@ -15,7 +15,7 @@ export const CartButton: React.FC = () => {
     let text = 'Cart Empty';
     let sub = undefined;
     if (cartHasItems) {
-        text = 'Checkout';
+        text = 'My Cart';
         sub = `${cart?.totalQuantity} items`;
     }
 

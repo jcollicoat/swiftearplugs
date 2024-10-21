@@ -2,6 +2,7 @@ import {
     addToCartMutation,
     createCartMutation,
     getCartQuery,
+    removeFromCartMutation,
 } from './cart.fragments';
 import {
     Cart,
@@ -9,6 +10,7 @@ import {
     ShopifyCart,
     ShopifyCartOperation,
     ShopifyCreateCartOperation,
+    ShopifyRemoveFromCartOperation,
 } from './cart.types';
 import { TAGS } from './constants';
 import { shopifyFetch } from './fetch';
@@ -73,4 +75,20 @@ export async function addToCart(
         cache: 'no-store',
     });
     return reshapeCart(res.body.data.cartLinesAdd.cart);
+}
+
+export async function removeFromCart(
+    cartId: string,
+    lineIds: string[],
+): Promise<Cart> {
+    const res = await shopifyFetch<ShopifyRemoveFromCartOperation>({
+        query: removeFromCartMutation,
+        variables: {
+            cartId,
+            lineIds,
+        },
+        cache: 'no-store',
+    });
+
+    return reshapeCart(res.body.data.cartLinesRemove.cart);
 }

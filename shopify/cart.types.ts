@@ -76,3 +76,15 @@ export type ShopifyAddToCartOperation = {
         }[];
     };
 };
+
+export type ShopifyRemoveFromCartOperation = {
+    data: {
+        cartLinesRemove: {
+            cart: ShopifyCart;
+        };
+    };
+    variables: {
+        cartId: string;
+        lineIds: string[];
+    };
+};

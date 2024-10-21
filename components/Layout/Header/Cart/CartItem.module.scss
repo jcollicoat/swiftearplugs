@@ -1,0 +1,53 @@
+@import 'styles/constants.scss';
+
+.item {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    .details {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 12px;
+
+        img {
+            border-radius: 4px;
+        }
+
+        span {
+            display: block;
+        }
+
+        .color {
+            font-weight: 600;
+        }
+
+        .product {
+            font-size: 14px;
+            opacity: 0.75;
+        }
+    }
+
+    .actions {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+
+        button {
+            border: none;
+            border-radius: 1000px;
+            color: $color-grey;
+            display: flex;
+            font-size: 24px;
+            height: 30px;
+            width: 30px;
+
+            svg {
+                margin: auto;
+            }
+        }
+    }
+}

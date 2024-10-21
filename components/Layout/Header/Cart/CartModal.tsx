@@ -6,6 +6,7 @@ import { Modal } from '@Generic/Modal/Modal';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
 import { createCartAndSetCookie } from 'shopify/cart.actions';
+import { CartItem } from './CartItem';
 import styles from './CartModal.module.scss';
 
 export const CartModal: React.FC = () => {
@@ -18,7 +19,9 @@ export const CartModal: React.FC = () => {
         }
     }, [cart]);
 
-    const cartIsEmpty = cart?.totalQuantity === 0;
+    if (!cart) return null;
+
+    const cartIsEmpty = cart.totalQuantity === 0;
 
     return (
         <Modal align="right">
@@ -29,7 +32,11 @@ export const CartModal: React.FC = () => {
                         <PiXCircle />
                     </button>
                 </div>
-                {cartIsEmpty ? 'Empty cart...' : 'Your cart has items'}
+                {cartIsEmpty
+                    ? 'Empty cart...'
+                    : cart.lines.map((item) => (
+                          <CartItem key={item.id} item={item} />
+                      ))}
             </div>
         </Modal>
     );

@@ -40,7 +40,7 @@ export const Tile: React.FC = async () => {
             />
             <div className={styles.container}>
                 <div className={styles.tile}>
-                    <Images />
+                    <Images images={product.images} />
                     <Selector variants={product.variants} />
                     <AddToCart />
                     <Shipping />

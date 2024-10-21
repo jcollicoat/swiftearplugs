@@ -1,4 +1,5 @@
 import { Connection, Image, Money } from 'shopify/types';
+import { ProductVariant } from './product.types';
 
 type CartProduct = {
     id: string;
@@ -8,6 +9,11 @@ type CartProduct = {
     images?: {
         edges: {
             node: Image;
+        }[];
+    };
+    variants?: {
+        edges: {
+            node: ProductVariant;
         }[];
     };
 };

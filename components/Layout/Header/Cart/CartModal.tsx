@@ -35,7 +35,7 @@ export const CartModal: React.FC = () => {
                 {cartIsEmpty
                     ? 'Empty cart...'
                     : cart.lines.map((item) => (
-                          <CartItem key={item.id} item={item} />
+                          <CartItem key={item.merchandise.id} item={item} />
                       ))}
             </div>
         </Modal>

@@ -20,7 +20,7 @@ export const Images: FC<Props> = ({ product }) => {
         <div className={styles.image}>
             <Image
                 src={product.featuredImage?.url ?? '/product-fallback.png'}
-                alt="Rose Gold"
+                alt="Swift Earplugs"
                 fill
                 className={classNames(
                     styles.fallback,
@@ -31,7 +31,7 @@ export const Images: FC<Props> = ({ product }) => {
                 <Image
                     key={variant.id}
                     src={variant.image.url}
-                    alt={variant.image.altText}
+                    alt={variant.image.altText ?? ''}
                     fill
                     className={classNames(
                         state.color === variant.title && styles.visible,

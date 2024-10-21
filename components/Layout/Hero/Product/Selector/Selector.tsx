@@ -1,47 +1,64 @@
 'use client';
 
 import classNames from 'classnames';
-import Image from 'next/image';
-import { FC, useState } from 'react';
+import { FC, useEffect } from 'react';
+import { useProduct, useUpdateURL } from 'context/product';
+import { ProductVariant } from 'shopify/product.types';
 import styles from './Selector.module.scss';
 
-export const Selector: FC = () => {
-    const [selected, setSelected] = useState('pink');
+interface Props {
+    variants: ProductVariant[];
+}
+
+export const Selector: FC<Props> = ({ variants }) => {
+    const { state, updateOption } = useProduct();
+    const { updateURL } = useUpdateURL();
+
+    useEffect(() => {
+        if (!state.color) {
+            const firstAvailable = variants.find(
+                (variant) => variant.availableForSale,
+            );
+            updateURL({ color: firstAvailable?.title ?? '' });
+        }
+    }, [state.color, updateURL, variants]);
 
     return (
-        <div className={styles.container}>
-            <div className={styles.image}>
-                <Image src="/rose-gold-lockup.png" alt="Rose Gold" fill />
-            </div>
-            <div className={styles.selector}>
-                <button
-                    className={classNames(
-                        styles.pink,
-                        selected === 'pink' && styles.selected,
-                    )}
-                    onClick={() => setSelected('pink')}
-                >
-                    Rose Gold
-                </button>
-                <button
-                    className={classNames(
-                        styles.purple,
-                        selected === 'purple' && styles.selected,
-                    )}
-                    onClick={() => setSelected('purple')}
-                >
-                    Lilac Purple
-                </button>
-                <button
-                    className={classNames(
-                        styles.black,
-                        selected === 'black' && styles.selected,
-                    )}
-                    onClick={() => setSelected('black')}
-                >
-                    Matte Black
-                </button>
-            </div>
-        </div>
+        <form className={styles.selector}>
+            {variants.map((variant) => {
+                const color = variant.title.split(' ')[1].toLowerCase();
+                const isUnavailable = !variant.availableForSale;
+                const isSelected = state.color === variant.title;
+
+                return (
+                    <button
+                        key={variant.id}
+                        formAction={() => {
+                            const newState = updateOption(
+                                'color',
+                                variant.title,
+                            );
+                            updateURL(newState);
+                        }}
+                        className={classNames(
+                            styles[color],
+                            isSelected && styles.isSelected,
+                        )}
+                        disabled={isUnavailable}
+                        aria-disabled={isUnavailable}
+                        title={`${variant.title} ${isUnavailable ? ' (Out of stock)' : ''}`}
+                    >
+                        <span>
+                            {variant.title}
+                            {isUnavailable && (
+                                <span className={styles.outOfStock}>
+                                    Out of stock
+                                </span>
+                            )}
+                        </span>
+                    </button>
+                );
+            })}
+        </form>
     );
 };

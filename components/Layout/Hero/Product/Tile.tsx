@@ -1,6 +1,7 @@
 import { ProductProvider } from 'context/product';
 import { getProduct } from 'shopify/product';
 import { AddToCart } from './AddToCart/AddToCart';
+import { Images } from './Images/Images';
 import { Payments } from './Payments/Payments';
 import { Selector } from './Selector/Selector';
 import { Shipping } from './Shipping/Shipping';
@@ -39,7 +40,8 @@ export const Tile: React.FC = async () => {
             />
             <div className={styles.container}>
                 <div className={styles.tile}>
-                    <Selector />
+                    <Images />
+                    <Selector variants={product.variants} />
                     <AddToCart />
                     <Shipping />
                     <Payments />

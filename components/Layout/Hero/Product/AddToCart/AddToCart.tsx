@@ -6,7 +6,6 @@ import styles from './AddToCart.module.scss';
 
 export const AddToCart: FC = () => {
     const product = useProduct();
-    console.log(product);
     const buttonDisabled = false;
 
     return (

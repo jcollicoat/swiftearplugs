@@ -83,11 +83,13 @@ export const useProduct = () => {
 export const useUpdateURL = () => {
     const router = useRouter();
 
-    return (state: ProductState) => {
+    const updateURL = (state: ProductState) => {
         const newParams = new URLSearchParams(window.location.search);
         Object.entries(state).forEach(([key, value]) => {
             newParams.set(key, value);
         });
         router.push(`?${newParams.toString()}`, { scroll: false });
     };
+
+    return { updateURL };
 };

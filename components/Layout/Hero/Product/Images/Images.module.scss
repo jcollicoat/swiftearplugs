@@ -1,0 +1,13 @@
+@import 'styles/constants.scss';
+
+.image {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    @container (width >= 500px) {
+        border-radius: 8px;
+    }
+}

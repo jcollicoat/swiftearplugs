@@ -12,10 +12,10 @@ export const CartButton: React.FC = () => {
     const cartHasItems = (cart?.totalQuantity ?? 0) > 0;
     const buttonDisabled = !cartHasItems;
 
-    let text = 'Cart Empty';
+    let text = 'Empty Cart';
     let sub = undefined;
     if (cartHasItems) {
-        text = 'My Cart';
+        text = 'View Cart';
         sub = `${cart?.totalQuantity} items`;
     }
 

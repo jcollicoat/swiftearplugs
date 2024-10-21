@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
@@ -33,6 +34,17 @@ export const AddToCart: FC<Props> = ({ product }) => {
 
     const actionWithVariant = formAction.bind(null, selectedVariantId);
 
+    const price =
+        finalVariant?.price.amount ?? product.priceRange.minVariantPrice.amount;
+    const compareAtPrice = finalVariant?.compareAtPrice?.amount;
+    const discount = compareAtPrice
+        ? Math.round(
+              ((Number(compareAtPrice) - Number(price)) /
+                  Number(compareAtPrice)) *
+                  100,
+          )
+        : undefined;
+
     const buttonDisabled = !finalVariant?.availableForSale;
 
     return (
@@ -46,9 +58,22 @@ export const AddToCart: FC<Props> = ({ product }) => {
             }}
         >
             <div className={styles.price}>
-                <span className={styles.old}>$39.90</span>
-                <span className={styles.current}>$35.10</span>
-                <span className={styles.discount}>10% off</span>
+                {compareAtPrice && (
+                    <span className={styles.old}>{`$${compareAtPrice}0`}</span>
+                )}
+                <span
+                    className={classNames(
+                        styles.current,
+                        discount && styles.isDiscounted,
+                    )}
+                >
+                    <span>{`$${price}0`}</span>
+                    {discount && (
+                        <span
+                            className={styles.discount}
+                        >{` ${discount}% off`}</span>
+                    )}
+                </span>
             </div>
             <button disabled={buttonDisabled} aria-disabled={buttonDisabled}>
                 {buttonDisabled ? 'Out of Stock' : 'Add to Cart'}

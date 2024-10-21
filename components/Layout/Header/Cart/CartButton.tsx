@@ -9,7 +9,7 @@ export const CartButton: React.FC = () => {
     const { cart } = useCart();
     const { isOpen, setIsOpen } = useModal();
 
-    const cartHasItems = (cart?.lines.length ?? 0) > 0;
+    const cartHasItems = (cart?.totalQuantity ?? 0) > 0;
     const buttonDisabled = !cartHasItems;
 
     let text = 'Cart Empty';

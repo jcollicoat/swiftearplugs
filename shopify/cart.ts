@@ -1,9 +1,14 @@
-import { addToCartMutation, getCartQuery } from './cart.fragments';
+import {
+    addToCartMutation,
+    createCartMutation,
+    getCartQuery,
+} from './cart.fragments';
 import {
     Cart,
     ShopifyAddToCartOperation,
     ShopifyCart,
     ShopifyCartOperation,
+    ShopifyCreateCartOperation,
 } from './cart.types';
 import { TAGS } from './constants';
 import { shopifyFetch } from './fetch';
@@ -23,6 +28,15 @@ const reshapeCart = (cart: ShopifyCart): Cart => {
         lines: removeEdgesAndNodes(cart.lines),
     };
 };
+
+export async function createCart(): Promise<Cart> {
+    const res = await shopifyFetch<ShopifyCreateCartOperation>({
+        query: createCartMutation,
+        cache: 'no-store',
+    });
+
+    return reshapeCart(res.body.data.cartCreate.cart);
+}
 
 export const getCart = async (
     cartId: string | undefined,

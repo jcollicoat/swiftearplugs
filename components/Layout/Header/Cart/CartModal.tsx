@@ -1,16 +1,24 @@
 'use client';
 
+import { useEffect } from 'react';
 import { PiXCircle } from 'react-icons/pi';
 import { Modal } from '@Generic/Modal/Modal';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
+import { createCartAndSetCookie } from 'shopify/cart.actions';
 import styles from './CartModal.module.scss';
 
 export const CartModal: React.FC = () => {
     const { closeModal } = useModal();
     const { cart } = useCart();
 
-    const cartIsEmpty = cart?.lines && cart.lines.length === 0;
+    useEffect(() => {
+        if (!cart) {
+            createCartAndSetCookie();
+        }
+    }, [cart]);
+
+    const cartIsEmpty = cart?.totalQuantity === 0;
 
     return (
         <Modal align="right">

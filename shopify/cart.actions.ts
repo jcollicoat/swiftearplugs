@@ -2,8 +2,13 @@
 
 import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers';
-import { addToCart } from './cart';
+import { addToCart, createCart } from './cart';
 import { TAGS } from './constants';
+
+export async function createCartAndSetCookie() {
+    const cart = await createCart();
+    cookies().set('cartId', cart.id!);
+}
 
 export async function addItem(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -58,6 +58,10 @@ export type ShopifyCartOperation = {
     };
 };
 
+export type ShopifyCreateCartOperation = {
+    data: { cartCreate: { cart: ShopifyCart } };
+};
+
 export type ShopifyAddToCartOperation = {
     data: {
         cartLinesAdd: {

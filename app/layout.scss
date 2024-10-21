@@ -72,4 +72,8 @@ a,
 button {
     cursor: pointer;
     font-weight: 500;
+
+    &:disabled {
+        cursor: auto;
+    }
 }

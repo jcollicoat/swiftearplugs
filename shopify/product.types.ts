@@ -9,6 +9,7 @@ type ProductOption = {
 export type ProductVariant = {
     id: string;
     title: string;
+    image: Image;
     availableForSale: boolean;
     selectedOptions: {
         name: string;
@@ -30,7 +31,7 @@ export type ShopifyProduct = {
         minVariantPrice: Money;
     };
     variants: Connection<ProductVariant>;
-    featuredImage: Image;
+    featuredImage?: Image;
     images: Connection<Image>;
     seo: SEO;
     tags: string[];

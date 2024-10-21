@@ -40,14 +40,14 @@
             background: $color-grey-light;
             border-color: $color-grey-light;
             color: $color-grey;
-            cursor: not-allowed;
+            opacity: 0.5;
 
             &:hover {
                 background: $color-grey-light;
             }
         }
 
-        &.gold {
+        &:not(:disabled).gold {
             border-color: $color-pink-light;
             color: $color-pink;
 
@@ -61,7 +61,7 @@
             }
         }
 
-        &.purple {
+        &:not(:disabled).purple {
             border-color: $color-purple-light;
             color: $color-purple;
 
@@ -75,7 +75,7 @@
             }
         }
 
-        &.black {
+        &:not(:disabled).black {
             border-color: $color-grey-light;
             color: $color-grey;
 

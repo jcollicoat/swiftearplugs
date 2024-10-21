@@ -35,12 +35,11 @@ export const AddToCart: FC<Props> = ({ product }) => {
 
     const buttonDisabled = !finalVariant?.availableForSale;
 
-    if (!finalVariant) return null;
-
     return (
         <form
             className={styles.wrapper}
             action={async () => {
+                if (!finalVariant) return;
                 addCartItem(finalVariant, product);
                 await actionWithVariant();
                 // TODO: track add to cart

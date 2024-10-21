@@ -13,6 +13,7 @@ import React, {
 type ProductState = {
     [key: string]: string;
 } & {
+    color?: string;
     image?: string;
 };
 

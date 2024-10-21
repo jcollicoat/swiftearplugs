@@ -7,8 +7,12 @@ import { Selector } from './Selector/Selector';
 import { Shipping } from './Shipping/Shipping';
 import styles from './Tile.module.scss';
 
+const { PRODUCT_HANDLE } = process.env;
+
 export const Tile: React.FC = async () => {
-    const product = await getProduct('swift-earplugs');
+    if (!PRODUCT_HANDLE) return null;
+
+    const product = await getProduct(PRODUCT_HANDLE);
 
     if (!product) return null;
 
@@ -17,7 +21,7 @@ export const Tile: React.FC = async () => {
         '@type': 'Product',
         name: product.title,
         description: product.description,
-        image: product.featuredImage.url,
+        image: product.featuredImage?.url,
         offers: {
             '@type': 'AggregateOffer',
             availability: product.availableForSale
@@ -40,7 +44,7 @@ export const Tile: React.FC = async () => {
             />
             <div className={styles.container}>
                 <div className={styles.tile}>
-                    <Images images={product.images} />
+                    <Images product={product} />
                     <Selector variants={product.variants} />
                     <AddToCart product={product} />
                     <Shipping />

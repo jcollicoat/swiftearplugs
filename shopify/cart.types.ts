@@ -57,3 +57,18 @@ export type ShopifyCartOperation = {
         cartId: string;
     };
 };
+
+export type ShopifyAddToCartOperation = {
+    data: {
+        cartLinesAdd: {
+            cart: ShopifyCart;
+        };
+    };
+    variables: {
+        cartId: string;
+        lines: {
+            merchandiseId: string;
+            quantity: number;
+        }[];
+    };
+};

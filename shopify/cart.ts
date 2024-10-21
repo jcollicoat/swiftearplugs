@@ -1,5 +1,10 @@
-import { getCartQuery } from './cart.fragments';
-import { Cart, ShopifyCart, ShopifyCartOperation } from './cart.types';
+import { addToCartMutation, getCartQuery } from './cart.fragments';
+import {
+    Cart,
+    ShopifyAddToCartOperation,
+    ShopifyCart,
+    ShopifyCartOperation,
+} from './cart.types';
 import { TAGS } from './constants';
 import { shopifyFetch } from './fetch';
 import { removeEdgesAndNodes } from './utils';
@@ -40,3 +45,18 @@ export const getCart = async (
 
     return reshapeCart(res.body.data.cart);
 };
+
+export async function addToCart(
+    cartId: string,
+    lines: { merchandiseId: string; quantity: number }[],
+): Promise<Cart> {
+    const res = await shopifyFetch<ShopifyAddToCartOperation>({
+        query: addToCartMutation,
+        variables: {
+            cartId,
+            lines,
+        },
+        cache: 'no-store',
+    });
+    return reshapeCart(res.body.data.cartLinesAdd.cart);
+}

@@ -10,13 +10,13 @@ export const CartButton: React.FC = () => {
     const { isOpen, setIsOpen } = useModal();
 
     const cartHasItems = (cart?.lines.length ?? 0) > 0;
-    const buttonDisabled = cartHasItems;
+    const buttonDisabled = !cartHasItems;
 
     let text = 'Cart Empty';
     let sub = undefined;
     if (cartHasItems) {
         text = 'Checkout';
-        sub = '2 items';
+        sub = `${cart?.totalQuantity} items`;
     }
 
     return (

@@ -59,6 +59,7 @@ export const Hero: React.FC = () => (
             </div>
             <Tile />
             <Quote
+                image="/quote-image-1.png"
                 quote={content.hero.testimonial.quote}
                 name={content.hero.testimonial.name}
             />

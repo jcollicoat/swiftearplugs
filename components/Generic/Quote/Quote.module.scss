@@ -12,11 +12,17 @@
         flex-direction: column;
 
         .image {
-            aspect-ratio: 1 / 1;
-            background: $color-pink-light;
-            border-radius: 1000px;
             flex-shrink: 0;
+            height: 180px;
             margin-left: 60px;
+            mask-image: radial-gradient(
+                circle at 0px 180px,
+                transparent,
+                transparent 90px,
+                black 90px
+            );
+            mask-repeat: no-repeat;
+            mask-size: 200%;
             width: 180px;
         }
 
@@ -62,11 +68,17 @@
 
             .image {
                 margin-left: unset;
+                mask-image: radial-gradient(
+                    circle at 225px 90px,
+                    transparent,
+                    transparent 90px,
+                    black 90px
+                );
             }
 
             .text {
                 .mark {
-                    margin-top: calc(90px - 36px);
+                    margin-top: calc(90px - 48px);
                     transform: translateX(-24px);
                 }
 
@@ -78,7 +90,20 @@
 
         @container (width >= 600px) {
             .image {
+                height: 240px;
+                mask-image: radial-gradient(
+                    circle at 285px 120px,
+                    transparent,
+                    transparent 120px,
+                    black 120px
+                );
                 width: 240px;
+            }
+
+            .text {
+                .mark {
+                    margin-top: calc(120px - 48px);
+                }
             }
         }
 

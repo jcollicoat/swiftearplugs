@@ -2,14 +2,21 @@ import Image from 'next/image';
 import styles from './Quote.module.scss';
 
 interface Props {
+    image: string;
     quote: string;
     name?: string;
 }
 
-export const Quote: React.FC<Props> = ({ quote, name }) => (
+export const Quote: React.FC<Props> = ({ image, quote, name }) => (
     <div className={styles.container}>
         <div className={styles.wrapper}>
-            <div className={styles.image}></div>
+            <Image
+                className={styles.image}
+                src={image}
+                alt=""
+                height={240}
+                width={240}
+            />
             <div className={styles.text}>
                 <svg
                     className={styles.mark}

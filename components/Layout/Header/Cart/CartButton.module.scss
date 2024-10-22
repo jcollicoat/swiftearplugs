@@ -1,5 +1,19 @@
 @import 'styles/constants.scss';
 
+@keyframes pop {
+    0% {
+        transform: scale(100%);
+    }
+
+    50% {
+        transform: scale(105%);
+    }
+
+    100% {
+        transform: scale(100%);
+    }
+}
+
 .button {
     align-items: center;
     background: linear-gradient(to right, $color-red, $color-pink);
@@ -31,6 +45,11 @@
         box-shadow: none;
         color: $color-grey;
         opacity: 0.5;
+    }
+
+    &:not(:disabled) {
+        animation: pop 0.25s ease;
+        transform-origin: center;
     }
 
     .text {

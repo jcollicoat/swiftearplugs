@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
+import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useProduct } from 'context/product';
 import { addItem } from 'shopify/cart.actions';
@@ -76,7 +77,9 @@ export const AddToCart: FC<Props> = ({ product }) => {
                 </span>
             </div>
             <button disabled={buttonDisabled} aria-disabled={buttonDisabled}>
-                {buttonDisabled ? 'Out of Stock' : 'Add to Cart'}
+                {buttonDisabled
+                    ? content.product.buttonDisabled
+                    : content.product.button}
             </button>
             <SRAnnounce message={message} />
         </form>

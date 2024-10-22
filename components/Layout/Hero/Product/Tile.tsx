@@ -1,10 +1,10 @@
 import { ProductProvider } from 'context/product';
 import { getProduct } from 'shopify/product';
 import { AddToCart } from './AddToCart/AddToCart';
+import { Delivery } from './Delivery/Delivery';
 import { Images } from './Images/Images';
 import { Payments } from './Payments/Payments';
 import { Selector } from './Selector/Selector';
-import { Shipping } from './Shipping/Shipping';
 import styles from './Tile.module.scss';
 
 const { PRODUCT_HANDLE } = process.env;
@@ -47,7 +47,7 @@ export const Tile: React.FC = async () => {
                     <Images product={product} />
                     <Selector variants={product.variants} />
                     <AddToCart product={product} />
-                    <Shipping />
+                    <Delivery />
                     <Payments />
                 </div>
             </div>

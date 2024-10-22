@@ -1,6 +1,7 @@
 'use client';
 
 import { PiShoppingBag } from 'react-icons/pi';
+import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
 import styles from './CartButton.module.scss';
@@ -12,10 +13,10 @@ export const CartButton: React.FC = () => {
     const cartHasItems = (cart?.totalQuantity ?? 0) > 0;
     const buttonDisabled = !cartHasItems;
 
-    let text = 'Empty Cart';
+    let text = content.header.buttonDisabled;
     let sub = undefined;
     if (cartHasItems) {
-        text = 'View Cart';
+        text = content.header.button;
         sub = `${cart?.totalQuantity} items`;
     }
 

@@ -6,6 +6,7 @@
         rgba($color-red-light, 1),
         rgba($color-red-light, 0)
     );
+    margin-bottom: calc(var(--section-margin) / 2);
     margin-top: 0;
     padding-top: calc(var(--page-gutter) + $header-height + 60px);
 

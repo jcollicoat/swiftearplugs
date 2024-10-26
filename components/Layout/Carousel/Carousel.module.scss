@@ -1,0 +1,192 @@
+@import 'styles/constants.scss';
+
+.section {
+    --active-color: 255, 229, 236; // Pink Light
+
+    &.alternate {
+        --active-color: 240, 230, 255; // Purple Light
+    }
+
+    background: linear-gradient(
+        to bottom,
+        rgba(var(--active-color), 0),
+        rgb(var(--active-color)),
+        rgba(var(--active-color), 0)
+    );
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: var(--section-margin);
+    padding-top: var(--section-margin);
+
+    .header {
+        @include float;
+
+        h2 {
+            max-width: 80%;
+            text-wrap: pretty;
+        }
+
+        .float1 {
+            bottom: 0px;
+            right: 0px;
+        }
+    }
+
+    .carousel {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .imageContainer {
+            border-radius: 24px;
+            height: 438px;
+            margin: 0 auto;
+            max-width: 702px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+
+            .image {
+                display: block;
+                object-fit: cover;
+                object-position: right center;
+                opacity: 0;
+                position: absolute;
+                transition: 0.25s ease opacity;
+                width: 100%;
+                z-index: 0;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+
+            &::after {
+                background: linear-gradient(
+                    to top,
+                    rgb(var(--active-color)),
+                    rgba(var(--active-color), 0) 75%
+                );
+                content: '';
+                inset: 0;
+                position: absolute;
+                z-index: 1;
+            }
+
+            .dots {
+                bottom: 12px;
+                left: 50%;
+                display: flex;
+                gap: 12px;
+                position: absolute;
+                transform: translateX(-50%);
+                z-index: 2;
+
+                .dot {
+                    background: white;
+                    border: none;
+                    border-radius: 1000px;
+                    height: 12px;
+                    opacity: 0.5;
+                    position: relative;
+                    transition: 0.25s ease;
+                    transition-property: opacity width;
+                    width: 12px;
+
+                    &.active {
+                        padding: 2px;
+                        opacity: 1;
+                        width: 60px;
+
+                        @keyframes progress {
+                            from {
+                                width: 8px;
+                            }
+
+                            to {
+                                width: 100%;
+                            }
+                        }
+
+                        &::after {
+                            animation: progress;
+                            animation-duration: 5s;
+                            animation-iteration-count: 1;
+                            animation-timing-function: linear;
+                            background-color: rgb(var(--active-color));
+                            border-radius: 1000px;
+                            content: '';
+                            display: block;
+                            height: 8px;
+                            position: relative;
+                            width: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .content {
+            margin: 0 auto;
+            max-width: 702px;
+            min-height: 144px;
+            position: relative;
+            transform: translateX(calc(var(--page-gutter) * -1));
+            width: 100vw;
+
+            @media (min-width: 702px) {
+                transform: translateX(0px);
+            }
+
+            .item {
+                filter: blur(6px);
+                padding: 0 48px;
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                text-align: center;
+                top: 0;
+                transform: translateX(200%);
+                width: 100%;
+
+                &.previous,
+                &.active,
+                &.next {
+                    opacity: 1;
+                    transition: 0.5s ease;
+                    transition-property: filter opacity transform;
+                }
+
+                &.previous {
+                    transform: translateX(calc(-100% + 36px + 48px));
+                }
+
+                &.active {
+                    filter: none;
+                    transform: translateX(0%);
+                }
+
+                &.next {
+                    transform: translateX(calc(100% - 36px - 48px));
+                }
+            }
+
+            &.static {
+                .item {
+                    &.previous,
+                    &.active,
+                    &.next {
+                        transition-property: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 800px) {
+        .carousel {
+            gap: 24px;
+        }
+    }
+}

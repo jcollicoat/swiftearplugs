@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Carousel } from '@Layout/Carousel/Carousel';
 import { Hero } from '@Layout/Hero/Hero';
 
 export const metadata: Metadata = {
@@ -7,5 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-    return <Hero />;
+    return (
+        <>
+            <Hero />
+            <Carousel />
+        </>
+    );
 }

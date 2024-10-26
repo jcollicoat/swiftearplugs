@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { ProductProvider } from 'context/product';
 import { getProduct } from 'shopify/product';
 import { AddToCart } from './AddToCart/AddToCart';
@@ -9,7 +10,7 @@ import { Selector } from './Selector/Selector';
 
 const { PRODUCT_HANDLE } = process.env;
 
-export const ProductTile: React.FC = async () => {
+export const ProductTile: FC = async () => {
     if (!PRODUCT_HANDLE) return null;
 
     const product = await getProduct(PRODUCT_HANDLE);

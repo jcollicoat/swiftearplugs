@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { PiXCircle } from 'react-icons/pi';
 import { Modal } from '@Generic/Modal/Modal';
 import { useCart } from 'context/cart';
@@ -9,7 +9,7 @@ import { createCartAndSetCookie } from 'shopify/cart.actions';
 import { CartItem } from './CartItem';
 import styles from './CartModal.module.scss';
 
-export const CartModal: React.FC = () => {
+export const CartModal: FC = () => {
     const { closeModal } = useModal();
     const { cart } = useCart();
 

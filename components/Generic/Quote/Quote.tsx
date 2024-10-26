@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { FC } from 'react';
 import styles from './Quote.module.scss';
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
     name?: string;
 }
 
-export const Quote: React.FC<Props> = ({ image, quote, name }) => (
+export const Quote: FC<Props> = ({ image, quote, name }) => (
     <div className={styles.container}>
         <div className={styles.wrapper}>
             <Image

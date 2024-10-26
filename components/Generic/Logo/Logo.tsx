@@ -1,6 +1,7 @@
+import { FC } from 'react';
 import styles from './Logo.module.scss';
 
-export const Logo: React.FC = () => {
+export const Logo: FC = () => {
     return (
         <svg
             aria-label="Swift Earplugs"

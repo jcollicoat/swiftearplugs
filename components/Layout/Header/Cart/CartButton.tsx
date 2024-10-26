@@ -1,12 +1,13 @@
 'use client';
 
+import { FC } from 'react';
 import { PiShoppingBag } from 'react-icons/pi';
 import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
 import styles from './CartButton.module.scss';
 
-export const CartButton: React.FC = () => {
+export const CartButton: FC = () => {
     const { cart } = useCart();
     const { isOpen, setIsOpen } = useModal();
 

@@ -1,10 +1,11 @@
 import Image from 'next/image';
+import { FC } from 'react';
 import { Quote } from '@Generic/Quote/Quote';
 import { content } from 'content';
 import styles from './Hero.module.scss';
 import { ProductTile } from './Product/ProductTile';
 
-export const Hero: React.FC = () => (
+export const Hero: FC = () => (
     <section className={styles.section}>
         <div className={styles.content}>
             <div className={styles.lockup}>

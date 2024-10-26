@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import { FC, PropsWithChildren } from 'react';
 import { useModal } from 'context/modal';
 import styles from './Modal.module.scss';
 import { useClickOutside } from './useClickOutside';
@@ -9,10 +10,7 @@ interface Props {
     align?: 'left' | 'right';
 }
 
-export const Modal: React.FC<React.PropsWithChildren<Props>> = ({
-    children,
-    align,
-}) => {
+export const Modal: FC<PropsWithChildren<Props>> = ({ children, align }) => {
     const { isOpen, closeModal } = useModal();
     const { modalRef } = useClickOutside(isOpen, closeModal);
 

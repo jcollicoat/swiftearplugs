@@ -1,0 +1,15 @@
+@import 'styles/constants.scss';
+
+.section {
+    margin-top: calc(var(--section-margin) / 2);
+
+    .content {
+        margin: 0 auto;
+        max-width: $page-width;
+        width: 100%;
+
+        div {
+            margin: 0 auto;
+        }
+    }
+}

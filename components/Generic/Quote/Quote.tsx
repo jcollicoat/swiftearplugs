@@ -6,9 +6,10 @@ interface Props {
     image: string;
     quote: string;
     name?: string;
+    altFloat?: boolean;
 }
 
-export const Quote: FC<Props> = ({ image, quote, name }) => (
+export const Quote: FC<Props> = ({ image, quote, name, altFloat }) => (
     <div className={styles.container}>
         <div className={styles.wrapper}>
             <Image
@@ -32,13 +33,23 @@ export const Quote: FC<Props> = ({ image, quote, name }) => (
                         // eslint-disable-next-line react/no-danger
                         dangerouslySetInnerHTML={{ __html: quote }}
                     />
-                    <Image
-                        src="/purples-1.png"
-                        alt=""
-                        width={190 / 2}
-                        height={217 / 2}
-                        className={styles.float}
-                    />
+                    {altFloat ? (
+                        <Image
+                            src="/blacks-2.png"
+                            alt=""
+                            width={200 / 2}
+                            height={203 / 2}
+                            className={styles.float2}
+                        />
+                    ) : (
+                        <Image
+                            src="/purples-1.png"
+                            alt=""
+                            width={190 / 2}
+                            height={217 / 2}
+                            className={styles.float1}
+                        />
+                    )}
                 </span>
                 {name && (
                     <span

@@ -60,7 +60,7 @@ export const Hero: FC = () => (
             </div>
             <ProductTile />
             <Quote
-                image="/quote-image-1.png"
+                image={content.hero.testimonial.image}
                 quote={content.hero.testimonial.quote}
                 name={content.hero.testimonial.name}
             />

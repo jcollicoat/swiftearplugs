@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Carousel } from '@Layout/Carousel/Carousel';
 import { Hero } from '@Layout/Hero/Hero';
+import { QuoteSection } from '@Layout/QuoteSection/QuoteSection';
 
 export const metadata: Metadata = {
     title: 'Swift Earplugs',
@@ -12,6 +13,7 @@ export default function HomePage() {
         <>
             <Hero />
             <Carousel />
+            <QuoteSection />
         </>
     );
 }

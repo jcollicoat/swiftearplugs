@@ -10,6 +10,7 @@ export const content = {
         subtitle: 'Swift&nbsp;Earplugs have you covered.',
         intro: 'Dive into the music with our high-fidelity earplugs designed to deliver crystal clear sound, while protecting your hearing for many years to come.',
         testimonial: {
+            image: '/quote-image-1.png',
             quote: 'I use these at really loud concerts, and they not only protect my ears but actually make the music sound better by balancing the sound and reducing the noise from the crowd.',
             name: 'Amber M.',
         },
@@ -47,5 +48,10 @@ export const content = {
                     'Whether you’re at a concert, a festival, or a club, Swift Earplugs are your best companion, ensuring that you are enjoying the music while protecting your hearing.',
             },
         ],
+    },
+    testimonial: {
+        image: '/quote-image-2.png',
+        quote: 'I love how these earplugs look and the fact that I can clip them to my keychain. They’re always with me, so when I’m off to a gig or a show, I just chuck them in and save my ears from the pain.',
+        name: 'Jessica S.',
     },
 };

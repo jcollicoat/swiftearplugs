@@ -115,8 +115,18 @@ export const Carousel: FC = () => {
                                     index === nextSlide && styles.next,
                                 )}
                             >
-                                <h3>{item.heading}</h3>
-                                <p>{item.content}</p>
+                                <h3
+                                    // eslint-disable-next-line react/no-danger
+                                    dangerouslySetInnerHTML={{
+                                        __html: item.heading,
+                                    }}
+                                />
+                                <p
+                                    // eslint-disable-next-line react/no-danger
+                                    dangerouslySetInnerHTML={{
+                                        __html: item.content,
+                                    }}
+                                />
                             </div>
                         ))}
                     </div>

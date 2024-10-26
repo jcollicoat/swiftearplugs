@@ -30,8 +30,17 @@ export const CartButton: FC = () => {
         >
             <PiShoppingBag size={24} />
             <div className={styles.text}>
-                <span>{text}</span>
-                <span className={styles.subtext}>{sub}</span>
+                <span
+                    // eslint-disable-next-line react/no-danger
+                    dangerouslySetInnerHTML={{ __html: text }}
+                />
+                {sub && (
+                    <span
+                        // eslint-disable-next-line react/no-danger
+                        dangerouslySetInnerHTML={{ __html: sub }}
+                        className={styles.subtext}
+                    />
+                )}
             </div>
         </button>
     );

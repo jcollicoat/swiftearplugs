@@ -76,11 +76,16 @@ export const AddToCart: FC<Props> = ({ product }) => {
                     )}
                 </span>
             </div>
-            <button disabled={buttonDisabled} aria-disabled={buttonDisabled}>
-                {buttonDisabled
-                    ? content.product.buttonDisabled
-                    : content.product.button}
-            </button>
+            <button
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{
+                    __html: buttonDisabled
+                        ? content.product.buttonDisabled
+                        : content.product.button,
+                }}
+                disabled={buttonDisabled}
+                aria-disabled={buttonDisabled}
+            />
             <SRAnnounce message={message} />
         </form>
     );

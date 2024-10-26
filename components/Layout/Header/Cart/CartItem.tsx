@@ -18,19 +18,18 @@ export const CartItem: FC<Props> = ({ item }) => {
 
     const actionWithVariant = formAction.bind(null, item.merchandise.id);
 
-    const image = item.merchandise.product.variants?.edges.find(
-        (edge) => edge.node.title === item.merchandise.selectedOptions[0].value,
-    )?.node.image.url;
+    const image =
+        item.merchandise.product.variants?.edges.find(
+            (edge) =>
+                edge.node.title === item.merchandise.selectedOptions[0].value,
+        )?.node.image.url ??
+        item.merchandise.product.featuredImage?.url ??
+        '/product-fallback.png';
 
     return (
         <div className={styles.item}>
             <div className={styles.details}>
-                <Image
-                    src={image ?? item.merchandise.product.featuredImage.url}
-                    alt=""
-                    width={48}
-                    height={48}
-                />
+                <Image src={image} alt="" width={48} height={48} />
                 <div>
                     <span className={styles.color}>
                         {item.merchandise.selectedOptions[0].value}

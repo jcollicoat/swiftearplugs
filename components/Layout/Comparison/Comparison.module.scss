@@ -1,0 +1,149 @@
+@import 'styles/constants.scss';
+
+.section {
+    margin: 0;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        margin: 0 auto;
+        max-width: 900px;
+        width: 100%;
+
+        h2 {
+            text-align: center;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid $color-pink-light;
+            border-radius: 24px;
+            box-shadow:
+                0px 1px 2px $color-shadow,
+                0px 2px 4px $color-shadow;
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                max-width: 100%;
+                width: 100%;
+
+                thead,
+                tbody {
+                    display: block;
+                }
+
+                tr {
+                    align-items: center;
+                    display: grid;
+                    grid-template-areas: 'check feature divider cross';
+                    grid-template-columns: 24px auto 2px 108px;
+                    gap: 12px;
+                    justify-items: center;
+                    padding: 0 12px;
+
+                    .divider {
+                        background-color: $color-pink-light;
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                    .competitor {
+                        max-width: 108px;
+                    }
+
+                    .swift {
+                        justify-self: start;
+                    }
+
+                    &.images {
+                        td {
+                            padding-bottom: 12px;
+
+                            img {
+                                margin-top: -18px;
+                            }
+                        }
+                    }
+
+                    &.headings {
+                        font-weight: 500;
+
+                        td {
+                            padding-bottom: 24px;
+                        }
+
+                        .swift {
+                            color: $color-pink;
+                        }
+                    }
+
+                    &.feature {
+                        font-size: 14px;
+
+                        td {
+                            padding-bottom: 12px;
+                        }
+
+                        &:last-of-type {
+                            td {
+                                padding-bottom: 24px;
+                            }
+                        }
+
+                        .text {
+                            grid-area: feature;
+                            justify-self: start;
+                        }
+
+                        .check {
+                            color: $color-pink;
+                            grid-area: check;
+                        }
+
+                        .cross {
+                            grid-area: cross;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 500px) {
+        .content .card table tr {
+            grid-template-columns: 36px auto 2px 144px;
+        }
+    }
+
+    @media (min-width: 600px) {
+        .content .card table tr {
+            gap: 24px;
+            padding: 0 24px;
+        }
+    }
+
+    @media (min-width: 800px) {
+        .content .card table tr {
+            gap: 36px;
+            grid-template-areas: 'feature check divider cross';
+            grid-template-columns: auto 144px 2px 144px;
+            padding: 0 48px;
+
+            .swift {
+                justify-self: center;
+            }
+
+            &.feature {
+                font-size: 16px;
+
+                &:last-of-type {
+                    td {
+                        padding-bottom: 48px;
+                    }
+                }
+            }
+        }
+    }
+}

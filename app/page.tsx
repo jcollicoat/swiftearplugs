@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import { Carousel } from '@Layout/Carousel/Carousel';
+import { Comparison } from '@Layout/Comparison/Comparison';
 import { Hero } from '@Layout/Hero/Hero';
 import { QuoteSection } from '@Layout/QuoteSection/QuoteSection';
+import styles from './page.module.scss';
 
 export const metadata: Metadata = {
     title: 'Swift Earplugs',
@@ -14,6 +16,9 @@ export default function HomePage() {
             <Hero />
             <Carousel />
             <QuoteSection />
+            <div className={styles.gradient}>
+                <Comparison />
+            </div>
         </>
     );
 }

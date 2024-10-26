@@ -54,4 +54,21 @@ export const content = {
         quote: 'I love how these earplugs look and the fact that I can clip them to my keychain. They’re always with me, so when I’m off to a gig or a show, I just chuck them in and save my ears from the pain.',
         name: 'Jessica S.',
     },
+    comparison: {
+        heading: 'Why choose<br />Swift&nbsp;Earplugs?',
+        table: {
+            swift: 'Swift Earplugs',
+            competitors: 'Competitors',
+            features: [
+                'Up to 17dB noise reduction',
+                'Secure and comfortable fit',
+                'Free shipping',
+                '30-day returns',
+                'Re-usable + eco-friendly',
+                'Durable design & materials',
+                'Easy to clean',
+                '100% Kiwi owned',
+            ],
+        },
+    },
 };

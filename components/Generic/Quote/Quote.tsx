@@ -14,8 +14,8 @@ export const Quote: React.FC<Props> = ({ image, quote, name }) => (
                 className={styles.image}
                 src={image}
                 alt=""
-                height={240}
                 width={240}
+                height={240}
             />
             <div className={styles.text}>
                 <svg
@@ -34,8 +34,8 @@ export const Quote: React.FC<Props> = ({ image, quote, name }) => (
                     <Image
                         src="/purples-1.png"
                         alt=""
-                        height={217 / 2}
                         width={190 / 2}
+                        height={217 / 2}
                         className={styles.float}
                     />
                 </span>

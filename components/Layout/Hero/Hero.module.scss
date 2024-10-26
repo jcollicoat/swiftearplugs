@@ -1,18 +1,17 @@
 @import 'styles/constants.scss';
 
-$header-height: 72px;
-
 .section {
     background: linear-gradient(
         to bottom,
         rgba($color-red-light, 1),
         rgba($color-red-light, 0)
     );
+    margin-top: 0;
     padding-top: calc(var(--page-gutter) + $header-height + 60px);
 
     .content {
         display: grid;
-        gap: 60px;
+        gap: 36px;
         margin: 0 auto;
         max-width: $page-width;
 
@@ -29,10 +28,6 @@ $header-height: 72px;
 
             .title {
                 @include float;
-
-                h1 {
-                    @include gradient-text;
-                }
 
                 .float1 {
                     right: -24px;
@@ -76,8 +71,6 @@ $header-height: 72px;
     }
 
     @media (min-width: 800px) {
-        margin-bottom: calc(var(--section-margin) * -1.5);
-
         .content {
             grid-template-columns: 1fr 1fr;
             column-gap: 24px;
@@ -102,8 +95,6 @@ $header-height: 72px;
     }
 
     @media (min-width: 1000px) {
-        margin-bottom: calc(var(--section-margin) * -2);
-
         .content .lockup {
             .subtitle .float,
             .intro .float {
@@ -113,8 +104,6 @@ $header-height: 72px;
     }
 
     @media (min-width: 1200px) {
-        margin-bottom: calc(var(--section-margin) * -2.5);
-
         .content {
             column-gap: 0;
             row-gap: calc((var(--section-margin) * 2) - 60px);

@@ -5,7 +5,7 @@ type CartProduct = {
     id: string;
     handle: string;
     title: string;
-    featuredImage: Image;
+    featuredImage?: Image;
     images?: {
         edges: {
             node: Image;

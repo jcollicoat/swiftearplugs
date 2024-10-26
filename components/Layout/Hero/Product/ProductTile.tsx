@@ -4,12 +4,12 @@ import { AddToCart } from './AddToCart/AddToCart';
 import { Delivery } from './Delivery/Delivery';
 import { Images } from './Images/Images';
 import { Payments } from './Payments/Payments';
+import styles from './ProductTile.module.scss';
 import { Selector } from './Selector/Selector';
-import styles from './Tile.module.scss';
 
 const { PRODUCT_HANDLE } = process.env;
 
-export const Tile: React.FC = async () => {
+export const ProductTile: React.FC = async () => {
     if (!PRODUCT_HANDLE) return null;
 
     const product = await getProduct(PRODUCT_HANDLE);

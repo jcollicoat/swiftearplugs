@@ -1,6 +1,7 @@
 @import 'styles/constants.scss';
 
 .wrapper {
+    height: $header-height;
     left: 0;
     padding: var(--page-gutter);
     pointer-events: none;

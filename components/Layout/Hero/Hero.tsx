@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Quote } from '@Generic/Quote/Quote';
 import { content } from 'content';
 import styles from './Hero.module.scss';
-import { Tile } from './Product/Tile';
+import { ProductTile } from './Product/ProductTile';
 
 export const Hero: React.FC = () => (
     <section className={styles.section}>
@@ -16,8 +16,8 @@ export const Hero: React.FC = () => (
                     <Image
                         src="/pinks-1.png"
                         alt=""
-                        height={204 / 2}
                         width={224 / 2}
+                        height={204 / 2}
                         className={styles.float1}
                     />
                     <Image
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => (
                     />
                 </div>
             </div>
-            <Tile />
+            <ProductTile />
             <Quote
                 image="/quote-image-1.png"
                 quote={content.hero.testimonial.quote}

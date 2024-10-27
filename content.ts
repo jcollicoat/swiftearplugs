@@ -54,6 +54,41 @@ export const content = {
         quote: 'I love how these earplugs look and the fact that I can clip them to my keychain. They’re always with me, so when I’m off to a gig or a show, I just chuck them in and save my ears from the pain.',
         name: 'Jessica S.',
     },
+    layered: {
+        heading: 'Designed for comfort and style.',
+        items: [
+            {
+                float: {
+                    src: '/purple-1.png',
+                    width: 122,
+                    height: 122,
+                },
+                heading: 'A secure fit that moves with you.',
+                content:
+                    'Jump, dance, and feel free. Our earplugs are crafted to fit securely, ensuring they stay in place as you move with the music.',
+            },
+            {
+                float: {
+                    src: '/black-2.png',
+                    width: 101,
+                    height: 100,
+                },
+                heading: 'Pops of colour to suit your style.',
+                content:
+                    'Select from Rose Gold, Lilac Purple, or Matte Black to accessorise your outfit. Swift Earplugs aren’t just functional—they’re fashionable.',
+            },
+            {
+                float: {
+                    src: '/pink-1-case.png',
+                    width: 562,
+                    height: 572,
+                },
+                heading: 'Re-usable and eco-friendly.',
+                content:
+                    'Easy to clean and designed for repeated use. Party with peace of mind, knowing your earplugs are environmentally friendly and built to last through countless nights out.',
+            },
+        ],
+    },
     comparison: {
         heading: 'Why choose<br />Swift&nbsp;Earplugs?',
         table: {

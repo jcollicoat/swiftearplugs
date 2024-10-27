@@ -57,7 +57,13 @@ export const Comparison: FC = () => (
                     <tbody>
                         {content.comparison.table.features.map((feature) => (
                             <tr key={feature} className={styles.feature}>
-                                <td className={styles.text}>{feature}</td>
+                                <td
+                                    className={styles.text}
+                                    // eslint-disable-next-line react/no-danger
+                                    dangerouslySetInnerHTML={{
+                                        __html: feature,
+                                    }}
+                                />
                                 <td className={styles.check}>
                                     <PiCheckCircle size={24} />
                                 </td>

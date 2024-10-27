@@ -3,16 +3,16 @@
 .section {
     .content {
         display: grid;
-        gap: 60px;
+        gap: 48px;
         margin: 0 auto;
         max-width: $page-width;
 
         .items {
             display: grid;
-            gap: 48px;
+            gap: inherit;
 
             .item {
-                max-width: 360px;
+                max-width: 324px;
                 position: relative;
                 width: 75%;
 
@@ -37,7 +37,7 @@
 
                 &:nth-of-type(2) {
                     .float {
-                        right: -36px;
+                        right: -42px;
                         top: 12px;
                     }
                 }
@@ -48,6 +48,68 @@
                     .float {
                         bottom: -204px;
                         left: -120px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 600px) {
+        .content .items .item {
+            &:nth-of-type(3n - 2) {
+                justify-self: start;
+
+                .float {
+                    left: unset;
+                    right: -48px;
+                    transform: scaleX(-100%);
+                }
+            }
+
+            &:nth-of-type(3n - 1) {
+                justify-self: center;
+
+                .float {
+                    left: -72px;
+                    right: unset;
+                    transform: rotate(-90deg);
+                }
+            }
+
+            &:nth-of-type(3n) {
+                justify-self: end;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .content {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+
+            .items {
+                grid-column: 2 / span 3;
+                grid-row: 2;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+
+                .item {
+                    justify-self: unset;
+                    max-width: unset;
+                    width: 100%;
+
+                    &:nth-of-type(3n - 2) {
+                        grid-column: 1;
+                        grid-row: 1;
+                    }
+
+                    &:nth-of-type(3n - 1) {
+                        grid-column: 2;
+                        grid-row: 2;
+                    }
+
+                    &:nth-of-type(3n) {
+                        grid-column: 3;
+                        grid-row: 3;
                     }
                 }
             }

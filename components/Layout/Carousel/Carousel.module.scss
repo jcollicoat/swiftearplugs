@@ -99,7 +99,7 @@
                 }
 
                 .dots {
-                    bottom: 12px;
+                    bottom: 21px;
                     left: 50%;
                     display: flex;
                     gap: 12px;
@@ -121,31 +121,51 @@
                             padding: 2px;
                             width: 60px;
 
-                            @keyframes progress {
-                                from {
-                                    width: 8px;
-                                }
-
-                                to {
-                                    width: 100%;
-                                }
-                            }
-
                             &::after {
-                                animation: progress;
-                                animation-duration: 5s;
-                                animation-fill-mode: forwards;
-                                animation-iteration-count: 1;
-                                animation-timing-function: linear;
                                 background-color: rgb(var(--active-color));
                                 border-radius: 1000px;
                                 content: '';
                                 display: block;
                                 height: 8px;
                                 position: relative;
-                                width: 8px;
+                                width: 100%;
+                            }
+
+                            &.animated {
+                                @keyframes progress {
+                                    from {
+                                        width: 8px;
+                                    }
+
+                                    to {
+                                        width: 100%;
+                                    }
+                                }
+
+                                &::after {
+                                    animation: progress;
+                                    animation-duration: 5s;
+                                    animation-fill-mode: forwards;
+                                    animation-iteration-count: 1;
+                                    animation-timing-function: linear;
+                                }
                             }
                         }
+                    }
+                }
+
+                .control {
+                    background: none;
+                    border: none;
+                    bottom: 12px;
+                    color: white;
+                    padding: 0;
+                    position: absolute;
+                    right: 12px;
+                    z-index: 2;
+
+                    svg {
+                        display: block;
                     }
                 }
             }
@@ -262,7 +282,7 @@
                 .dots {
                     bottom: unset;
                     left: unset;
-                    right: -36px;
+                    right: -33px;
                     top: 50%;
                     transform: rotate(90deg) translateX(0%) translateY(-50%);
                 }

@@ -3,12 +3,14 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 import { FC, Fragment, useEffect, useState } from 'react';
+import { PiPauseCircle, PiPlayCircle } from 'react-icons/pi';
 import { content } from 'content';
 import styles from './Carousel.module.scss';
 
 export const Carousel: FC = () => {
     const [animate, setAnimate] = useState(true);
     const [slide, setSlide] = useState(0);
+    const [playing, setPlaying] = useState(true);
 
     const previousSlide =
         slide === 0 ? content.carousel.items.length - 1 : slide - 1;
@@ -17,12 +19,16 @@ export const Carousel: FC = () => {
 
     useEffect(() => {
         const carousel = setTimeout(() => {
+            if (!playing) {
+                return;
+            }
+
             setAnimate(true);
             setSlide(nextSlide);
         }, 5000);
 
         return () => clearTimeout(carousel);
-    }, [nextSlide, slide]);
+    }, [nextSlide, playing, slide]);
 
     return (
         <section
@@ -93,11 +99,23 @@ export const Carousel: FC = () => {
                                     className={classNames(
                                         styles.dot,
                                         index === slide && styles.active,
+                                        playing && styles.animated,
                                     )}
                                     title={item.heading}
                                 />
                             ))}
                         </div>
+                        <button
+                            className={styles.control}
+                            onClick={() => setPlaying(!playing)}
+                            title={playing ? 'Pause Carousel' : 'Play Carousel'}
+                        >
+                            {playing ? (
+                                <PiPauseCircle size={30} />
+                            ) : (
+                                <PiPlayCircle size={30} />
+                            )}
+                        </button>
                     </div>
                     <div
                         className={classNames(

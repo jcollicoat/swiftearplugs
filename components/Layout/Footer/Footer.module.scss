@@ -66,4 +66,10 @@
             padding-left: unset;
         }
     }
+
+    @media (min-width: 1200px) {
+        .content nav {
+            gap: 72px;
+        }
+    }
 }

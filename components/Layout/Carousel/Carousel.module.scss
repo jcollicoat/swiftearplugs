@@ -355,11 +355,12 @@
                     text-align: left;
                     transform: scale(0.875) translateX(48px);
                     transition: 0.5s ease;
+                    transform-origin: right center;
                     transition-property: transform;
                     width: calc(360px - 48px);
 
                     &.active {
-                        transform: translateX(0px);
+                        transform: translateX(24px);
                     }
                 }
             }

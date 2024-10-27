@@ -214,6 +214,10 @@
                     top: 0;
                     width: 100%;
 
+                    h3 {
+                        margin-bottom: 6px;
+                    }
+
                     &.next {
                         @keyframes next {
                             from {
@@ -349,7 +353,7 @@
                     padding: 0;
                     position: static;
                     text-align: left;
-                    transform: translateX(48px);
+                    transform: scale(0.875) translateX(48px);
                     transition: 0.5s ease;
                     transition-property: transform;
                     width: calc(360px - 48px);

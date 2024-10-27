@@ -19,19 +19,44 @@
             flex-direction: column;
             gap: 48px;
 
-            .logo {
-                color: $color-pink;
-                height: 36px;
+            .primary,
+            .secondary {
+                align-items: inherit;
+                display: inherit;
+                flex-direction: inherit;
+                gap: inherit;
+
+                .link {
+                    color: $color-grey;
+                    font-weight: 400;
+                    text-decoration: none;
+                    transition: 0.25s ease;
+                    transition-property: color;
+
+                    &:hover {
+                        color: $color-pink;
+                    }
+                }
             }
 
-            .link {
-                color: $color-grey;
-                font-weight: 400;
-                text-decoration: none;
-                transition: 0.25s ease color;
-
-                &:hover {
+            .primary {
+                .logo {
                     color: $color-pink;
+                    height: 36px;
+                }
+
+                .link {
+                    border: 2px solid $color-pink;
+                    border-radius: 1000px;
+                    color: $color-pink;
+                    font-weight: 500;
+                    padding: 8px 12px;
+                    transition-property: background-color, color;
+
+                    &:hover {
+                        background-color: $color-pink;
+                        color: white;
+                    }
                 }
             }
         }
@@ -48,28 +73,56 @@
 
             nav {
                 align-items: flex-start;
-                padding-left: 48px;
+                padding-left: 36px;
+
+                .primary .link {
+                    margin-left: -14px;
+                }
             }
         }
     }
 
     @media (min-width: 800px) {
         .content nav {
-            padding-left: 96px;
+            padding-left: 72px;
         }
     }
 
     @media (min-width: 1000px) {
         .content nav {
-            align-items: center;
-            flex-direction: row;
-            padding-left: unset;
+            .primary,
+            .secondary {
+                flex-direction: row;
+                gap: 72px;
+            }
+
+            .primary .link {
+                margin-left: unset;
+            }
         }
     }
 
     @media (min-width: 1200px) {
         .content nav {
+            align-items: center;
+            flex-direction: row;
+            padding-left: unset;
+
+            .primary,
+            .secondary {
+                gap: 48px;
+            }
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .content nav {
             gap: 72px;
+
+            .primary,
+            .secondary {
+                gap: inherit;
+            }
         }
     }
 }

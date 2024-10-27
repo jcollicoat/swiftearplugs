@@ -118,7 +118,8 @@
                         transition-property: transform width;
                         width: 12px;
 
-                        &:not(.active):hover {
+                        &:not(.active):hover,
+                        &:not(.active):focus {
                             transform: scale(150%);
                         }
 
@@ -161,6 +162,7 @@
                 .control {
                     background: none;
                     border: none;
+                    border-radius: 1000px;
                     bottom: 12px;
                     color: white;
                     padding: 0;

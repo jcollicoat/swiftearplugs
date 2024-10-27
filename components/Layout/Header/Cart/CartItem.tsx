@@ -16,6 +16,8 @@ export const CartItem: FC<Props> = ({ item }) => {
     const { updateCartItem } = useCart();
     const [message, formAction] = useFormState(removeItem, null);
 
+    console.log(item);
+
     const actionWithVariant = formAction.bind(null, item.merchandise.id);
 
     const image =
@@ -29,14 +31,16 @@ export const CartItem: FC<Props> = ({ item }) => {
     return (
         <div className={styles.item}>
             <div className={styles.details}>
-                <Image src={image} alt="" width={48} height={48} />
-                <div>
-                    <span className={styles.color}>
+                <Image src={image} alt="" width={96} height={96} />
+                <div className={styles.text}>
+                    <h3 className={styles.color}>
                         {item.merchandise.selectedOptions[0].value}
-                        {item.quantity > 1 && ` x${item.quantity}`}
-                    </span>
+                    </h3>
                     <span className={styles.product}>
                         {item.merchandise.product.title}
+                    </span>
+                    <span className={styles.price}>
+                        {`$${item.cost.totalAmount.amount}0`}
                     </span>
                 </div>
             </div>
@@ -47,8 +51,9 @@ export const CartItem: FC<Props> = ({ item }) => {
                     await actionWithVariant();
                 }}
             >
+                <span className={styles.quantity}>{item.quantity}</span>
                 <button>
-                    <PiTrash />
+                    <PiTrash size={24} />
                 </button>
             </form>
             <SRAnnounce message={message} />

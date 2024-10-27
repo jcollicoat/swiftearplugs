@@ -12,6 +12,7 @@ $color-purple: rgb(120, 50, 220);
 $color-purple-light: rgb(240, 230, 255);
 $color-grey: rgb(70, 70, 70);
 $color-grey-light: rgb(230, 230, 230);
+$color-grey-button: rgb(240, 240, 240);
 $color-shadow: rgba(128, 0, 42, 0.05);
 
 $header-height: 72px;
@@ -48,5 +49,6 @@ $z-modal: 3;
     background-clip: text;
     background-image: linear-gradient(135deg, $color-red, $color-pink);
     color: transparent;
+    margin-bottom: -0.1em;
     padding-bottom: 0.1em;
 }

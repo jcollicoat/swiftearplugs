@@ -112,13 +112,17 @@
                         border: none;
                         border-radius: 1000px;
                         height: 12px;
+                        padding: 2px;
                         position: relative;
                         transition: 0.25s ease;
-                        transition-property: opacity width;
+                        transition-property: transform width;
                         width: 12px;
 
+                        &:not(.active):hover {
+                            transform: scale(150%);
+                        }
+
                         &.active {
-                            padding: 2px;
                             width: 60px;
 
                             &::after {

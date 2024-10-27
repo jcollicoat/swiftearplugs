@@ -58,30 +58,50 @@ export const content = {
         heading: 'Designed for comfort and style.',
         items: [
             {
-                float: {
+                float1: {
                     src: '/purple-1.png',
                     width: 122,
                     height: 122,
+                },
+                float2: {
+                    src: '/pinks-1-case.png',
+                    width: 562,
+                    height: 615,
                 },
                 heading: 'A secure fit that moves with you.',
                 content:
                     'Jump, dance, and feel free. Our earplugs are crafted to fit securely, ensuring they stay in place as you move with the music.',
             },
             {
-                float: {
+                float1: {
                     src: '/black-2.png',
                     width: 101,
                     height: 100,
+                },
+                float2: {
+                    src: '/purple-pink-1.png',
+                    width: 214,
+                    height: 227,
                 },
                 heading: 'Pops of colour to suit your style.',
                 content:
                     'Select from Rose Gold, Lilac Purple, or Matte Black to accessorise your outfit. Swift Earplugs aren’t just functional—they’re fashionable.',
             },
             {
-                float: {
+                float1: {
                     src: '/pink-1-case.png',
                     width: 562,
                     height: 572,
+                },
+                float2: {
+                    src: '/black-1.png',
+                    width: 100,
+                    height: 100,
+                },
+                float3: {
+                    src: '/purple-1.png',
+                    width: 122,
+                    height: 122,
                 },
                 heading: 'Re-usable and eco-friendly.',
                 content:

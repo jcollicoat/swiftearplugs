@@ -13,6 +13,13 @@ export const LayeredContent: FC = () => (
                         __html: content.layered.heading,
                     }}
                 />
+                <Image
+                    src="/purples-2.png"
+                    alt=""
+                    width={186 / 2}
+                    height={201 / 2}
+                    className={styles.float}
+                />
             </div>
             <div className={styles.items}>
                 {content.layered.items.map((item) => (
@@ -26,12 +33,28 @@ export const LayeredContent: FC = () => (
                             dangerouslySetInnerHTML={{ __html: item.content }}
                         />
                         <Image
-                            src={item.float.src}
+                            src={item.float1.src}
                             alt=""
-                            width={item.float.width / 2}
-                            height={item.float.height / 2}
-                            className={styles.float}
+                            width={item.float1.width / 2}
+                            height={item.float1.height / 2}
+                            className={styles.float1}
                         />
+                        <Image
+                            src={item.float2.src}
+                            alt=""
+                            width={item.float2.width / 2}
+                            height={item.float2.height / 2}
+                            className={styles.float2}
+                        />
+                        {item.float3 && (
+                            <Image
+                                src={item.float3.src}
+                                alt=""
+                                width={item.float3.width / 2}
+                                height={item.float3.height / 2}
+                                className={styles.float3}
+                            />
+                        )}
                     </div>
                 ))}
             </div>

@@ -7,13 +7,24 @@
         margin: 0 auto;
         max-width: $page-width;
 
+        .heading {
+            @include float;
+
+            .float {
+                display: none;
+                left: -24px;
+                top: -108px;
+            }
+        }
+
         .items {
             display: grid;
             gap: inherit;
 
             .item {
+                @include float;
+
                 max-width: 324px;
-                position: relative;
                 width: 75%;
 
                 &:nth-of-type(2n - 1) {
@@ -24,30 +35,50 @@
                     margin-bottom: 6px;
                 }
 
-                .float {
-                    position: absolute;
-                }
-
                 &:nth-of-type(3n - 2) {
-                    .float {
+                    .float1 {
                         left: -60px;
                         top: -24px;
+                    }
+
+                    .float2 {
+                        display: none;
+                        left: -168px;
+                        top: 48px;
                     }
                 }
 
                 &:nth-of-type(3n - 1) {
-                    .float {
+                    .float1 {
                         right: -42px;
                         top: 12px;
+                    }
+
+                    .float2 {
+                        display: none;
+                        left: -12px;
+                        top: -108px;
                     }
                 }
 
                 &:nth-of-type(3n) {
                     margin-bottom: var(--section-margin);
 
-                    .float {
+                    .float1 {
                         bottom: -204px;
                         left: -120px;
+                    }
+
+                    .float2 {
+                        display: none;
+                        right: 0px;
+                        top: -24px;
+                        transform: rotate(90deg);
+                    }
+
+                    .float3 {
+                        display: none;
+                        transform: rotate(75deg);
                     }
                 }
             }
@@ -59,7 +90,7 @@
             &:nth-of-type(3n - 2) {
                 justify-self: start;
 
-                .float {
+                .float1 {
                     left: unset;
                     right: -48px;
                     transform: scaleX(-100%);
@@ -69,7 +100,7 @@
             &:nth-of-type(3n - 1) {
                 justify-self: center;
 
-                .float {
+                .float1 {
                     left: -72px;
                     right: unset;
                     transform: rotate(-90deg);
@@ -82,10 +113,21 @@
         }
     }
 
+    @media (min-width: 1000px) {
+        .content .items {
+            row-gap: 0;
+        }
+    }
+
     @media (min-width: 1200px) {
         .content {
             grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 24px;
+            column-gap: 24px;
+            row-gap: 0;
+
+            .heading .float {
+                display: block;
+            }
 
             .items {
                 grid-column: 2 / span 3;
@@ -100,16 +142,46 @@
                     &:nth-of-type(3n - 2) {
                         grid-column: 1;
                         grid-row: 1;
+
+                        .float1 {
+                            display: none;
+                        }
+
+                        .float2 {
+                            display: block;
+                        }
                     }
 
                     &:nth-of-type(3n - 1) {
                         grid-column: 2;
                         grid-row: 2;
+
+                        .float1 {
+                            bottom: -60px;
+                            left: unset;
+                            right: 50%;
+                            top: unset;
+                            transform: rotate(0deg);
+                        }
+
+                        .float2 {
+                            display: block;
+                        }
                     }
 
                     &:nth-of-type(3n) {
                         grid-column: 3;
                         grid-row: 3;
+                        margin-bottom: unset;
+
+                        .float1 {
+                            display: none;
+                        }
+
+                        .float2,
+                        .float3 {
+                            display: block;
+                        }
                     }
                 }
             }

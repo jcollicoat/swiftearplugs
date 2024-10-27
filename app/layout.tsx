@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import './layout.scss';
 import { cookies } from 'next/headers';
+import { Footer } from '@Layout/Footer/Footer';
 import { Header } from '@Layout/Header/Header';
 import { CartProvider } from 'context/cart';
 import { ModalProvider } from 'context/modal';
@@ -36,6 +37,7 @@ export default function RootLayout({
                     <ModalProvider>
                         <Header />
                         <main>{children}</main>
+                        <Footer />
                     </ModalProvider>
                 </CartProvider>
             </body>

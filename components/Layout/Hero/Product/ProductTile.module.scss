@@ -6,6 +6,7 @@
     grid-row: span 2;
     max-width: 555px;
     position: relative;
+    scroll-margin-top: calc($header-height + (var(--page-gutter) * 2));
     width: 100%;
     z-index: $z-main;
 

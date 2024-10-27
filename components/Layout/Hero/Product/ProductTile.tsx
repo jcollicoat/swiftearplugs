@@ -43,7 +43,7 @@ export const ProductTile: FC = async () => {
                     __html: JSON.stringify(productJsonLd),
                 }}
             />
-            <div className={styles.container}>
+            <div className={styles.container} id="product">
                 <div className={styles.tile}>
                     <Images product={product} />
                     <Selector variants={product.variants} />

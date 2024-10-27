@@ -14,7 +14,11 @@
         .old {
             display: block;
             font-weight: 500;
-            text-decoration: line-through;
+            opacity: 0.5;
+
+            span {
+                font-size: 14px;
+            }
         }
 
         .current {

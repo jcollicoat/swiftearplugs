@@ -60,7 +60,10 @@ export const AddToCart: FC<Props> = ({ product }) => {
         >
             <div className={styles.price}>
                 {compareAtPrice && (
-                    <span className={styles.old}>{`$${compareAtPrice}0`}</span>
+                    <span className={styles.old}>
+                        <span>Was </span>
+                        {`$${compareAtPrice}0`}
+                    </span>
                 )}
                 <span
                     className={classNames(

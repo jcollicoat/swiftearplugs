@@ -8,7 +8,6 @@ import { content } from 'content';
 import styles from './Carousel.module.scss';
 
 export const Carousel: FC = () => {
-    const [animate, setAnimate] = useState(true);
     const [slide, setSlide] = useState(0);
     const [playing, setPlaying] = useState(true);
 
@@ -22,8 +21,6 @@ export const Carousel: FC = () => {
             if (!playing) {
                 return;
             }
-
-            setAnimate(true);
             setSlide(nextSlide);
         }, 5000);
 
@@ -93,7 +90,6 @@ export const Carousel: FC = () => {
                                 <button
                                     key={item.heading}
                                     onClick={() => {
-                                        setAnimate(false);
                                         setSlide(index);
                                     }}
                                     className={classNames(
@@ -117,12 +113,7 @@ export const Carousel: FC = () => {
                             )}
                         </button>
                     </div>
-                    <div
-                        className={classNames(
-                            styles.items,
-                            !animate && styles.static,
-                        )}
-                    >
+                    <div className={styles.items}>
                         {content.carousel.items.map((item, index) => (
                             <div
                                 key={item.heading}

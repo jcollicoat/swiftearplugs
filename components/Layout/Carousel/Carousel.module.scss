@@ -183,6 +183,28 @@
                 }
 
                 .item {
+                    @keyframes item {
+                        0% {
+                            opacity: 1;
+                            transform: translateX(calc(-100% + 36px + 48px));
+                        }
+
+                        99% {
+                            opacity: 0;
+                            transform: translateX(calc(-200% + 36px + 48px));
+                        }
+
+                        100% {
+                            opacity: 0;
+                            transform: translateX(calc(200% - 36px - 48px));
+                        }
+                    }
+
+                    animation-name: item;
+                    animation-duration: 0.5s;
+                    animation-fill-mode: forwards;
+                    animation-iteration-count: 1;
+                    animation-timing-function: ease;
                     filter: blur(6px);
                     padding: 0 48px;
                     position: absolute;
@@ -190,38 +212,60 @@
                     opacity: 0;
                     text-align: center;
                     top: 0;
-                    transform: translateX(200%);
                     width: 100%;
 
-                    &.previous,
-                    &.active,
                     &.next {
-                        opacity: 1;
-                        transition: 0.5s ease;
-                        transition-property: filter opacity transform;
-                    }
+                        @keyframes next {
+                            from {
+                                opacity: 0;
+                                transform: translateX(calc(200% - 36px - 48px));
+                            }
 
-                    &.previous {
-                        transform: translateX(calc(-100% + 36px + 48px));
+                            to {
+                                opacity: 1;
+                                transform: translateX(calc(100% - 36px - 48px));
+                            }
+                        }
+
+                        animation-name: next;
                     }
 
                     &.active {
-                        filter: none;
-                        transform: translateX(0%);
-                    }
+                        @keyframes active {
+                            from {
+                                filter: blur(6px);
+                                opacity: 1;
+                                transform: translateX(calc(100% - 36px - 48px));
+                            }
 
-                    &.next {
-                        transform: translateX(calc(100% - 36px - 48px));
-                    }
-                }
-
-                &.static {
-                    .item {
-                        &.previous,
-                        &.active,
-                        &.next {
-                            transition-property: none;
+                            to {
+                                filter: none;
+                                opacity: 1;
+                                transform: translateX(0%);
+                            }
                         }
+
+                        animation-name: active;
+                    }
+
+                    &.previous {
+                        @keyframes previous {
+                            from {
+                                filter: none;
+                                opacity: 1;
+                                transform: translateX(0%);
+                            }
+
+                            to {
+                                filter: blur(6px);
+                                opacity: 1;
+                                transform: translateX(
+                                    calc(-100% + 36px + 48px)
+                                );
+                            }
+                        }
+
+                        animation-name: previous;
                     }
                 }
             }
@@ -298,6 +342,7 @@
                 width: calc(360px);
 
                 .item {
+                    animation: none;
                     filter: none;
                     left: unset;
                     opacity: 1;
@@ -305,20 +350,12 @@
                     position: static;
                     text-align: left;
                     transform: translateX(48px);
+                    transition: 0.5s ease;
                     transition-property: transform;
                     width: calc(360px - 48px);
 
-                    &.previous,
-                    &.next {
-                        transform: translateX(48px);
-                    }
-                }
-
-                &.static .item {
-                    &.previous,
-                    &.active,
-                    &.next {
-                        transition-property: transform;
+                    &.active {
+                        transform: translateX(0px);
                     }
                 }
             }

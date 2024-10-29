@@ -23,7 +23,7 @@ export const Footer: FC = () => (
                     <Link href="/terms-of-service" className={styles.link}>
                         Terms of Service
                     </Link>
-                    <Link href="/returns-plolicy" className={styles.link}>
+                    <Link href="/returns-policy" className={styles.link}>
                         Returns Policy
                     </Link>
                 </div>

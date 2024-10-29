@@ -1,0 +1,107 @@
+@import 'styles/constants.scss';
+
+.section {
+    background: linear-gradient(
+        to bottom,
+        rgba($color-red-light, 1),
+        rgba($color-red-light, 0) calc(var(--section-margin) * 2),
+        rgba($color-red-light, 0) calc(100% - (var(--section-margin) * 3)),
+        rgba($color-red-light, 1)
+    );
+    margin: 0;
+    min-height: 100vh;
+    padding-bottom: var(--section-margin);
+    padding-top: calc(var(--section-margin) * 2);
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--section-margin) / 2);
+        margin: 0 auto;
+        max-width: calc($page-width / 2);
+
+        .heading {
+            @include float;
+
+            h1 {
+                margin-bottom: 0.25em;
+            }
+
+            .date {
+                font-size: 14px;
+                opacity: 0.5;
+            }
+
+            .float {
+                left: -24px;
+                top: -108px;
+            }
+        }
+
+        .body {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                margin: 1.5em 0 0.75em 0;
+            }
+
+            h1,
+            h2 {
+                font-size: 36px;
+            }
+
+            h3 {
+                color: $color-grey;
+                font-size: 24px;
+            }
+
+            h4,
+            h5,
+            h6 {
+                font-size: 18px;
+            }
+
+            p,
+            ul,
+            ol {
+                margin: 1em 0;
+            }
+
+            p {
+                line-height: 1.5;
+            }
+
+            ul {
+                list-style-type: disc;
+                padding-left: 1em;
+            }
+
+            li {
+                line-height: 1.25;
+                margin: 0.5em 0;
+            }
+
+            strong {
+                font-weight: 600;
+            }
+
+            em {
+                font-style: italic;
+                font-weight: 500;
+            }
+
+            a {
+                color: $color-pink;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

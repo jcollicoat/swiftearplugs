@@ -112,15 +112,22 @@
                         border: none;
                         border-radius: 1000px;
                         height: 12px;
+                        outline: 1px dashed;
+                        outline-color: transparent;
+                        outline-offset: 2px;
                         padding: 2px;
                         position: relative;
                         transition: 0.25s ease;
-                        transition-property: transform width;
+                        transition-property: outline-color transform width;
                         width: 12px;
 
                         &:not(.active):hover,
-                        &:not(.active):focus {
+                        &:not(.active):focus-visible {
                             transform: scale(150%);
+                        }
+
+                        &:not(.active):focus-visible {
+                            outline-color: white;
                         }
 
                         &.active {

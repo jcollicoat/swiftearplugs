@@ -26,6 +26,72 @@ $z-modal: 3;
 
 // Mixins
 
+@mixin button {
+    align-items: center;
+    border: 2px solid;
+    border-color: transparent;
+    border-radius: 1000px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    outline: 1px dashed transparent;
+    outline-offset: 2px;
+    transition: 0.25s ease;
+    transition-property: background border-color box-shadow color opacity
+        outline-color;
+
+    &:focus-visible {
+        outline-color: currentColor;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        transition: none;
+    }
+}
+
+@mixin button-gradient {
+    @include button;
+
+    background: linear-gradient(to right, $color-red, $color-pink);
+    border-color: $color-pink;
+    box-shadow:
+        0px 1px 2px $color-shadow,
+        0px 2px 4px $color-shadow,
+        0px 4px 8px $color-shadow;
+    color: white;
+    min-height: 48px;
+    padding: 8px 24px;
+
+    &:hover,
+    &:focus-visible {
+        box-shadow:
+            0px 1px 2px $color-shadow,
+            0px 2px 4px $color-shadow,
+            0px 4px 8px $color-shadow,
+            0px 8px 16px $color-shadow,
+            0px 16px 32px $color-shadow;
+    }
+
+    &:focus-visible {
+        outline-color: $color-pink;
+    }
+
+    &:disabled {
+        background: $color-grey-button;
+        border-color: transparent;
+        box-shadow: none;
+        color: $color-grey;
+    }
+}
+
+@mixin button-grey {
+    @include button;
+
+    background: $color-grey-button;
+    color: $color-grey;
+}
+
 @mixin container {
     container-type: inline-size;
 }

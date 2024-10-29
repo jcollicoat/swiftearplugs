@@ -7,17 +7,11 @@
     margin: 12px 0;
 
     button {
-        align-items: center;
+        @include button;
+
         background: none;
-        border: 2px solid transparent;
-        border-radius: 1000px;
-        display: flex;
         font-size: 14px;
-        gap: 12px;
-        justify-content: center;
         min-height: 48px;
-        transition: 0.25s ease;
-        transition-property: background border-color color;
 
         &::before {
             background-color: currentColor;
@@ -37,14 +31,10 @@
         }
 
         &:disabled {
-            background: $color-grey-light;
-            border-color: $color-grey-light;
+            background: $color-grey-button;
+            border-color: $color-grey-button;
             color: $color-grey;
             opacity: 0.5;
-
-            &:hover {
-                background: $color-grey-light;
-            }
         }
 
         &:not(:disabled).gold {
@@ -99,10 +89,6 @@
 
             &::before {
                 display: block;
-            }
-
-            .unavailable {
-                font-size: 14px;
             }
         }
     }

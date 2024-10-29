@@ -97,6 +97,7 @@ export const Carousel: FC = () => {
                                         index === slide && styles.active,
                                         playing && styles.animated,
                                     )}
+                                    tabIndex={index === slide ? -1 : 0}
                                     title={item.heading}
                                 />
                             ))}

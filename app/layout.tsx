@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import './layout.scss';
+import { Analytics } from '@vercel/analytics/react';
 import { cookies } from 'next/headers';
 import { Footer } from '@Layout/Footer/Footer';
 import { Header } from '@Layout/Header/Header';
@@ -43,6 +44,7 @@ export default function RootLayout({
                         <Footer />
                     </ModalProvider>
                 </CartProvider>
+                <Analytics />
                 <FacebookPixel />
                 <GoogleTagManager />
                 <MicrosoftClarity />

@@ -17,13 +17,6 @@ export const useFacebookPixel = () => {
                 content_type: string;
             },
         ) => {
-            if (!FACEBOOK_PIXEL_ID) {
-                console.warn(
-                    `No Facebook Pixel ID, could not track event ${name}`,
-                );
-                return;
-            }
-
             window.fbq('track', name, content);
         },
         [],

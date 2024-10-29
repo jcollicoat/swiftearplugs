@@ -1,0 +1,34 @@
+@import 'styles/constants.scss';
+
+.section {
+    background: linear-gradient(
+        to bottom,
+        rgba($color-red-light, 1),
+        rgba($color-red-light, 0) calc(var(--section-margin) * 2),
+        rgba($color-red-light, 0) calc(100% - (var(--section-margin) * 3)),
+        rgba($color-red-light, 1)
+    );
+    margin: 0;
+    min-height: 80vh;
+    padding-bottom: var(--section-margin);
+    padding-top: calc(var(--section-margin) * 2);
+
+    .content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin: 0 auto;
+        max-width: $page-width;
+        text-align: center;
+
+        a {
+            color: $color-pink;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

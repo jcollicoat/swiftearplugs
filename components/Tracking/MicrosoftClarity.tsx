@@ -2,8 +2,11 @@ import Script from 'next/script';
 import { FC } from 'react';
 
 const { MICROSOFT_CLARITY_ID } = process.env;
+const TRACKING_ENABLED = process.env.NODE_ENV === 'production';
 
 export const MicrosoftClarity: FC = () => {
+    if (!TRACKING_ENABLED) return null;
+
     if (!MICROSOFT_CLARITY_ID) {
         console.warn('No Microsoft Clarity ID');
         return null;

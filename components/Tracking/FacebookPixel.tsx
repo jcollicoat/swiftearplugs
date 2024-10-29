@@ -29,6 +29,8 @@ export const useFacebookPixel = () => {
 };
 
 export const FacebookPixel: FC = () => {
+    if (!TRACKING_ENABLED) return null;
+
     if (!FACEBOOK_PIXEL_ID) {
         console.warn('No Facebook Pixel ID');
         return null;

@@ -26,6 +26,7 @@ export const Images: FC<Props> = ({ product }) => {
                     styles.fallback,
                     noVariantSelected && styles.visible,
                 )}
+                priority
             />
             {product.variants.map((variant) => (
                 <Image
@@ -36,6 +37,7 @@ export const Images: FC<Props> = ({ product }) => {
                     className={classNames(
                         state.color === variant.title && styles.visible,
                     )}
+                    priority
                 />
             ))}
         </div>

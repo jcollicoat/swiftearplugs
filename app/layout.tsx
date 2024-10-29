@@ -5,6 +5,7 @@ import { Footer } from '@Layout/Footer/Footer';
 import { Header } from '@Layout/Header/Header';
 import { FacebookPixel } from '@Tracking/FacebookPixel';
 import { GoogleTagManager } from '@Tracking/GoogleTagManager';
+import { MicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { CartProvider } from 'context/cart';
 import { ModalProvider } from 'context/modal';
 import { getCart } from 'shopify/cart';
@@ -44,6 +45,7 @@ export default function RootLayout({
                 </CartProvider>
                 <FacebookPixel />
                 <GoogleTagManager />
+                <MicrosoftClarity />
             </body>
         </html>
     );

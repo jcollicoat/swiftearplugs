@@ -4,7 +4,10 @@ import { FC } from 'react';
 const { FACEBOOK_PIXEL_ID } = process.env;
 
 export const FacebookPixel: FC = () => {
-    if (!FACEBOOK_PIXEL_ID) return null;
+    if (!FACEBOOK_PIXEL_ID) {
+        console.warn('No Facebook Pixel ID');
+        return null;
+    }
 
     return (
         <>

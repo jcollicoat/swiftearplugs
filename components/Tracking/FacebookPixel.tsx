@@ -2,6 +2,7 @@ import Script from 'next/script';
 import { FC, useCallback } from 'react';
 
 const { FACEBOOK_PIXEL_ID } = process.env;
+const TRACKING_ENABLED = process.env.NODE_ENV === 'production';
 
 interface WindowWithFBQ extends Window {
     fbq: (event: string, name: string, data: unknown) => void;
@@ -17,7 +18,9 @@ export const useFacebookPixel = () => {
                 content_type: string;
             },
         ) => {
-            window.fbq('track', name, content);
+            if (TRACKING_ENABLED) {
+                window.fbq('track', name, content);
+            }
         },
         [],
     );

@@ -24,7 +24,8 @@
         "typeRoots": ["@types/**/*.ts"],
         "paths": {
             "@Generic/*": ["components/Generic/*"],
-            "@Layout/*": ["components/Layout/*"]
+            "@Layout/*": ["components/Layout/*"],
+            "@Tracking/*": ["components/Tracking/*"]
         }
     },
     "include": [

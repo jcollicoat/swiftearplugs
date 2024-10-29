@@ -16,8 +16,6 @@ export const CartItem: FC<Props> = ({ item }) => {
     const { updateCartItem } = useCart();
     const [message, formAction] = useFormState(removeItem, null);
 
-    console.log(item);
-
     const actionWithVariant = formAction.bind(null, item.merchandise.id);
 
     const image =

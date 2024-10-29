@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import './layout.scss';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { cookies } from 'next/headers';
 import { Footer } from '@Layout/Footer/Footer';
 import { Header } from '@Layout/Header/Header';
@@ -45,6 +46,7 @@ export default function RootLayout({
                     </ModalProvider>
                 </CartProvider>
                 <Analytics />
+                <SpeedInsights />
                 <FacebookPixel />
                 <GoogleTagManager />
                 <MicrosoftClarity />

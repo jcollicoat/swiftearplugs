@@ -1,7 +1,36 @@
 import Script from 'next/script';
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 
 const { FACEBOOK_PIXEL_ID } = process.env;
+
+interface WindowWithFBQ extends Window {
+    fbq: (event: string, name: string, data: unknown) => void;
+}
+declare const window: WindowWithFBQ;
+
+export const useFacebookPixel = () => {
+    const trackEvent = useCallback(
+        (
+            name: string,
+            content: {
+                content_ids: string[];
+                content_type: string;
+            },
+        ) => {
+            if (!FACEBOOK_PIXEL_ID) {
+                console.warn(
+                    `No Facebook Pixel ID, could not track event ${name}`,
+                );
+                return;
+            }
+
+            window.fbq('track', name, content);
+        },
+        [],
+    );
+
+    return { trackEvent };
+};
 
 export const FacebookPixel: FC = () => {
     if (!FACEBOOK_PIXEL_ID) {

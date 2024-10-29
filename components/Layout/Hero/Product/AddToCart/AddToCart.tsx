@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
+import { useFacebookPixel } from '@Tracking/FacebookPixel';
 import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useProduct } from 'context/product';
@@ -19,6 +20,7 @@ export const AddToCart: FC<Props> = ({ product }) => {
     const { state } = useProduct();
     const { addCartItem } = useCart();
     const [message, formAction] = useFormState(addItem, null);
+    const { trackEvent } = useFacebookPixel();
 
     const { variants } = product;
     const variant = variants.find((variant: ProductVariant) =>
@@ -55,7 +57,11 @@ export const AddToCart: FC<Props> = ({ product }) => {
                 if (!finalVariant) return;
                 addCartItem(finalVariant, product);
                 await actionWithVariant();
-                // TODO: track add to cart
+
+                trackEvent('AddToCart', {
+                    content_ids: [finalVariant.id],
+                    content_type: 'product',
+                });
             }}
         >
             <div className={styles.price}>

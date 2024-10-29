@@ -16,7 +16,9 @@ export const GoogleTagManager: FC = () => {
             <Script id="gtag-track" strategy="afterInteractive">
                 {`
                 window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
+                function gtag(){
+                    dataLayer.push(arguments);
+                }
                 gtag('js', new Date());
                 gtag('config', '${GTM_ID}');
             `}

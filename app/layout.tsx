@@ -3,6 +3,7 @@ import './layout.scss';
 import { cookies } from 'next/headers';
 import { Footer } from '@Layout/Footer/Footer';
 import { Header } from '@Layout/Header/Header';
+import { FacebookPixel } from '@Tracking/FacebookPixel';
 import { GoogleTagManager } from '@Tracking/GoogleTagManager';
 import { CartProvider } from 'context/cart';
 import { ModalProvider } from 'context/modal';
@@ -41,6 +42,7 @@ export default function RootLayout({
                         <Footer />
                     </ModalProvider>
                 </CartProvider>
+                <FacebookPixel />
                 <GoogleTagManager />
             </body>
         </html>

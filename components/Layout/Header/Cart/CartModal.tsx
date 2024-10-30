@@ -42,7 +42,7 @@ export const CartModal: FC = () => {
                 {cart.lines.map((item) => (
                     <CartItem key={item.merchandise.id} item={item} />
                 ))}
-                <Delivery />
+                {!cartIsEmpty && <Delivery />}
                 <form
                     action={redirectToCheckout}
                     className={classNames(

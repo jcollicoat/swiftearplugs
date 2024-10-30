@@ -2,6 +2,7 @@
 
 import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 import { addToCart, createCart, getCart, removeFromCart } from './cart';
 import { TAGS } from './constants';
 
@@ -62,4 +63,22 @@ export async function removeItem(
     } catch (e) {
         return 'Error removing item from cart';
     }
+}
+
+export async function redirectToCheckout() {
+    const cartId = cookies().get('cartId')?.value;
+
+    if (!cartId) {
+        console.error('Missing cart ID at checkout');
+        return 'Missing cart ID';
+    }
+
+    const cart = await getCart(cartId);
+
+    if (!cart) {
+        console.error('Error fetching cart at checkout');
+        return 'Error fetching cart';
+    }
+
+    redirect(cart.checkoutUrl);
 }

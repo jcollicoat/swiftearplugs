@@ -7,7 +7,10 @@ import { Modal } from '@Generic/Modal/Modal';
 import { Price } from '@Generic/Price/Price';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
-import { createCartAndSetCookie } from 'shopify/cart.actions';
+import {
+    createCartAndSetCookie,
+    redirectToCheckout,
+} from 'shopify/cart.actions';
 import { CartItem } from './CartItem';
 import styles from './CartModal.module.scss';
 
@@ -38,7 +41,8 @@ export const CartModal: FC = () => {
                 {cart.lines.map((item) => (
                     <CartItem key={item.merchandise.id} item={item} />
                 ))}
-                <div
+                <form
+                    action={redirectToCheckout}
                     className={classNames(
                         styles.footer,
                         cartIsEmpty && styles.disabled,
@@ -51,7 +55,6 @@ export const CartModal: FC = () => {
                         </span>
                     </div>
                     <button
-                        onClick={() => 'Checkout!'}
                         className={styles.checkout}
                         disabled={cartIsEmpty}
                         aria-disabled={cartIsEmpty}
@@ -59,7 +62,7 @@ export const CartModal: FC = () => {
                         <span>{cartIsEmpty ? 'Empty Cart' : 'Checkout'}</span>
                         {!cartIsEmpty && <PiArrowRight size={24} />}
                     </button>
-                </div>
+                </form>
             </div>
         </Modal>
     );

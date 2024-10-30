@@ -5,7 +5,7 @@ export const useSwiping = (actionLeft: () => void, actionRight: () => void) => {
     const touchXStart = useRef(0);
     const touchXEnd = useRef(0);
 
-    const minimumSwipeDistance = 100;
+    const minimumSwipeDistance = 50;
 
     const handleAction = useCallback(() => {
         const distance = touchXStart.current - touchXEnd.current;

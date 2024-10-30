@@ -6,6 +6,7 @@ import { FC, Fragment, useEffect, useState } from 'react';
 import { PiPauseCircle, PiPlayCircle } from 'react-icons/pi';
 import { content } from 'content';
 import styles from './Carousel.module.scss';
+import { useSwiping } from './useSwiping';
 
 // TODO: Break into smaller components
 export const Carousel: FC = () => {
@@ -16,6 +17,11 @@ export const Carousel: FC = () => {
         slide === 0 ? content.carousel.items.length - 1 : slide - 1;
     const nextSlide =
         slide === content.carousel.items.length - 1 ? 0 : slide + 1;
+
+    const { swiperRef } = useSwiping(
+        () => setSlide(nextSlide),
+        () => setSlide(previousSlide),
+    );
 
     useEffect(() => {
         const carousel = setTimeout(() => {
@@ -58,7 +64,7 @@ export const Carousel: FC = () => {
                         className={styles.float2}
                     />
                 </div>
-                <div className={styles.carousel}>
+                <div className={styles.carousel} ref={swiperRef}>
                     <div className={styles.imageContainer}>
                         {content.carousel.items.map((item, index) => (
                             <Fragment key={item.heading}>

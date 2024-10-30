@@ -27,6 +27,8 @@ $z-modal: 3;
 // Mixins
 
 @mixin button {
+    @include focus-outline;
+
     align-items: center;
     border: 2px solid;
     border-color: transparent;
@@ -34,16 +36,9 @@ $z-modal: 3;
     display: flex;
     gap: 12px;
     justify-content: center;
-    outline: 1px dashed transparent;
-    outline-offset: 2px;
     padding-inline: 0px; // For Safari
-    transition: 0.25s ease;
-    transition-property: background border-color box-shadow color opacity
+    transition-property: background, border-color, box-shadow, color, opacity,
         outline-color;
-
-    &:focus-visible {
-        outline-color: currentColor;
-    }
 
     &:disabled {
         opacity: 0.5;
@@ -74,7 +69,7 @@ $z-modal: 3;
             0px 16px 32px $color-shadow;
     }
 
-    &:focus-visible {
+    &:not(:disabled):focus-visible {
         outline-color: $color-pink;
     }
 
@@ -109,6 +104,16 @@ $z-modal: 3;
         pointer-events: none;
         position: absolute;
         z-index: $z-float;
+    }
+}
+
+@mixin focus-outline {
+    outline: 1px dashed transparent;
+    outline-offset: 2px;
+    transition: 0.25s ease outline-color;
+
+    &:not(:disabled):focus-visible {
+        outline-color: currentColor;
     }
 }
 

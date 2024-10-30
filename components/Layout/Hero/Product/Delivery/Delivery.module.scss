@@ -2,10 +2,14 @@
 
 .wrapper {
     align-items: center;
+    background: linear-gradient(to right, $color-red-light, $color-pink-light);
+    border: 1px solid rgba($color-pink, 0.1);
+    border-radius: 1000px;
     display: flex;
     gap: 8px;
     justify-content: center;
-    margin: 12px 0;
+    margin: 0 auto 12px auto;
+    padding: 4px 12px;
 
     svg {
         color: $color-pink;

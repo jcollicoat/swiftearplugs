@@ -27,7 +27,7 @@ export const content = {
                 image: '/carousel-1',
                 heading: 'Up to 17dB noise reduction.',
                 content:
-                    'Jump, dance, and feel free. Our earplugs are crafted to fit securely, ensuring they stay in place as you move with the music.',
+                    'Enjoy the music you love at a volume that loves you back. Swift Earplugs allow you to hear every beat and lyric clearly without damaging your hearing.',
             },
             {
                 image: '/carousel-2',

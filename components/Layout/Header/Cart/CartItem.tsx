@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
 import { PiTrash } from 'react-icons/pi';
+import { Price } from '@Generic/Price/Price';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
 import { useCart } from 'context/cart';
 import { removeItem } from 'shopify/cart.actions';
@@ -39,7 +40,7 @@ export const CartItem: FC<Props> = ({ item }) => {
                         {item.merchandise.product.title}
                     </span>
                     <span className={styles.price}>
-                        {`$${item.cost.totalAmount.amount}0`}
+                        <Price price={item.cost.totalAmount.amount} />
                     </span>
                 </div>
             </div>

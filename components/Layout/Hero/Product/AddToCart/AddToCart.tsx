@@ -3,6 +3,7 @@
 import classNames from 'classnames';
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
+import { Price } from '@Generic/Price/Price';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
 import { content } from 'content';
@@ -69,7 +70,7 @@ export const AddToCart: FC<Props> = ({ product }) => {
                 {compareAtPrice && (
                     <span className={styles.old}>
                         <span>Was </span>
-                        {`$${compareAtPrice}0`}
+                        <Price price={compareAtPrice} />
                     </span>
                 )}
                 <span
@@ -78,7 +79,9 @@ export const AddToCart: FC<Props> = ({ product }) => {
                         discount && styles.isDiscounted,
                     )}
                 >
-                    <span>{`$${price}0`}</span>
+                    <span>
+                        <Price price={price} />
+                    </span>
                     {discount && (
                         <span
                             className={styles.discount}

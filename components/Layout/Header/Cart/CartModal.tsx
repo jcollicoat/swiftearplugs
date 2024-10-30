@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { FC, useEffect } from 'react';
 import { PiArrowRight, PiXCircle } from 'react-icons/pi';
 import { Modal } from '@Generic/Modal/Modal';
+import { Price } from '@Generic/Price/Price';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
 import { createCartAndSetCookie } from 'shopify/cart.actions';
@@ -46,7 +47,7 @@ export const CartModal: FC = () => {
                     <div className={styles.details}>
                         <span className={styles.total}>Total Price:</span>
                         <span className={styles.price}>
-                            {`$${cart.cost.totalAmount.amount}0`}
+                            <Price price={cart.cost.totalAmount.amount} />
                         </span>
                     </div>
                     <button

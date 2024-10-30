@@ -106,7 +106,7 @@ const updateCartTotals = (
         (sum, item) => sum + Number(item.cost.totalAmount.amount),
         0,
     );
-    const currencyCode = lines[0]?.cost.totalAmount.currencyCode ?? 'USD';
+    const currencyCode = lines[0]?.cost.totalAmount.currencyCode ?? 'NZD';
 
     return {
         totalQuantity,
@@ -125,9 +125,9 @@ const createEmptyCart = (): Cart => {
         totalQuantity: 0,
         lines: [],
         cost: {
-            subtotalAmount: { amount: '0', currencyCode: 'USD' },
-            totalAmount: { amount: '0', currencyCode: 'USD' },
-            totalTaxAmount: { amount: '0', currencyCode: 'USD' },
+            subtotalAmount: { amount: '0.00', currencyCode: 'NZD' },
+            totalAmount: { amount: '0.00', currencyCode: 'NZD' },
+            totalTaxAmount: { amount: '0.00', currencyCode: 'NZD' },
         },
         discountCodes: [],
     };
@@ -156,7 +156,7 @@ const cartReducer = (state: Cart | undefined, action: CartAction): Cart => {
                         ...currentCart.cost,
                         totalAmount: {
                             ...currentCart.cost.totalAmount,
-                            amount: '0',
+                            amount: '0.00',
                         },
                     },
                 };

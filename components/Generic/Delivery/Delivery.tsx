@@ -8,7 +8,7 @@ export const Delivery: FC = () => (
         <PiPackage size={24} />
         <span
             // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: content.product.delivery }}
+            dangerouslySetInnerHTML={{ __html: content.delivery }}
         />
     </div>
 );

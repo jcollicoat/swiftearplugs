@@ -3,6 +3,7 @@
 import classNames from 'classnames';
 import { FC, useEffect } from 'react';
 import { PiArrowRight, PiXCircle } from 'react-icons/pi';
+import { Delivery } from '@Generic/Delivery/Delivery';
 import { Modal } from '@Generic/Modal/Modal';
 import { Price } from '@Generic/Price/Price';
 import { useCart } from 'context/cart';
@@ -41,6 +42,7 @@ export const CartModal: FC = () => {
                 {cart.lines.map((item) => (
                     <CartItem key={item.merchandise.id} item={item} />
                 ))}
+                <Delivery />
                 <form
                     action={redirectToCheckout}
                     className={classNames(

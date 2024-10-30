@@ -17,7 +17,6 @@ export const content = {
     product: {
         button: 'Add to Cart',
         buttonDisabled: 'Out of Stock',
-        delivery: 'Free delivery on all orders',
     },
     carousel: {
         heading: 'Feel the music, not noise.',
@@ -125,4 +124,5 @@ export const content = {
             ],
         },
     },
+    delivery: 'Free delivery on all orders',
 };

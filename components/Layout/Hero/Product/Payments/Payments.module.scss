@@ -5,6 +5,7 @@
     gap: 4px;
     grid-template-columns: repeat(8, minmax(0, 50px));
     justify-content: center;
+    margin-top: 12px;
 
     .payment {
         aspect-ratio: 16 / 10;

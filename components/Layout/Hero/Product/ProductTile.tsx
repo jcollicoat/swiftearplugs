@@ -1,8 +1,8 @@
 import { FC } from 'react';
+import { Delivery } from '@Generic/Delivery/Delivery';
 import { ProductProvider } from 'context/product';
 import { getProduct } from 'shopify/product';
 import { AddToCart } from './AddToCart/AddToCart';
-import { Delivery } from './Delivery/Delivery';
 import { Images } from './Images/Images';
 import { Payments } from './Payments/Payments';
 import styles from './ProductTile.module.scss';

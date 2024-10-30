@@ -56,7 +56,11 @@ h3 {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 36px;
+
+    @media (min-width: $breakpoint-1) {
+        font-size: 48px;
+    }
 
     @media (min-width: $breakpoint-3) {
         font-size: 60px;

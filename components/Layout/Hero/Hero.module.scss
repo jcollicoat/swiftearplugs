@@ -30,6 +30,10 @@
             .title {
                 @include float;
 
+                h1 {
+                    max-width: 90%;
+                }
+
                 .float1 {
                     right: -24px;
                     top: -60px;
@@ -37,35 +41,25 @@
 
                 .float2 {
                     display: none;
-                    right: -72px;
+                    right: -24px;
                     top: -72px;
-                }
-            }
-
-            .subtitle {
-                @include float;
-
-                span {
-                    @include gradient-text;
-
-                    font-size: 24px;
-                }
-
-                .float {
-                    display: none;
-                    bottom: -24px;
-                    left: -60px;
                 }
             }
 
             .intro {
                 @include float;
 
-                .float {
+                .float1 {
                     display: none;
-                    right: -36px;
+                    left: -60px;
+                    top: -24px;
+                }
+
+                .float2 {
+                    display: none;
+                    right: -120px;
                     top: -36px;
-                    transform: rotate(15deg);
+                    transform: rotate(5deg);
                 }
             }
         }
@@ -95,35 +89,22 @@
         }
     }
 
-    @media (min-width: 1000px) {
-        .content .lockup {
-            .subtitle .float,
-            .intro .float {
-                display: block;
-            }
-        }
-    }
-
     @media (min-width: 1200px) {
         .content {
             column-gap: 0;
             row-gap: calc((var(--section-margin) * 2) - 60px);
 
-            .lockup {
-                .subtitle span {
-                    font-size: 36px;
-                }
-
-                .intro .float {
-                    right: -120px;
-                    transform: rotate(5deg);
+            .lockup .intro {
+                .float1,
+                .float2 {
+                    display: block;
                 }
             }
         }
     }
 
     @media (min-width: 1400px) {
-        .content .lockup .intro .float {
+        .content .lockup .intro .float2 {
             right: -200px;
             transform: roate(0deg);
         }

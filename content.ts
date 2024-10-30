@@ -6,9 +6,8 @@ export const content = {
         buttonDisabled: 'Empty Cart',
     },
     hero: {
-        title: 'Dance, laugh<br />and live loudly.',
-        subtitle: 'Swift&nbsp;Earplugs have you covered.',
-        intro: 'Dive into the music with our high-fidelity earplugs designed to deliver crystal clear sound, while protecting your hearing for many years to come.',
+        title: 'Meet the last earplugs you will ever need.',
+        intro: 'Protect your ears in style — Swift Earplugs deliver crystal-clear sound, blocking noise while keeping you comfortable and stylish at every event.',
         testimonial: {
             image: '/quote-image-1.png',
             quote: 'I use these at really loud concerts, and they not only protect my ears but actually make the music sound better by balancing the sound and reducing the noise from the crowd.',

@@ -29,32 +29,24 @@ export const Hero: FC = () => (
                         className={styles.float2}
                     />
                 </div>
-                <div className={styles.subtitle}>
-                    <span
-                        // eslint-disable-next-line react/no-danger
-                        dangerouslySetInnerHTML={{
-                            __html: content.hero.subtitle,
-                        }}
-                    />
-                    <Image
-                        src="/black-1.png"
-                        alt=""
-                        width={100 / 2}
-                        height={100 / 2}
-                        className={styles.float}
-                    />
-                </div>
                 <div className={styles.intro}>
                     <p
                         // eslint-disable-next-line react/no-danger
                         dangerouslySetInnerHTML={{ __html: content.hero.intro }}
                     />
                     <Image
+                        src="/black-1.png"
+                        alt=""
+                        width={100 / 2}
+                        height={100 / 2}
+                        className={styles.float1}
+                    />
+                    <Image
                         src="/case-purple-1.png"
                         alt=""
                         width={819 / 2}
                         height={819 / 2}
-                        className={styles.float}
+                        className={styles.float2}
                     />
                 </div>
             </div>

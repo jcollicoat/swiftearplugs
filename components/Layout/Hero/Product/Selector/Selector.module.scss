@@ -12,6 +12,7 @@
         background: none;
         font-size: 14px;
         min-height: 48px;
+        white-space: nowrap;
 
         &::before {
             background-color: currentColor;

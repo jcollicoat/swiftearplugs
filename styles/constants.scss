@@ -36,6 +36,7 @@ $z-modal: 3;
     justify-content: center;
     outline: 1px dashed transparent;
     outline-offset: 2px;
+    padding-inline: 0px; // For Safari
     transition: 0.25s ease;
     transition-property: background border-color box-shadow color opacity
         outline-color;

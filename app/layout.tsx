@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-page-custom-font */
+/* eslint-disable @next/next/no-page-custom-font */ // TODO: Remove need for this suppression
 import './layout.scss';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';

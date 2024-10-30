@@ -22,6 +22,7 @@ export const CartModal: FC = () => {
 
     if (!cart) return null;
 
+    // TODO: extract this logic
     const cartIsEmpty = cart.totalQuantity === 0;
 
     return (

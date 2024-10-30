@@ -32,6 +32,7 @@ export default async function Page({
     if (!pageData) notFound();
 
     return (
+        // TODO: Refactor to long-form content and pull hero out to page level
         <PageContent
             title={pageData.title}
             lastUpdated={pageData.updatedAt}

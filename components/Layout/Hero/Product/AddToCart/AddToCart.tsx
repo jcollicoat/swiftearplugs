@@ -22,6 +22,7 @@ export const AddToCart: FC<Props> = ({ product }) => {
     const [message, formAction] = useFormState(addItem, null);
     const { trackEvent } = useFacebookPixel();
 
+    // TODO: extract this logic
     const { variants } = product;
     const variant = variants.find((variant: ProductVariant) =>
         variant.selectedOptions.every(

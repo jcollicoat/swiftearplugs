@@ -26,6 +26,8 @@ $z-modal: 3;
 
 // Mixins
 
+// TODO: extract more styling logic to mixins for re-use
+
 @mixin button {
     @include focus-outline;
 

@@ -3,6 +3,7 @@ import { Quote } from '@Generic/Quote/Quote';
 import { content } from 'content';
 import styles from './QuoteSection.module.scss';
 
+// TODO: extract section to component and re-use
 export const QuoteSection: FC = () => (
     <section className={styles.section}>
         <div className={styles.content}>

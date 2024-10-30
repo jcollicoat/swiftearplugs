@@ -18,6 +18,7 @@ export const CartItem: FC<Props> = ({ item }) => {
 
     const actionWithVariant = formAction.bind(null, item.merchandise.id);
 
+    // TODO: extract this logic
     const image =
         item.merchandise.product.variants?.edges.find(
             (edge) =>

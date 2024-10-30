@@ -22,6 +22,7 @@ export const LayeredContent: FC = () => (
                 />
             </div>
             <div className={styles.items}>
+                {/* TODO: extract to component */}
                 {content.layered.items.map((item) => (
                     <div key={item.heading} className={styles.item}>
                         <h3

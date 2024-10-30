@@ -1,4 +1,4 @@
-// Content to be sourced from Shopify in future
+// TODO: Content to be sourced from Shopify in future
 
 export const content = {
     header: {

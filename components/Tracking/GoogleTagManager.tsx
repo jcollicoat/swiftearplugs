@@ -4,6 +4,8 @@ import { FC } from 'react';
 const { GOOGLE_TAG_MANAGER_ID } = process.env;
 const TRACKING_ENABLED = process.env.NODE_ENV === 'production';
 
+// TODO: add GTM events tracking hook like FB
+
 export const GoogleTagManager: FC = () => {
     if (!TRACKING_ENABLED) return null;
 

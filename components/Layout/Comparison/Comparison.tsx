@@ -4,6 +4,7 @@ import { PiCheckCircle, PiXCircle } from 'react-icons/pi';
 import { content } from 'content';
 import styles from './Comparison.module.scss';
 
+// TODO: Break into smaller components
 export const Comparison: FC = () => (
     <section className={styles.section}>
         <div className={styles.content}>

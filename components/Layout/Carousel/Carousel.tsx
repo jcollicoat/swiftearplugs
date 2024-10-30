@@ -7,6 +7,7 @@ import { PiPauseCircle, PiPlayCircle } from 'react-icons/pi';
 import { content } from 'content';
 import styles from './Carousel.module.scss';
 
+// TODO: Break into smaller components
 export const Carousel: FC = () => {
     const [slide, setSlide] = useState(0);
     const [playing, setPlaying] = useState(true);

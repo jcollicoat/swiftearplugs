@@ -11,6 +11,7 @@ export const CartButton: FC = () => {
     const { cart } = useCart();
     const { isOpen, setIsOpen } = useModal();
 
+    // TODO: extract this logic
     const cartHasItems = (cart?.totalQuantity ?? 0) > 0;
     const buttonDisabled = !cartHasItems;
 

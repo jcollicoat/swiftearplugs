@@ -1,5 +1,6 @@
 import { productFragment } from './product.fragments';
 
+// TODO: review all Shopify fragments and only fetch relevant data
 const cartFragment = /* GraphQL */ `
     fragment cart on Cart {
         id

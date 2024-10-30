@@ -26,6 +26,7 @@ export const Selector: FC<Props> = ({ variants }) => {
     return (
         <form className={styles.selector}>
             {variants.map((variant) => {
+                // TODO: extract this logic
                 const color = variant.title.split(' ')[1].toLowerCase();
                 const isUnavailable = !variant.availableForSale;
                 const isSelected = state.color === variant.title;

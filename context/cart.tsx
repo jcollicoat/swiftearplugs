@@ -208,7 +208,7 @@ export const CartProvider: FC<PropsWithChildren<CartProviderProps>> = ({
     const [optimisticCart, updateOptimisticCart] = useOptimistic(
         initialCart,
         cartReducer,
-    );
+    ); // TODO: Fix bug around optimistic updates (removed products re-appearing at times)
 
     const updateCartItem = useCallback(
         (merchandiseId: string, updateType: UpdateType) => {

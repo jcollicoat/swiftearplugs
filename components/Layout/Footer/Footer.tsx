@@ -4,6 +4,7 @@ import { FC } from 'react';
 import { Logo } from '@Generic/Logo/Logo';
 import styles from './Footer.module.scss';
 
+// TODO: Extract content to be editable
 export const Footer: FC = () => (
     <footer className={styles.footer}>
         <div className={styles.content}>

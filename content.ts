@@ -23,7 +23,7 @@ export const content = {
         items: [
             {
                 image: '/carousel-1',
-                heading: 'Up to 17dB noise reduction.',
+                heading: 'Up to 20dB noise reduction.',
                 content:
                     'Enjoy the music you love at a volume that loves you back. Swift Earplugs allow you to hear every beat and lyric clearly without damaging your hearing.',
             },

@@ -5,7 +5,7 @@ const { FACEBOOK_PIXEL_ID } = process.env;
 const TRACKING_ENABLED = process.env.NODE_ENV === 'production';
 
 interface WindowWithFBQ extends Window {
-    fbq: (event: string, name: string, data: unknown) => void;
+    fbq?: (event: string, name: string, data: unknown) => void;
 }
 declare const window: WindowWithFBQ;
 
@@ -18,7 +18,7 @@ export const useFacebookPixel = () => {
                 content_type: string;
             },
         ) => {
-            if (TRACKING_ENABLED) {
+            if (TRACKING_ENABLED && window.fbq) {
                 window.fbq('track', name, content);
             }
         },

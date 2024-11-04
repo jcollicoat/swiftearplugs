@@ -19,7 +19,7 @@ export const Images: FC<Props> = ({ product }) => {
     return (
         <div className={styles.image}>
             <Image
-                src={product.featuredImage?.url ?? '/product-fallback.png'}
+                src="/product-fallback.png"
                 alt="Swift Earplugs"
                 fill
                 className={classNames(
@@ -29,15 +29,15 @@ export const Images: FC<Props> = ({ product }) => {
                 priority
             />
             {product.variants.map((variant) => (
-                <Image
+                // Not using Next Image here so Vercel doesn't cache images which may be updated in Shopify
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
                     key={variant.id}
                     src={variant.image.url}
                     alt={variant.image.altText ?? ''}
-                    fill
                     className={classNames(
                         state.color === variant.title && styles.visible,
                     )}
-                    priority
                 />
             ))}
         </div>

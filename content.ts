@@ -26,7 +26,7 @@ export const content = {
     },
     product: {
         price: {
-            prefix: 'Price',
+            prefix: 'Only',
             discountPrefix: 'Was',
         },
         button: 'Add to Cart',

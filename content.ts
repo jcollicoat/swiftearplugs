@@ -8,6 +8,12 @@ export const content = {
     header: {
         button: 'View Cart',
         buttonDisabled: 'Empty Cart',
+        cart: {
+            heading: 'Your Cart',
+            priceLabel: 'Total Price',
+            checkout: 'Checkout',
+            checkoutDisabled: 'Empty Cart',
+        },
     },
     hero: {
         title: 'Meet the last earplugs you will ever need.',
@@ -19,6 +25,10 @@ export const content = {
         },
     },
     product: {
+        price: {
+            prefix: 'Price',
+            discountPrefix: 'Was',
+        },
         button: 'Add to Cart',
         buttonDisabled: 'Out of Stock',
     },

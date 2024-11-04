@@ -6,6 +6,7 @@ import { PiArrowRight, PiXCircle } from 'react-icons/pi';
 import { Delivery } from '@Generic/Delivery/Delivery';
 import { Modal } from '@Generic/Modal/Modal';
 import { Price } from '@Generic/Price/Price';
+import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
 import {
@@ -34,7 +35,7 @@ export const CartModal: FC = () => {
         <Modal align="right">
             <div className={styles.wrapper}>
                 <div className={styles.header}>
-                    <h2>Your Cart</h2>
+                    <h2>{content.header.cart.heading}</h2>
                     <button className={styles.close} onClick={closeModal}>
                         <PiXCircle />
                     </button>
@@ -51,7 +52,9 @@ export const CartModal: FC = () => {
                     )}
                 >
                     <div className={styles.details}>
-                        <span className={styles.total}>Total Price:</span>
+                        <span className={styles.total}>
+                            {content.header.cart.priceLabel}
+                        </span>
                         <span className={styles.price}>
                             <Price price={cart.cost.totalAmount.amount} />
                         </span>
@@ -61,7 +64,11 @@ export const CartModal: FC = () => {
                         disabled={cartIsEmpty}
                         aria-disabled={cartIsEmpty}
                     >
-                        <span>{cartIsEmpty ? 'Empty Cart' : 'Checkout'}</span>
+                        <span>
+                            {cartIsEmpty
+                                ? content.header.cart.checkoutDisabled
+                                : content.header.cart.checkout}
+                        </span>
                         {!cartIsEmpty && <PiArrowRight size={24} />}
                     </button>
                 </form>

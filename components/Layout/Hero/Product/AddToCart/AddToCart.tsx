@@ -1,6 +1,5 @@
 'use client';
 
-import classNames from 'classnames';
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
 import { Price } from '@Generic/Price/Price';
@@ -41,6 +40,7 @@ export const AddToCart: FC<Props> = ({ product }) => {
 
     const price =
         finalVariant?.price.amount ?? product.priceRange.minVariantPrice.amount;
+
     const compareAtPrice = finalVariant?.compareAtPrice?.amount;
     const discount = compareAtPrice
         ? Math.round(
@@ -67,21 +67,18 @@ export const AddToCart: FC<Props> = ({ product }) => {
             }}
         >
             <div className={styles.price}>
-                {compareAtPrice && (
-                    <span className={styles.old}>
-                        <span>Was </span>
-                        <Price price={compareAtPrice} />
-                    </span>
-                )}
-                <span
-                    className={classNames(
-                        styles.current,
-                        discount && styles.isDiscounted,
+                <span className={styles.prefix}>
+                    {compareAtPrice ? (
+                        <>
+                            {content.product.price.discountPrefix}{' '}
+                            <Price price={compareAtPrice} />
+                        </>
+                    ) : (
+                        content.product.price.prefix
                     )}
-                >
-                    <span>
-                        <Price price={price} />
-                    </span>
+                </span>
+                <span className={styles.current}>
+                    <Price price={price} />
                     {discount && (
                         <span
                             className={styles.discount}

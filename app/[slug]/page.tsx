@@ -9,15 +9,12 @@ export async function generateMetadata(
 ): Promise<Metadata> {
     const pageData = await getPage(slug);
 
-    // optionally access and extend (rather than replace) parent metadata
-    // const previousImages = (await parent).openGraph?.images || []; // TODO: OG images
-
     return {
         title: pageData
-            ? `${pageData.seo?.title ?? pageData.title} | Swift Earplugs`
+            ? (pageData.seo?.title ?? pageData.title)
             : (await parent).title,
-        description: pageData
-            ? pageData.seo?.description
+        description: pageData?.seo?.description
+            ? pageData.seo.description
             : (await parent).description,
     };
 }

@@ -1,6 +1,10 @@
 // TODO: Content to be sourced from Shopify in future
 
 export const content = {
+    meta: {
+        title: 'Swift Earplugs',
+        description: 'Swift Earplugs bring you closer to the music you love.',
+    },
     header: {
         button: 'View Cart',
         buttonDisabled: 'Empty Cart',

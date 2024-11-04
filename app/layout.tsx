@@ -2,15 +2,35 @@
 import './layout.scss';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { Footer } from '@Layout/Footer/Footer';
 import { Header } from '@Layout/Header/Header';
 import { FacebookPixel } from '@Tracking/FacebookPixel';
 import { GoogleTagManager } from '@Tracking/GoogleTagManager';
 import { MicrosoftClarity } from '@Tracking/MicrosoftClarity';
+import { content } from 'content';
 import { CartProvider } from 'context/cart';
 import { ModalProvider } from 'context/modal';
 import { getCart } from 'shopify/cart';
+
+const { VERCEL_PROJECT_PRODUCTION_URL } = process.env;
+const baseUrl = VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${VERCEL_PROJECT_PRODUCTION_URL}`
+    : 'http://localhost:3001';
+
+export const metadata: Metadata = {
+    metadataBase: new URL(baseUrl),
+    title: {
+        default: content.meta.title,
+        template: `%s | ${content.meta.title}`,
+    },
+    description: content.meta.description,
+    robots: {
+        follow: true,
+        index: true,
+    },
+};
 
 export default function RootLayout({
     children,

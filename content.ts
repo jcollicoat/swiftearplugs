@@ -67,7 +67,10 @@ export const content = {
         name: 'Jessica S.',
     },
     layered: {
-        heading: 'Designed for comfort and style.',
+        heading: {
+            text: 'Steal the show',
+            emojis: '💃✨',
+        },
         items: [
             {
                 float1: {

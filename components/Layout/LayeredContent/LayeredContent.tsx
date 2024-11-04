@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
+import { Emoji } from '@Generic/Emoji/Emoji';
 import { content } from 'content';
 import styles from './LayeredContent.module.scss';
 
@@ -7,12 +8,10 @@ export const LayeredContent: FC = () => (
     <section className={styles.section}>
         <div className={styles.content}>
             <div className={styles.heading}>
-                <h2
-                    // eslint-disable-next-line react/no-danger
-                    dangerouslySetInnerHTML={{
-                        __html: content.layered.heading,
-                    }}
-                />
+                <h2>
+                    {content.layered.heading.text}{' '}
+                    <Emoji>{content.layered.heading.emojis}</Emoji>
+                </h2>
                 <Image
                     src="/purples-2.png"
                     alt=""

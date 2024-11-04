@@ -3,7 +3,11 @@
 .selector {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
+    gap: 6px;
+
+    @container (width >= 350px) {
+        gap: 12px;
+    }
 
     button {
         @include button;

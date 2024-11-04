@@ -1,8 +1,8 @@
 import Script from 'next/script';
 import { FC, useCallback } from 'react';
 
-const { FACEBOOK_PIXEL_ID } = process.env;
-const TRACKING_ENABLED = process.env.NODE_ENV === 'production';
+const { FACEBOOK_PIXEL_ID, NODE_ENV } = process.env;
+const TRACKING_ENABLED = NODE_ENV === 'production';
 
 interface WindowWithFBQ extends Window {
     fbq?: (event: string, name: string, data: unknown) => void;

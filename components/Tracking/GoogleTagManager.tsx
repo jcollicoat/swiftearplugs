@@ -2,7 +2,7 @@ import Script from 'next/script';
 import { FC } from 'react';
 
 const { GOOGLE_TAG_MANAGER_ID } = process.env;
-const TRACKING_ENABLED = process.env.NODE_ENV === 'production';
+const TRACKING_ENABLED = process.env.NEXT_PUBLIC_TRACKING_ENABLED === 'true';
 
 // TODO: add GTM events tracking hook like FB
 

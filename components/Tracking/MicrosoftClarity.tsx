@@ -2,7 +2,7 @@ import Script from 'next/script';
 import { FC } from 'react';
 
 const { MICROSOFT_CLARITY_ID } = process.env;
-const TRACKING_ENABLED = process.env.NODE_ENV === 'production';
+const TRACKING_ENABLED = process.env.NEXT_PUBLIC_TRACKING_ENABLED === 'true';
 
 export const MicrosoftClarity: FC = () => {
     if (!TRACKING_ENABLED) return null;

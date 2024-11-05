@@ -1,8 +1,23 @@
 import Script from 'next/script';
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 
 const { MICROSOFT_CLARITY_ID } = process.env;
 const TRACKING_ENABLED = process.env.NEXT_PUBLIC_TRACKING_ENABLED === 'true';
+
+interface WindowWithClarity extends Window {
+    clarity?: (event: 'event', name: string) => void;
+}
+declare const window: WindowWithClarity;
+
+export const useMicrosoftClarity = () => {
+    const trackClarityEvent = useCallback((name: string) => {
+        if (TRACKING_ENABLED && window.clarity) {
+            window.clarity('event', name);
+        }
+    }, []);
+
+    return { trackClarityEvent };
+};
 
 export const MicrosoftClarity: FC = () => {
     if (!TRACKING_ENABLED) return null;

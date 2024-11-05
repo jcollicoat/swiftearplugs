@@ -8,6 +8,7 @@ import { Modal } from '@Generic/Modal/Modal';
 import { Price } from '@Generic/Price/Price';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
 import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
+import { useMicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
@@ -23,6 +24,7 @@ export const CartModal: FC = () => {
     const { cart } = useCart();
     const { trackFacebookEvent } = useFacebookPixel();
     const { trackGoogleEvent } = useGoogleTagManager();
+    const { trackClarityEvent } = useMicrosoftClarity();
 
     useEffect(() => {
         if (!cart) {
@@ -68,6 +70,7 @@ export const CartModal: FC = () => {
                             value: Number(cart.cost.totalAmount.amount),
                             currency: 'NZD',
                         });
+                        trackClarityEvent('Initiate Checkout');
                         redirectToCheckout();
                     }}
                     className={classNames(

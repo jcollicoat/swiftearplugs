@@ -4,6 +4,7 @@ import { FC } from 'react';
 import { PiShoppingBag } from 'react-icons/pi';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
 import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
+import { useMicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
@@ -14,6 +15,7 @@ export const CartButton: FC = () => {
     const { openModal } = useModal();
     const { trackCustomFacebookEvent } = useFacebookPixel();
     const { trackGoogleEvent } = useGoogleTagManager();
+    const { trackClarityEvent } = useMicrosoftClarity();
 
     // TODO: extract this logic
     const cartHasItems = (cart?.totalQuantity ?? 0) > 0;
@@ -43,6 +45,7 @@ export const CartButton: FC = () => {
                         quantity: line.quantity,
                     })),
                 });
+                trackClarityEvent('View Cart');
             }}
             disabled={buttonDisabled}
             aria-disabled={buttonDisabled}

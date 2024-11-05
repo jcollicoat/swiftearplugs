@@ -6,6 +6,7 @@ import { Price } from '@Generic/Price/Price';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
 import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
+import { useMicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { useCart } from 'context/cart';
 import { removeItem } from 'shopify/cart.actions';
 import { CartItem as CartItemType } from 'shopify/cart.types';
@@ -20,6 +21,7 @@ export const CartItem: FC<Props> = ({ item }) => {
     const [message, formAction] = useFormState(removeItem, null);
     const { trackCustomFacebookEvent } = useFacebookPixel();
     const { trackGoogleEvent } = useGoogleTagManager();
+    const { trackClarityEvent } = useMicrosoftClarity();
 
     const actionWithVariant = formAction.bind(null, item.merchandise.id);
 
@@ -61,6 +63,7 @@ export const CartItem: FC<Props> = ({ item }) => {
                         id: item.merchandise.id,
                         quantity: item.quantity,
                     });
+                    trackClarityEvent('Remove Cart Item');
                 }}
             >
                 <span className={styles.quantity}>{item.quantity}</span>

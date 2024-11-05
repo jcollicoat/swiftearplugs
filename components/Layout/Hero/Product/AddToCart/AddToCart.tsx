@@ -6,6 +6,7 @@ import { Price } from '@Generic/Price/Price';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
 import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
+import { useMicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useProduct } from 'context/product';
@@ -23,6 +24,7 @@ export const AddToCart: FC<Props> = ({ product }) => {
     const [message, formAction] = useFormState(addItem, null);
     const { trackFacebookEvent } = useFacebookPixel();
     const { trackGoogleEvent } = useGoogleTagManager();
+    const { trackClarityEvent } = useMicrosoftClarity();
 
     // TODO: extract this logic
     const { variants } = product;
@@ -68,6 +70,7 @@ export const AddToCart: FC<Props> = ({ product }) => {
                 trackGoogleEvent('add_to_cart', {
                     id: finalVariant.id,
                 });
+                trackClarityEvent('Add To Cart');
             }}
         >
             <div className={styles.price}>

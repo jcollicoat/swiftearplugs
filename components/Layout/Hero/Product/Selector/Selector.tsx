@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 import { FC, useEffect } from 'react';
+import { useFacebookPixel } from '@Tracking/FacebookPixel';
 import { useProduct, useUpdateURL } from 'context/product';
 import { ProductVariant } from 'shopify/product.types';
 import styles from './Selector.module.scss';
@@ -13,6 +14,7 @@ interface Props {
 export const Selector: FC<Props> = ({ variants }) => {
     const { state, updateOption } = useProduct();
     const { updateURL } = useUpdateURL();
+    const { trackFacebookEvent } = useFacebookPixel();
 
     useEffect(() => {
         if (!state.color) {
@@ -40,6 +42,10 @@ export const Selector: FC<Props> = ({ variants }) => {
                                 variant.title,
                             );
                             updateURL(newState);
+                            trackFacebookEvent('CustomizeProduct', {
+                                content_ids: [variant.id],
+                                content_type: 'product',
+                            });
                         }}
                         className={classNames(
                             styles[color],

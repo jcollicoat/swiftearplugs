@@ -4,6 +4,7 @@ import { useFormState } from 'react-dom';
 import { PiTrash } from 'react-icons/pi';
 import { Price } from '@Generic/Price/Price';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
+import { useFacebookPixel } from '@Tracking/FacebookPixel';
 import { useCart } from 'context/cart';
 import { removeItem } from 'shopify/cart.actions';
 import { CartItem as CartItemType } from 'shopify/cart.types';
@@ -16,6 +17,7 @@ interface Props {
 export const CartItem: FC<Props> = ({ item }) => {
     const { updateCartItem } = useCart();
     const [message, formAction] = useFormState(removeItem, null);
+    const { trackCustomFacebookEvent } = useFacebookPixel();
 
     const actionWithVariant = formAction.bind(null, item.merchandise.id);
 
@@ -49,6 +51,10 @@ export const CartItem: FC<Props> = ({ item }) => {
                 action={async () => {
                     updateCartItem(item.merchandise.id, 'delete');
                     await actionWithVariant();
+                    trackCustomFacebookEvent('RemoveCartItem', {
+                        id: item.merchandise.id,
+                        quantity: item.quantity,
+                    });
                 }}
             >
                 <span className={styles.quantity}>{item.quantity}</span>

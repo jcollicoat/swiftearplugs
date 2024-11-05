@@ -6,6 +6,7 @@ import { PiArrowRight, PiXCircle } from 'react-icons/pi';
 import { Delivery } from '@Generic/Delivery/Delivery';
 import { Modal } from '@Generic/Modal/Modal';
 import { Price } from '@Generic/Price/Price';
+import { useFacebookPixel } from '@Tracking/FacebookPixel';
 import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
@@ -19,6 +20,7 @@ import styles from './CartModal.module.scss';
 export const CartModal: FC = () => {
     const { closeModal } = useModal();
     const { cart } = useCart();
+    const { trackFacebookEvent } = useFacebookPixel();
 
     useEffect(() => {
         if (!cart) {
@@ -45,7 +47,18 @@ export const CartModal: FC = () => {
                 ))}
                 {!cartIsEmpty && <Delivery />}
                 <form
-                    action={redirectToCheckout}
+                    action={() => {
+                        trackFacebookEvent('InitiateCheckout', {
+                            contents: cart.lines.map((line) => ({
+                                id: line.merchandise.id,
+                                quantity: line.quantity,
+                            })),
+                            num_items: cart.totalQuantity,
+                            value: Number(cart.cost.totalAmount.amount),
+                            currency: 'NZD',
+                        });
+                        redirectToCheckout();
+                    }}
                     className={classNames(
                         styles.footer,
                         cartIsEmpty && styles.disabled,

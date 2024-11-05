@@ -20,7 +20,7 @@ export const AddToCart: FC<Props> = ({ product }) => {
     const { state } = useProduct();
     const { addCartItem } = useCart();
     const [message, formAction] = useFormState(addItem, null);
-    const { trackEvent } = useFacebookPixel();
+    const { trackFacebookEvent } = useFacebookPixel();
 
     // TODO: extract this logic
     const { variants } = product;
@@ -59,8 +59,7 @@ export const AddToCart: FC<Props> = ({ product }) => {
                 if (!finalVariant) return;
                 addCartItem(finalVariant, product);
                 await actionWithVariant();
-
-                trackEvent('AddToCart', {
+                trackFacebookEvent('AddToCart', {
                     content_ids: [finalVariant.id],
                     content_type: 'product',
                 });

@@ -26,18 +26,18 @@ type InitiateCheckout = {
 
 export const useFacebookPixel = () => {
     const trackFacebookEvent = useCallback(
-        (name: string, content: CustomizeOrAddToCart | InitiateCheckout) => {
+        (name: string, data: CustomizeOrAddToCart | InitiateCheckout) => {
             if (TRACKING_ENABLED && window.fbq) {
-                window.fbq('track', name, content);
+                window.fbq('track', name, data);
             }
         },
         [],
     );
 
     const trackCustomFacebookEvent = useCallback(
-        (name: string, content?: unknown) => {
+        (name: string, data?: unknown) => {
             if (TRACKING_ENABLED && window.fbq) {
-                window.fbq('trackCustom', name, content);
+                window.fbq('trackCustom', name, data);
             }
         },
         [],

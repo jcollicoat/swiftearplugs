@@ -1,10 +1,23 @@
 import Script from 'next/script';
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 
 const { GOOGLE_TAG_MANAGER_ID } = process.env;
 const TRACKING_ENABLED = process.env.NEXT_PUBLIC_TRACKING_ENABLED === 'true';
 
-// TODO: add GTM events tracking hook like FB
+interface WindowWithGtag extends Window {
+    gtag?: (event: 'event', name: string, data: unknown) => void;
+}
+declare const window: WindowWithGtag;
+
+export const useGoogleTagManager = () => {
+    const trackGoogleEvent = useCallback((name: string, data: unknown) => {
+        if (TRACKING_ENABLED && window.gtag) {
+            window.gtag('event', name, data);
+        }
+    }, []);
+
+    return { trackGoogleEvent };
+};
 
 export const GoogleTagManager: FC = () => {
     if (!TRACKING_ENABLED) return null;

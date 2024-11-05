@@ -9,15 +9,24 @@ interface WindowWithFBQ extends Window {
 }
 declare const window: WindowWithFBQ;
 
+type CustomizeOrAddToCart = {
+    content_ids: string[];
+    content_type: string;
+};
+
+type InitiateCheckout = {
+    contents: {
+        id: string;
+        quantity: number;
+    }[];
+    num_items: number;
+    value: number;
+    currency: string;
+};
+
 export const useFacebookPixel = () => {
-    const trackEvent = useCallback(
-        (
-            name: string,
-            content: {
-                content_ids: string[];
-                content_type: string;
-            },
-        ) => {
+    const trackFacebookEvent = useCallback(
+        (name: string, content: CustomizeOrAddToCart | InitiateCheckout) => {
             if (TRACKING_ENABLED && window.fbq) {
                 window.fbq('track', name, content);
             }
@@ -25,7 +34,16 @@ export const useFacebookPixel = () => {
         [],
     );
 
-    return { trackEvent };
+    const trackCustomFacebookEvent = useCallback(
+        (name: string, content?: unknown) => {
+            if (TRACKING_ENABLED && window.fbq) {
+                window.fbq('trackCustom', name, content);
+            }
+        },
+        [],
+    );
+
+    return { trackFacebookEvent, trackCustomFacebookEvent };
 };
 
 export const FacebookPixel: FC = () => {

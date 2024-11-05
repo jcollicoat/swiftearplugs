@@ -3,6 +3,7 @@
 import { FC } from 'react';
 import { PiShoppingBag } from 'react-icons/pi';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
+import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
 import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
@@ -12,6 +13,7 @@ export const CartButton: FC = () => {
     const { cart } = useCart();
     const { openModal } = useModal();
     const { trackCustomFacebookEvent } = useFacebookPixel();
+    const { trackGoogleEvent } = useGoogleTagManager();
 
     // TODO: extract this logic
     const cartHasItems = (cart?.totalQuantity ?? 0) > 0;
@@ -30,6 +32,12 @@ export const CartButton: FC = () => {
             onClick={() => {
                 openModal();
                 trackCustomFacebookEvent('ViewCart', {
+                    cart: cart?.lines.map((line) => ({
+                        id: line.merchandise.id,
+                        quantity: line.quantity,
+                    })),
+                });
+                trackGoogleEvent('view_cart', {
                     cart: cart?.lines.map((line) => ({
                         id: line.merchandise.id,
                         quantity: line.quantity,

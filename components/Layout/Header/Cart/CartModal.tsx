@@ -7,6 +7,7 @@ import { Delivery } from '@Generic/Delivery/Delivery';
 import { Modal } from '@Generic/Modal/Modal';
 import { Price } from '@Generic/Price/Price';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
+import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
 import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useModal } from 'context/modal';
@@ -21,6 +22,7 @@ export const CartModal: FC = () => {
     const { closeModal } = useModal();
     const { cart } = useCart();
     const { trackFacebookEvent } = useFacebookPixel();
+    const { trackGoogleEvent } = useGoogleTagManager();
 
     useEffect(() => {
         if (!cart) {
@@ -54,6 +56,15 @@ export const CartModal: FC = () => {
                                 quantity: line.quantity,
                             })),
                             num_items: cart.totalQuantity,
+                            value: Number(cart.cost.totalAmount.amount),
+                            currency: 'NZD',
+                        });
+                        trackGoogleEvent('initiate_checkout', {
+                            cart: cart.lines.map((line) => ({
+                                id: line.merchandise.id,
+                                quantity: line.quantity,
+                            })),
+                            totalQuantity: cart.totalQuantity,
                             value: Number(cart.cost.totalAmount.amount),
                             currency: 'NZD',
                         });

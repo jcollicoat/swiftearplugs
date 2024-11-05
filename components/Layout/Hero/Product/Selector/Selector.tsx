@@ -3,6 +3,7 @@
 import classNames from 'classnames';
 import { FC, useEffect } from 'react';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
+import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
 import { useProduct, useUpdateURL } from 'context/product';
 import { ProductVariant } from 'shopify/product.types';
 import styles from './Selector.module.scss';
@@ -15,6 +16,7 @@ export const Selector: FC<Props> = ({ variants }) => {
     const { state, updateOption } = useProduct();
     const { updateURL } = useUpdateURL();
     const { trackFacebookEvent } = useFacebookPixel();
+    const { trackGoogleEvent } = useGoogleTagManager();
 
     useEffect(() => {
         if (!state.color) {
@@ -45,6 +47,9 @@ export const Selector: FC<Props> = ({ variants }) => {
                             trackFacebookEvent('CustomizeProduct', {
                                 content_ids: [variant.id],
                                 content_type: 'product',
+                            });
+                            trackGoogleEvent('change_color', {
+                                id: variant.id,
                             });
                         }}
                         className={classNames(

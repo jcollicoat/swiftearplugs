@@ -5,6 +5,7 @@ import { useFormState } from 'react-dom';
 import { Price } from '@Generic/Price/Price';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
+import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
 import { content } from 'content';
 import { useCart } from 'context/cart';
 import { useProduct } from 'context/product';
@@ -21,6 +22,7 @@ export const AddToCart: FC<Props> = ({ product }) => {
     const { addCartItem } = useCart();
     const [message, formAction] = useFormState(addItem, null);
     const { trackFacebookEvent } = useFacebookPixel();
+    const { trackGoogleEvent } = useGoogleTagManager();
 
     // TODO: extract this logic
     const { variants } = product;
@@ -62,6 +64,9 @@ export const AddToCart: FC<Props> = ({ product }) => {
                 trackFacebookEvent('AddToCart', {
                     content_ids: [finalVariant.id],
                     content_type: 'product',
+                });
+                trackGoogleEvent('add_to_cart', {
+                    id: finalVariant.id,
                 });
             }}
         >

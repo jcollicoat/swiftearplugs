@@ -19,7 +19,7 @@ export const Images: FC<Props> = ({ product }) => {
     return (
         <div className={styles.image}>
             <Image
-                src="/product-fallback.png"
+                src="/product-fallback.jpg"
                 alt="Swift Earplugs"
                 fill
                 className={classNames(
@@ -38,7 +38,7 @@ export const Images: FC<Props> = ({ product }) => {
                     className={classNames(
                         state.color === variant.title && styles.visible,
                     )}
-                    loading="lazy"
+                    loading="eager"
                 />
             ))}
         </div>

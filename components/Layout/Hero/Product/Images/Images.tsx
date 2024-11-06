@@ -38,6 +38,7 @@ export const Images: FC<Props> = ({ product }) => {
                     className={classNames(
                         state.color === variant.title && styles.visible,
                     )}
+                    loading="lazy"
                 />
             ))}
         </div>

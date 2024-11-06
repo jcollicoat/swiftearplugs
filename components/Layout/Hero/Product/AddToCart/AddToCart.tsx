@@ -77,11 +77,11 @@ export const AddToCart: FC<Props> = ({ product }) => {
                 <span className={styles.prefix}>
                     {compareAtPrice ? (
                         <>
-                            {content.product.price.discountPrefix}{' '}
+                            {content.hero.product.price.discountPrefix}{' '}
                             <Price price={compareAtPrice} />
                         </>
                     ) : (
-                        content.product.price.prefix
+                        content.hero.product.price.prefix
                     )}
                 </span>
                 <span className={styles.current}>
@@ -97,8 +97,8 @@ export const AddToCart: FC<Props> = ({ product }) => {
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                     __html: buttonDisabled
-                        ? content.product.buttonDisabled
-                        : content.product.button,
+                        ? content.hero.product.buttonDisabled
+                        : content.hero.product.button,
                 }}
                 disabled={buttonDisabled}
                 aria-disabled={buttonDisabled}

@@ -18,19 +18,19 @@ export const content = {
     hero: {
         title: 'Meet the last earplugs you will ever need.',
         intro: 'Protect your ears in style — Swift Earplugs deliver crystal-clear sound, blocking noise while keeping you comfortable and stylish at every event.',
+        product: {
+            price: {
+                prefix: 'Only',
+                discountPrefix: 'Was',
+            },
+            button: 'Add to Cart',
+            buttonDisabled: 'Out of Stock',
+        },
         testimonial: {
             image: '/quote-image-1.png',
             quote: 'I use these at really loud concerts, and they not only protect my ears but actually make the music sound better by balancing the sound and reducing the noise from the crowd.',
             name: 'Amber M.',
         },
-    },
-    product: {
-        price: {
-            prefix: 'Only',
-            discountPrefix: 'Was',
-        },
-        button: 'Add to Cart',
-        buttonDisabled: 'Out of Stock',
     },
     carousel: {
         heading: 'Feel the music, not noise.',

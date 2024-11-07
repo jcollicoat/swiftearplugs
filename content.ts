@@ -32,6 +32,15 @@ export const content = {
             name: 'Amber M.',
         },
     },
+    hearingDamage: {
+        heading: 'Don&apos;t lose your hearing',
+        content:
+            'Raves and concerts are often as loud as <strong>110 decibels</strong>, which can result in permanent hearing damage in <strong>as little as 2 minutes</strong>.',
+        button: {
+            text: 'Learn more at healthed.govt.nz',
+            link: 'https://healthed.govt.nz/products/noise-around-the-home',
+        },
+    },
     carousel: {
         heading: 'Feel the music, not noise.',
         items: [

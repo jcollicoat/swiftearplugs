@@ -1,0 +1,93 @@
+@import 'styles/constants.scss';
+
+.section {
+    margin-bottom: 0;
+
+    .tile {
+        @keyframes glow {
+            0% {
+                border-color: rgba($color-pink, 0.1);
+                box-shadow: 0px 0px 100px rgba($color-pink, 0.15);
+            }
+
+            50% {
+                border-color: rgba($color-purple, 0.1);
+                box-shadow: 0px 0px 100px rgba($color-purple, 0.15);
+            }
+
+            100% {
+                border-color: rgba($color-red, 0.1);
+                box-shadow: 0px 0px 100px rgba($color-red, 0.15);
+            }
+        }
+
+        animation: glow 5s ease infinite;
+        border: 1px solid;
+        border-radius: 24px;
+        margin: 0 auto;
+        max-width: 580px;
+        overflow: hidden;
+        padding: 12px;
+        padding-top: 24px;
+        position: relative;
+        width: 100%;
+
+        img {
+            inset: 0;
+            object-fit: cover;
+            position: absolute;
+            z-index: 0;
+        }
+
+        &::after {
+            background-color: rgba(white, 0.925);
+            content: '';
+            inset: 0;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .content {
+            display: grid;
+            gap: 12px;
+            position: relative;
+            text-align: center;
+            z-index: 3;
+
+            h2 {
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .link {
+                @include button;
+
+                background-color: transparent;
+                border: 1px solid $color-pink;
+                color: $color-pink;
+                margin-top: 12px;
+                min-height: 36px;
+                padding: 4px 24px;
+                text-decoration: none;
+                transition: 0.25s ease;
+                transition-property: background-color, color;
+
+                &:hover {
+                    background-color: $color-pink;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 500px) {
+        .tile {
+            padding: 24px;
+
+            .content .link {
+                justify-self: center;
+                width: max-content;
+            }
+        }
+    }
+}

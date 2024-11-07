@@ -141,5 +141,11 @@ export const content = {
             ],
         },
     },
+    promo: {
+        enabled: true, // Controls whether banner displays
+        icon: 'percent', // valid: 'percent', 'b2g1f', 'sale'. Default: star
+        text: 'Use code {{ code }} at checkout for 10% off your order!',
+        code: 'PARTY10',
+    },
     delivery: 'Free delivery on all orders',
 };

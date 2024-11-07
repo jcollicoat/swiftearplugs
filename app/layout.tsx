@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { Footer } from '@Layout/Footer/Footer';
 import { Header } from '@Layout/Header/Header';
+import { PromoBanner } from '@Layout/PromoBanner/PromoBanner';
 import { FacebookPixel } from '@Tracking/FacebookPixel';
 import { GoogleTagManager } from '@Tracking/GoogleTagManager';
 import { MicrosoftClarity } from '@Tracking/MicrosoftClarity';
@@ -64,6 +65,7 @@ export default function RootLayout({
                         <Header />
                         <main>{children}</main>
                         <Footer />
+                        <PromoBanner />
                     </ModalProvider>
                 </CartProvider>
                 <Analytics />

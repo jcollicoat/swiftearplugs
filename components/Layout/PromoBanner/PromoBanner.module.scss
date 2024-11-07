@@ -1,0 +1,83 @@
+@import 'styles/constants.scss';
+
+.wrapper {
+    display: flex;
+    inset: var(--page-gutter);
+    pointer-events: none;
+    position: fixed;
+    z-index: $z-banner;
+
+    .banner {
+        align-items: center;
+        backdrop-filter: blur(100px);
+        background: linear-gradient(
+            to right,
+            rgba($color-red-light, 0.75),
+            rgba($color-pink-light, 0.75)
+        );
+        border: 1px solid rgba($color-pink, 0.1);
+        border-radius: 1000px;
+        display: flex;
+        gap: 12px;
+        height: max-content;
+        margin: auto auto 0 auto;
+        max-width: 600px;
+        opacity: 0;
+        padding: 8px;
+        padding-left: 12px;
+        transform: translateY(var(--page-gutter));
+        transition: 0.5s ease;
+        transition-property: opacity, transform;
+        width: 100%;
+
+        &.isVisible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .icon {
+            color: $color-pink;
+            flex-shrink: 0;
+        }
+
+        .text {
+            font-size: 14px;
+            margin-right: 12px;
+
+            .code {
+                color: $color-pink;
+                font-weight: 700;
+            }
+        }
+
+        .close {
+            background: none;
+            border: none;
+            border-radius: 1000px;
+            color: $color-pink;
+            display: flex;
+            margin-left: auto;
+            opacity: 0.5;
+            padding: 4px;
+            transition: 0.25s ease;
+            transition-property: background, opacity;
+
+            &:hover,
+            &:focus-visible {
+                background: rgba($color-pink, 0.05);
+                opacity: 1;
+            }
+
+            svg {
+                margin: auto;
+            }
+        }
+    }
+
+    @media (min-width: 800px) {
+        .banner .text {
+            font-size: 16px;
+        }
+    }
+}

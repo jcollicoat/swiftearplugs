@@ -17,7 +17,7 @@ export const content = {
     },
     hero: {
         title: 'Meet the last earplugs you will ever need.',
-        intro: 'Protect your ears in style — Swift Earplugs deliver crystal-clear sound, blocking noise while keeping you comfortable and stylish at every event.',
+        intro: 'Protect your ears in style — Swift earplugs deliver crystal-clear sound and reliable protection, wherever the music takes you.',
         product: {
             price: {
                 prefix: 'Only',
@@ -35,7 +35,7 @@ export const content = {
     hearingDamage: {
         heading: 'Don&apos;t lose your hearing.',
         content:
-            'Concerts get as loud as <strong>110 decibels</strong>, causing permanent hearing damage in <strong>as little as 2 minutes</strong>. Swift earplugs provide the protection you should have.',
+            'Concerts get as loud as <strong>110 decibels</strong>, causing permanent hearing damage in <strong>just 2 minutes</strong>. Swift earplugs provide the ear protection everyone should have.',
         button: {
             text: 'Learn more at healthed.govt.nz',
             link: 'https://healthed.govt.nz/products/noise-around-the-home',

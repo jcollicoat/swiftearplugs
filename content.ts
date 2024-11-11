@@ -66,7 +66,7 @@ export const content = {
                 image: '/carousel-4',
                 heading: 'Perfect on any night out.',
                 content:
-                    'Whether you’re at a concert, a festival, or a club, Swift Earplugs are your best companion, ensuring that you are enjoying the music while protecting your hearing.',
+                    'Whether you’re at a concert, festival, or club, Swift earplugs are your best companion — because you should not have to worry about your hearing while enjoying the music.',
             },
         ],
     },

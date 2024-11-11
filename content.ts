@@ -35,7 +35,7 @@ export const content = {
     hearingDamage: {
         heading: 'Don&apos;t lose your hearing.',
         content:
-            'Concerts get as loud as <strong>110 decibels</strong>, causing permanent hearing damage in <strong>just 2 minutes</strong>. Swift earplugs provide the ear protection everyone should have.',
+            'Concerts get as loud as <strong>110 decibels</strong>, causing permanent hearing damage in <strong>just 2 minutes</strong>.<br />Swift earplugs provide the ear protection everyone should have.',
         button: {
             text: 'Learn more at healthed.govt.nz',
             link: 'https://healthed.govt.nz/products/noise-around-the-home',

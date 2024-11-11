@@ -72,7 +72,7 @@ export const content = {
     },
     testimonial: {
         image: '/quote-image-2.png',
-        quote: 'I love how these earplugs look and the fact that I can clip them to my keychain. They’re always with me, so when I’m off to a gig or a show, I just chuck them in and save my ears from the pain.',
+        quote: 'I love how these earplugs look and the fact that I can clip them to my keychain.<br><br>They’re always with me, so when I’m off to a gig or a show, I just chuck them in and save my ears from the pain.',
         name: 'Jessica S.',
     },
     layered: {

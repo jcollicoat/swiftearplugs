@@ -28,21 +28,21 @@ export const content = {
         },
         testimonial: {
             image: '/quote-image-1.png',
-            quote: 'I use these at really loud concerts, and they not only protect my ears but actually make the music sound better by balancing the sound and reducing the noise from the crowd.',
+            quote: 'I wear these at every gig now – they cut the harsh noise while keeping the music super clear!',
             name: 'Amber M.',
         },
     },
     hearingDamage: {
-        heading: 'Don&apos;t lose your hearing',
+        heading: 'You shouldn&apos;t lose your hearing',
         content:
-            'Raves and concerts are often as loud as <strong>110 decibels</strong>, which can result in permanent hearing damage in <strong>as little as 2 minutes</strong>.',
+            'Concerts get as loud as <strong>110 decibels</strong>, which can lead to permanent hearing damage in <strong>as little as 2 minutes</strong>.',
         button: {
             text: 'Learn more at healthed.govt.nz',
             link: 'https://healthed.govt.nz/products/noise-around-the-home',
         },
     },
     carousel: {
-        heading: 'Feel the music, not noise.',
+        heading: 'Ear protection, perfected.',
         items: [
             {
                 image: '/carousel-1',
@@ -153,7 +153,7 @@ export const content = {
     promo: {
         enabled: true, // Controls whether banner displays
         icon: 'percent', // valid: 'percent', 'b2g1f', 'sale'. Default: star
-        text: 'Use code {{ code }} at checkout for 10% off your order!',
+        text: 'Don&apos;t miss, 10% off with code {{ code }} — for a short time only!',
         code: 'PARTY10',
     },
     delivery: 'Free delivery on all orders',

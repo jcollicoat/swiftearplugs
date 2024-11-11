@@ -33,9 +33,9 @@ export const content = {
         },
     },
     hearingDamage: {
-        heading: 'You shouldn&apos;t lose your hearing',
+        heading: 'Don&apos;t lose your hearing.',
         content:
-            'Concerts get as loud as <strong>110 decibels</strong>, which can lead to permanent hearing damage in <strong>as little as 2 minutes</strong>.',
+            'Concerts get as loud as <strong>110 decibels</strong>, causing permanent hearing damage in <strong>as little as 2 minutes</strong>. Swift earplugs provide the protection you should have.',
         button: {
             text: 'Learn more at healthed.govt.nz',
             link: 'https://healthed.govt.nz/products/noise-around-the-home',
@@ -77,7 +77,7 @@ export const content = {
     },
     layered: {
         heading: {
-            text: 'Steal the show',
+            text: 'Feel the music, not noise.',
             emojis: '💃✨',
         },
         items: [
@@ -129,7 +129,7 @@ export const content = {
                 },
                 heading: 'Re-usable and eco-friendly.',
                 content:
-                    'Easy to clean and designed for repeated use. Party with peace of mind, knowing your earplugs are environmentally friendly and built to last through countless nights out.',
+                    'Easy to clean and designed for repeated use, as earplugs should be. Party with peace of mind, knowing your earplugs are environmentally friendly and built to last through countless nights out.',
             },
         ],
     },

@@ -2,8 +2,8 @@
 
 export const content = {
     meta: {
-        title: 'Swift Earplugs',
-        description: 'Swift Earplugs bring you closer to the music you love.',
+        title: 'Swift Earplugs - Stylish Ear Protection for Music Lovers',
+        description: 'Meet the last earplugs you will ever need. Protect your ears with Swift earplugs – up to 17dB noise reduction, sleek design, and clear sound for concerts and festivals.',
     },
     header: {
         button: 'View Cart',

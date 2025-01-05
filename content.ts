@@ -153,8 +153,8 @@ export const content = {
     promo: {
         enabled: true, // Controls whether banner displays
         icon: 'percent', // valid: 'percent', 'b2g1f', 'sale'. Default: star
-        text: 'Don&apos;t miss, 10% off with code {{ code }} — for a short time only!',
-        code: 'PARTY10',
+        text: 'Double the style, half the price! Get 50% OFF your second pair – use code {{ code }} at checkout.',
+        code: 'PARTY50',
     },
     delivery: 'Free delivery on all orders',
 };

@@ -11,17 +11,12 @@
         aspect-ratio: 16 / 10;
         border: 1px solid $color-red-light;
         border-radius: 4px;
+        height: 100%;
         position: relative;
         width: 100%;
 
-        img {
-            object-fit: cover;
-        }
-
         &.PayPal {
-            img {
-                object-fit: contain;
-            }
+            padding: 5%;
         }
     }
 }

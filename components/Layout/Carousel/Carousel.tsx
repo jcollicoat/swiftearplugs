@@ -38,7 +38,8 @@ export const Carousel: FC = () => {
         <section
             className={classNames(
                 styles.section,
-                slide % 2 !== 0 && styles.alternate,
+                slide === 1 && styles.grey,
+                slide === 3 && styles.purple,
             )}
         >
             <div className={styles.content}>

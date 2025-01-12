@@ -3,7 +3,11 @@
 .section {
     --active-color: 255, 229, 236; // Pink Light
 
-    &.alternate {
+    &.grey {
+        --active-color: 230, 230, 230; // Grey Light
+    }
+
+    &.purple {
         --active-color: 240, 230, 255; // Purple Light
     }
 

@@ -16,13 +16,19 @@ export const revalidate = async (req: NextRequest): Promise<NextResponse> => {
     const isCollectionUpdate = COLLECTION_WEBHOOKS.includes(topic);
     const isProductUpdate = PRODUCT_WEBHOOKS.includes(topic);
 
-    if (!secret || secret !== SHOPIFY_REVALIDATION_SECRET) {
+    if (!secret) {
+        console.error('Missing revalidation secret');
+        return NextResponse.json({ status: 400 });
+    }
+
+    if (secret !== SHOPIFY_REVALIDATION_SECRET) {
         console.error('Invalid revalidation secret.');
-        return NextResponse.json({ status: 200 });
+        return NextResponse.json({ status: 400 });
     }
 
     if (!isCollectionUpdate && !isProductUpdate) {
         // We don't need to revalidate anything for any other topics.
+        console.log('Revalidation not for collection or product update.');
         return NextResponse.json({ status: 200 });
     }
 

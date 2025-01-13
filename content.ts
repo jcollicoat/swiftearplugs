@@ -3,7 +3,8 @@
 export const content = {
     meta: {
         title: 'Swift Earplugs - Stylish Ear Protection for Music Lovers',
-        description: 'Meet the last earplugs you will ever need. Protect your ears with Swift earplugs – up to 17dB noise reduction, sleek design, and clear sound for concerts and festivals.',
+        description:
+            'Meet the last earplugs you will ever need. Protect your ears with Swift earplugs – up to 17dB noise reduction, sleek design, and clear sound for concerts and festivals.',
     },
     header: {
         button: 'View Cart',
@@ -153,7 +154,7 @@ export const content = {
     promo: {
         enabled: true, // Controls whether banner displays
         icon: 'percent', // valid: 'percent', 'b2g1f', 'sale'. Default: star
-        text: 'Double the style, half the price! Get 50% OFF your second pair – use code {{ code }} at checkout.',
+        text: 'Get 50% OFF your second pair – use code {{ code }} at checkout.',
         code: 'PARTY50',
     },
     delivery: 'Free delivery on all orders',

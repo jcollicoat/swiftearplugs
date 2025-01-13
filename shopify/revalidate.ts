@@ -36,15 +36,30 @@ export const revalidate = async (req: NextRequest): Promise<NextResponse> => {
 
     if (isCollectionUpdate) {
         revalidateTag(TAGS.collections);
+
+        return NextResponse.json({
+            status: 200,
+            revalidated: true,
+            type: 'collection',
+            now: Date.now(),
+        });
     }
 
     if (isProductUpdate) {
         revalidateTag(TAGS.products);
+
+        return NextResponse.json({
+            status: 200,
+            revalidated: true,
+            type: 'product',
+            now: Date.now(),
+        });
     }
 
     return NextResponse.json({
         status: 200,
         revalidated: true,
+        type: 'unknown',
         now: Date.now(),
     });
 };

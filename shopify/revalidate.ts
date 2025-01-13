@@ -35,6 +35,7 @@ export const revalidate = async (req: NextRequest): Promise<NextResponse> => {
     }
 
     if (isCollectionUpdate) {
+        console.log('Revalidating collections');
         revalidateTag(TAGS.collections);
 
         return NextResponse.json({
@@ -46,6 +47,7 @@ export const revalidate = async (req: NextRequest): Promise<NextResponse> => {
     }
 
     if (isProductUpdate) {
+        console.log('Revalidating products');
         revalidateTag(TAGS.products);
 
         return NextResponse.json({

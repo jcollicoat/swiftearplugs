@@ -26,6 +26,8 @@ export const revalidate = async (req: NextRequest): Promise<NextResponse> => {
         return NextResponse.json({ status: 400 });
     }
 
+    console.log(`Revalidation webhook received for ${topic}.`);
+
     if (!isCollectionUpdate && !isProductUpdate) {
         // We don't need to revalidate anything for any other topics.
         console.log('Revalidation not for collection or product update.');

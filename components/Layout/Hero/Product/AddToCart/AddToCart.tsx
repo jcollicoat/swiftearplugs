@@ -5,7 +5,7 @@ import { useFormState } from 'react-dom';
 import { Price } from '@Generic/Price/Price';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
-import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
+import { useGoogleGtag } from '@Tracking/GoogleGtag';
 import { useMicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { content } from 'content';
 import { useCart } from 'context/cart';
@@ -23,7 +23,7 @@ export const AddToCart: FC<Props> = ({ product }) => {
     const { addCartItem } = useCart();
     const [message, formAction] = useFormState(addItem, null);
     const { trackFacebookEvent } = useFacebookPixel();
-    const { trackGoogleEvent } = useGoogleTagManager();
+    const { trackGoogleEvent } = useGoogleGtag();
     const { trackClarityEvent } = useMicrosoftClarity();
 
     // TODO: extract this logic

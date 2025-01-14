@@ -7,7 +7,7 @@ import { Delivery } from '@Generic/Delivery/Delivery';
 import { Modal } from '@Generic/Modal/Modal';
 import { Price } from '@Generic/Price/Price';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
-import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
+import { useGoogleGtag } from '@Tracking/GoogleGtag';
 import { useMicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { content } from 'content';
 import { useCart } from 'context/cart';
@@ -23,7 +23,7 @@ export const CartModal: FC = () => {
     const { closeModal } = useModal();
     const { cart } = useCart();
     const { trackFacebookEvent } = useFacebookPixel();
-    const { trackGoogleEvent } = useGoogleTagManager();
+    const { trackGoogleEvent } = useGoogleGtag();
     const { trackClarityEvent } = useMicrosoftClarity();
 
     useEffect(() => {

@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import { FC, useEffect } from 'react';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
-import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
+import { useGoogleGtag } from '@Tracking/GoogleGtag';
 import { useMicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { useProduct, useUpdateURL } from 'context/product';
 import { ProductVariant } from 'shopify/product.types';
@@ -17,7 +17,7 @@ export const Selector: FC<Props> = ({ variants }) => {
     const { state, updateOption } = useProduct();
     const { updateURL } = useUpdateURL();
     const { trackFacebookEvent } = useFacebookPixel();
-    const { trackGoogleEvent } = useGoogleTagManager();
+    const { trackGoogleEvent } = useGoogleGtag();
     const { trackClarityEvent } = useMicrosoftClarity();
 
     useEffect(() => {

@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import { PiShoppingBag } from 'react-icons/pi';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
-import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
+import { useGoogleGtag } from '@Tracking/GoogleGtag';
 import { useMicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { content } from 'content';
 import { useCart } from 'context/cart';
@@ -14,7 +14,7 @@ export const CartButton: FC = () => {
     const { cart } = useCart();
     const { openModal } = useModal();
     const { trackCustomFacebookEvent } = useFacebookPixel();
-    const { trackGoogleEvent } = useGoogleTagManager();
+    const { trackGoogleEvent } = useGoogleGtag();
     const { trackClarityEvent } = useMicrosoftClarity();
 
     // TODO: extract this logic

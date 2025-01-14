@@ -8,6 +8,7 @@ import { Footer } from '@Layout/Footer/Footer';
 import { Header } from '@Layout/Header/Header';
 import { PromoBanner } from '@Layout/PromoBanner/PromoBanner';
 import { FacebookPixel } from '@Tracking/FacebookPixel';
+import { GoogleGtag } from '@Tracking/GoogleGtag';
 import { GoogleTagManager } from '@Tracking/GoogleTagManager';
 import { MicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { content } from 'content';
@@ -71,6 +72,7 @@ export default function RootLayout({
                 <Analytics />
                 <SpeedInsights />
                 <FacebookPixel />
+                <GoogleGtag />
                 <GoogleTagManager />
                 <MicrosoftClarity />
             </body>

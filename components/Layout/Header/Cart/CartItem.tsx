@@ -5,7 +5,7 @@ import { PiTrash } from 'react-icons/pi';
 import { Price } from '@Generic/Price/Price';
 import { SRAnnounce } from '@Generic/SRAnnounce/SRAnnounce';
 import { useFacebookPixel } from '@Tracking/FacebookPixel';
-import { useGoogleTagManager } from '@Tracking/GoogleTagManager';
+import { useGoogleGtag } from '@Tracking/GoogleGtag';
 import { useMicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { useCart } from 'context/cart';
 import { removeItem } from 'shopify/cart.actions';
@@ -20,7 +20,7 @@ export const CartItem: FC<Props> = ({ item }) => {
     const { updateCartItem } = useCart();
     const [message, formAction] = useFormState(removeItem, null);
     const { trackCustomFacebookEvent } = useFacebookPixel();
-    const { trackGoogleEvent } = useGoogleTagManager();
+    const { trackGoogleEvent } = useGoogleGtag();
     const { trackClarityEvent } = useMicrosoftClarity();
 
     const actionWithVariant = formAction.bind(null, item.merchandise.id);

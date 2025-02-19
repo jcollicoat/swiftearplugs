@@ -153,9 +153,18 @@ export const content = {
     },
     promo: {
         enabled: true, // Controls whether banner displays
-        icon: 'percent', // valid: 'percent', 'b2g1f', 'sale'. Default: star
-        text: 'Get 50% OFF your second pair – use code {{ code }} at checkout.',
-        code: 'PARTY50',
+        variants: [
+            {
+                icon: 'percent', // valid: 'percent', 'b2g1f', 'sale'. Default: star
+                text: 'Get 50% OFF your second pair – use code {{ code }} at checkout.',
+                code: 'PARTY50',
+            },
+            {
+                icon: 'b2g1f', // valid: 'percent', 'b2g1f', 'sale'. Default: star
+                text: 'Buy 2 pairs, get 1 free – use code {{ code }} at checkout.',
+                code: 'BUY2GET3',
+            },
+        ],
     },
     delivery: 'Free delivery on all orders',
 };

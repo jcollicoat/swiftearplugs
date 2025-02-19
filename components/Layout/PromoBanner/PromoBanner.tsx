@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import {
     PiCirclesThree,
     PiSealPercent,
@@ -12,10 +12,10 @@ import {
 import { content } from 'content';
 import styles from './PromoBanner.module.scss';
 
-const Icon: FC = () => {
+const Icon: FC<{ index: number }> = ({ index }) => {
     const props = { size: 24, className: styles.icon };
 
-    switch (content.promo.icon) {
+    switch (content.promo.variants[index].icon) {
         case 'percent':
             return <PiSealPercent {...props} />;
         case 'b2g1f':
@@ -27,24 +27,22 @@ const Icon: FC = () => {
     }
 };
 
-export const PromoBanner: FC = () => {
-    const [isVisible, setIsVisible] = useState(false);
+interface Props {
+    variant: string;
+}
 
-    useEffect(() => {
-        if (content.promo.enabled) {
-            setIsVisible(true);
-        }
-    }, []);
+export const PromoBannerGated: FC<Props> = ({ variant }) => {
+    const [isVisible, setIsVisible] = useState(true);
 
-    if (!content.promo.enabled) return null;
+    const index = Number(variant);
 
-    let textOne = content.promo.text;
+    let textOne = content.promo.variants[index].text;
     let code: string | undefined = undefined;
     let textTwo: string | undefined = undefined;
-    if (content.promo.text.includes('{{ code }}')) {
-        const split = content.promo.text.split('{{ code }}');
+    if (textOne.includes('{{ code }}')) {
+        const split = textOne.split('{{ code }}');
         textOne = split[0];
-        code = content.promo.code;
+        code = content.promo.variants[index].code;
         textTwo = split[1];
     }
 
@@ -56,7 +54,7 @@ export const PromoBanner: FC = () => {
                     isVisible && styles.isVisible,
                 )}
             >
-                <Icon />
+                <Icon index={index} />
                 <span className={styles.text}>
                     {textOne}{' '}
                     {code && <span className={styles.code}>{code}</span>}{' '}
@@ -71,4 +69,9 @@ export const PromoBanner: FC = () => {
             </div>
         </aside>
     );
+};
+
+export const PromoBanner: FC<Props> = (props) => {
+    if (!content.promo.enabled) return null;
+    return <PromoBannerGated {...props} />;
 };

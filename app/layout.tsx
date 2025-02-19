@@ -3,7 +3,7 @@ import './layout.scss';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Metadata } from 'next';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import { Footer } from '@Layout/Footer/Footer';
 import { Header } from '@Layout/Header/Header';
 import { PromoBanner } from '@Layout/PromoBanner/PromoBanner';
@@ -14,6 +14,7 @@ import { MicrosoftClarity } from '@Tracking/MicrosoftClarity';
 import { content } from 'content';
 import { CartProvider } from 'context/cart';
 import { ModalProvider } from 'context/modal';
+import { PROMO_COOKIE } from 'middleware';
 import { getCart } from 'shopify/cart';
 
 const { VERCEL_PROJECT_PRODUCTION_URL } = process.env;
@@ -40,9 +41,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     const cartId = cookies().get('cartId')?.value;
-
     // Don't await the fetch, pass the Promise to the context provider
     const cart = getCart(cartId);
+
+    const promoVariant =
+        (cookies().get(PROMO_COOKIE)?.value || headers().get(PROMO_COOKIE)) ??
+        '0';
 
     return (
         <html lang="en">
@@ -66,7 +70,7 @@ export default function RootLayout({
                         <Header />
                         <main>{children}</main>
                         <Footer />
-                        <PromoBanner />
+                        <PromoBanner variant={promoVariant} />
                     </ModalProvider>
                 </CartProvider>
                 <Analytics />
